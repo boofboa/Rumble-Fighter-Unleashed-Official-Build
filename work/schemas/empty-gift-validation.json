@@ -1,0 +1,166 @@
+{
+  "schema": "rf.experimental-zero-gift-validation.v1",
+  "scope": "Structural inspection plus original zero-filled candidate responses. No captured gift names, account/record IDs, item values, payload strings or record bytes are output or saved. No captured gift reply is replayed. Candidate semantics remain unverified until a real-client run.",
+  "evidence": {
+    "local_enum": "analysis/reference-source/upstream-c56f4dc/Gemnet/Packets.cs::ActionGeneral.GIFT_FROM/GIFT_TO",
+    "local_dispatch": "analysis/reference-source/upstream-c56f4dc/Gemnet/Network/PacketProcessor.cs::ProcessGeneralPacket",
+    "prior_schema": "analysis/character-inventory-layout.json::received_gifts/sent_gifts",
+    "client_headers": "analysis/capture/client_to_server-legacy_rc4_abcde-framing.json",
+    "server_headers": "analysis/capture/server_to_client-legacy_rc4_abcde-framing.json",
+    "reference_url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs",
+    "fresh_primary_reinspection": "General.cs was not local. Root reports another pinned-source retrieval returned DisabledError. Detailed handler summary remains prior-source-derived, not freshly inspected."
+  },
+  "structure": {
+    "received_gifts": {
+      "request_type": 48,
+      "request_action": 146,
+      "request_total_bytes": 6,
+      "response_type": 48,
+      "response_action": 147,
+      "response_total_bytes": 3507,
+      "response_body_bytes": 3501
+    },
+    "sent_gifts": {
+      "request_type": 48,
+      "request_action": 144,
+      "request_total_bytes": 6,
+      "response_type": 48,
+      "response_action": 145,
+      "response_total_bytes": 3507,
+      "response_body_bytes": 3501
+    },
+    "next_request": {
+      "type": 16,
+      "action": 168,
+      "declared_total_bytes": 10,
+      "body_bytes": 4,
+      "observer_reads_header_only": true
+    },
+    "captured_structural_observations": [
+      {
+        "action": 147,
+        "stream_offset": 12764,
+        "total_bytes": 3507,
+        "body_bytes": 3501,
+        "body_all_zero": false,
+        "first_byte_zero": true,
+        "first_four_bytes_zero": true,
+        "first_byte_fits_hypothetical_50_record_capacity": true,
+        "first_two_bytes_as_le16_fit_hypothetical_50_record_capacity": true,
+        "first_four_bytes_as_le32_fit_hypothetical_50_record_capacity": true,
+        "body_zero_bytes": 2498,
+        "body_nonzero_bytes": 1003
+      },
+      {
+        "action": 145,
+        "stream_offset": 16271,
+        "total_bytes": 3507,
+        "body_bytes": 3501,
+        "body_all_zero": false,
+        "first_byte_zero": false,
+        "first_four_bytes_zero": false,
+        "first_byte_fits_hypothetical_50_record_capacity": true,
+        "first_two_bytes_as_le16_fit_hypothetical_50_record_capacity": false,
+        "first_four_bytes_as_le32_fit_hypothetical_50_record_capacity": false,
+        "body_zero_bytes": 2518,
+        "body_nonzero_bytes": 983
+      }
+    ],
+    "limits": [
+      "Prior source summary reports raw example arrays, with no named count or record serializer.",
+      "A3501-byte body permits arithmetic decompositions such as1+50*70 or1+70*50; neither count width nor record layout is established.",
+      "The received-gifts zero prefix with nonzero trailing bytes is compatible with ignored fixed-capacity storage, but does not establish its meaning.",
+      "All-zero bodies are experimental candidates. Zero count is a hypothesis, not a verified public serializer."
+    ]
+  },
+  "bounded_behavior": {
+    "gift_from_requires_successful_property_reply": true,
+    "gift_to_requires_gift_from_reply": true,
+    "max_gift_from_replies": 1,
+    "max_gift_to_replies": 1,
+    "property_after_gift_stage": "Stop after header as out of order; do not read its body.",
+    "clock_requests": "Existing bounded clock replies remain allowed.",
+    "gift_request_lengths": "Only exact6-byte headers with no body.",
+    "unknown_request": "Observe header only and stop before body, including expected buddy request.",
+    "postlogin_header_limit": 12,
+    "max_property_bodies": 3,
+    "max_input_bytes": 222,
+    "max_output_bytes": 19280,
+    "max_output_formula": "ack6+login326+GG68+status8+cash18+3*property3928+2*gift3507+4*clock14"
+  },
+  "synthetic_vectors": {
+    "received_gift_header_hex": "00300db39300",
+    "received_gift_plaintext_sha256": "4a41843a6fddb38348a8ffabafaa2645b5841d16a7dc6c32aabf36d736cda54a",
+    "sent_gift_header_hex": "00300db39100",
+    "sent_gift_plaintext_sha256": "eaf0ecf3865d886cdea90ced30594434e46a54aebfda2896837164c4cb024f0f",
+    "gift_body_definition": "3501 invented zero bytes; not copied from the capture.",
+    "base_definition": "The fixed454-byte startup stream from bootstrap-status-cash-validation.json, with synthetic ID1, fixed GUID/token, fixed clock and inventedGG0..59 blob.",
+    "property_tails_hex": [
+      "00000000000000",
+      "00010203040506",
+      "ffffffffffffff"
+    ],
+    "buddy_header_plaintext_hex": "0010000aa800",
+    "paths": [
+      {
+        "property_reply_count": 1,
+        "incoming_total_bytes": 182,
+        "incoming_plaintext_sha256": "d51f1078e47b36b5f53afbfacfe33eb143a8b43ebc436ee92c8e346e5e1e1618",
+        "incoming_ciphertext_sha256": "20507261247c399ebe73b49aec8592c049db45e9d37a864baffec2cf0083b4b8",
+        "incoming_gift_from_header_offset": 164,
+        "incoming_gift_to_header_offset": 170,
+        "incoming_buddy_header_offset": 176,
+        "incoming_buddy_header_ciphertext_hex": "24eb67151091",
+        "outgoing_total_bytes": 11396,
+        "outgoing_plaintext_sha256": "cf254d74bc92122724fd2b0294fc6a8e2e92f2b6e1ed9650ef179ef140e8bcd5",
+        "outgoing_ciphertext_sha256": "b5c4f46105d97adb8e38d54c480df179092073f5eb62afa777e15dabd9ec03a5",
+        "outgoing_received_gifts_offset": 4382,
+        "outgoing_sent_gifts_offset": 7889,
+        "outgoing_received_gifts_ciphertext_sha256": "089563e62da69dc42bab539cdd45bf7448ae5e2d28573ba95a187ac1ccfc5616",
+        "outgoing_sent_gifts_ciphertext_sha256": "0ec6815a47c0e932f1ee4c27fd60b6d266c18cf10ad9a4cd7bc64a12fd65c629",
+        "fragmented_followup_header_cipher_checks_passed": true
+      },
+      {
+        "property_reply_count": 3,
+        "incoming_total_bytes": 216,
+        "incoming_plaintext_sha256": "9070f6cd119fb517dbe09c0366d2f8c776f1c65dd0a4ee3f4c0f2b503f849bc2",
+        "incoming_ciphertext_sha256": "b4abdc2f65ff3c90be81121247aa0b60c8fb2328e48805a674f29de334d22f8c",
+        "incoming_gift_from_header_offset": 198,
+        "incoming_gift_to_header_offset": 204,
+        "incoming_buddy_header_offset": 210,
+        "incoming_buddy_header_ciphertext_hex": "0db3c2e64dd0",
+        "outgoing_total_bytes": 19252,
+        "outgoing_plaintext_sha256": "afdb522debe79c89be48de7aaa0ffb0e83149d4f6425cec3324d3d3a571dda59",
+        "outgoing_ciphertext_sha256": "372b0a77f95c046f66096bfe075845e0752648331c6dee157e98e7351d6a7a53",
+        "outgoing_received_gifts_offset": 12238,
+        "outgoing_sent_gifts_offset": 15745,
+        "outgoing_received_gifts_ciphertext_sha256": "2cca3422ed2e6c620f797a18c77329fa3702ce8d33b47b9f5c85b367579c7ab1",
+        "outgoing_sent_gifts_ciphertext_sha256": "665fc69b2258042bd47fb68b9376d7ed73c74606ea61b16c1c1f69d0789e26ba",
+        "fragmented_followup_header_cipher_checks_passed": true
+      }
+    ]
+  },
+  "runtime_validation": {
+    "python_reference_vectors_executed": true,
+    "csharp_compile_or_windows_execution_here": false,
+    "v1_8_real_client_acceptance_verified": false
+  },
+  "csharp_static_review": {
+    "source_path": "rf-protocol-lab/RFHandshakeProbe.cs",
+    "source_sha256": "d829f76592c018079ef86e67c2377883977f4e7005de045d1e2d5aca96b082d0",
+    "scope": [
+      "Both3507-byte candidate serializers match independent zero-body vectors",
+      "GiftFrom requires completed startup and at least one completed property reply",
+      "GiftTo requires GiftFrom, and both replies are single use",
+      "Property phase closes after GiftFrom, clocks remain separate by frame type",
+      "Unsupported buddy10/A8 header stops before its declared four-byte body",
+      "Gift result flags, byte counts and aggregate counters update once after complete writes",
+      "Existing12-header/3-property body caps remain, with222 maximum input and19280 output",
+      "All one-property and three-property fullstream golden literals match independently executed Python vectors"
+    ],
+    "concrete_defects_found": [],
+    "embedded_golden_literals_match": true,
+    "compiler_or_windows_execution_here": false,
+    "gift_empty_semantics_verified": false
+  }
+}

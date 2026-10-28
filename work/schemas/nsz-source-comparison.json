@@ -1,0 +1,95 @@
+{
+  "schema": "rf-nsz-source-comparison-v1",
+  "purpose": "Bounded metadata comparison of supplied archives against primary public parser source; no extracted payloads",
+  "primary_sources": [
+    {
+      "url": "https://github.com/wattostudios/GameExtractor/blob/master/src/org/watto/ge/plugin/archive/Plugin_NSZ_NSZ.java",
+      "git_blob_sha": "c30786e4d62978160625437cce983d2fcf9d5800",
+      "license": "GPL-2.0-or-later",
+      "observation": "Reader is declared Rumble Fighter NSZ; recognizes NSZ! and directory pointer at -6. Uses fixed extra offset 142; commented-out Deflate exporter."
+    },
+    {
+      "url": "https://github.com/wattostudios/GameExtractor/blob/master/src/org/watto/ge/plugin/archive/Plugin_NSZ_NSZJ.java",
+      "git_blob_sha": "ca5f19be74902fe47755e99957746578fd622fc1",
+      "license": "GPL-2.0-or-later",
+      "observation": "Reader recognizes NSZj and XOR-decodes at most32 filename bytes; does not implement payload decompression."
+    }
+  ],
+  "archives": [
+    {
+      "file": "011600_default_item.nsz",
+      "size_bytes": 7745045,
+      "sha256": "eea1272251fe1231ea096b8fcebb03ee6e897447c9f0a2648a5e4f28aa253056",
+      "magic_hex": "4e535a21",
+      "entropy_bits_per_byte": 8.0,
+      "recognized_watto_magic": true,
+      "directory_offset_le32_at_minus6": 7744863,
+      "status": "recognized_zip_like_nsz_container",
+      "entries": [
+        {
+          "name": "ChrDefaultSphere.NSX",
+          "central_header_signature_hex": "504b0102",
+          "flags_hex": "0xd",
+          "standard_zip_encrypted_bit_set": true,
+          "standard_zip_data_descriptor_bit_set": true,
+          "method": 8,
+          "compressed_bytes": 685,
+          "uncompressed_bytes": 2293,
+          "local_header_offset": 0,
+          "central_extra_length": 17,
+          "local_header_signature_hex": "4e535a21",
+          "local_filename_length": 20,
+          "local_extra_length": 122,
+          "zip_like_data_offset": 172,
+          "watto_plugin_data_offset": 192,
+          "local_central_flags_agree": true,
+          "local_central_method_agree": true
+        },
+        {
+          "name": "GEMFIGHTER.NST",
+          "central_header_signature_hex": "504b0102",
+          "flags_hex": "0xd",
+          "standard_zip_encrypted_bit_set": true,
+          "standard_zip_data_descriptor_bit_set": true,
+          "method": 8,
+          "compressed_bytes": 7743808,
+          "uncompressed_bytes": 14473100,
+          "local_header_offset": 873,
+          "central_extra_length": 17,
+          "local_header_signature_hex": "4e535a21",
+          "local_filename_length": 14,
+          "local_extra_length": 122,
+          "zip_like_data_offset": 1039,
+          "watto_plugin_data_offset": 1059,
+          "local_central_flags_agree": true,
+          "local_central_method_agree": true
+        }
+      ],
+      "directory_entry_count": 2,
+      "conclusion": "Directory exposes two entry names, ChrDefaultSphere.NSX and GEMFIGHTER.NST; decoded payload types and contents are unverified, and no server configuration has been identified. ZIP-like compression and encryption flags require format-specific interpretation. The old Watto fixed extra offset differs from these local headers; its Basic plugin has no active decompression exporter. Bounded raw-deflate probes of the first entry did not validate; no assets were extracted or decrypted."
+    },
+    {
+      "file": "060501_gamekey.nsz",
+      "size_bytes": 31888,
+      "sha256": "8707ac4949e8fae5b5404638522fe90bb3fcd902a5e6f0e4700f6dd83104b9f5",
+      "magic_hex": "e73127ae",
+      "entropy_bits_per_byte": 7.9939,
+      "recognized_watto_magic": false,
+      "directory_offset_le32_at_minus6": 3027130101,
+      "status": "opaque_unrecognized_container",
+      "conclusion": "Does not match the published Watto NSZ!/NSZj header or bounded directory offset. Filename alone does not establish contents or server-setting purpose. No extraction or decryption performed."
+    },
+    {
+      "file": "100000_table.nsz",
+      "size_bytes": 2212,
+      "sha256": "155cb5f6754b273624abb14504243baa01a104c9fdb34eac4f9c55141a4b8960",
+      "magic_hex": "8e5f647d",
+      "entropy_bits_per_byte": 7.9204,
+      "recognized_watto_magic": false,
+      "directory_offset_le32_at_minus6": 3707636534,
+      "status": "opaque_unrecognized_container",
+      "conclusion": "Does not match the published Watto NSZ!/NSZj header or bounded directory offset. Filename alone does not establish contents or server-setting purpose. No extraction or decryption performed."
+    }
+  ],
+  "next_step": "The two opaque files require their actual read/decode routines; names alone are insufficient. Continue offline client reconstruction to locate resource decoding and endpoint initialization."
+}

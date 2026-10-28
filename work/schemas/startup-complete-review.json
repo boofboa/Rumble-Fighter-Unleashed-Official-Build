@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "rf-startup-paths (2).json",
+    "sha256": "b4c920dc2cbce682bcea61866e231ca569cde27accb4388aae657e79265bc101",
+    "file_bytes": 1527908
+  },
+  "scope": "Review of every retained entry and all registry namespaces/file candidates in the supplied metadata report; this is not review of the original CSV or raw event Detail fields.",
+  "counts": {
+    "input_bytes": 114286003,
+    "rows_seen": 693863,
+    "matching_rows": 16090,
+    "unique_entries_emitted": 4842,
+    "truncated": false,
+    "omitted_matching_rows": 0,
+    "skipped_rows": {
+      "other_process": 0,
+      "other_operation": 37184,
+      "other_result": 3311,
+      "empty_path": 0,
+      "non_candidate_file": 637278
+    }
+  },
+  "entry_counts_by_process": {
+    "RumbleLauncher.exe": 785,
+    "rumblefighter.exe": 4057
+  },
+  "entry_counts_by_category": {
+    "registry_key_or_value_name": 4752,
+    "extensionless_file_or_directory_candidate": 61,
+    "file_candidate": 29
+  },
+  "entry_counts_by_operation": {
+    "RegOpenKey": 1300,
+    "RegQueryValue": 3452,
+    "CreateFile": 70,
+    "ReadFile": 20
+  },
+  "entry_counts_by_result": {
+    "SUCCESS": 1620,
+    "NAME NOT FOUND": 3222
+  },
+  "retained_event_count_sum": 16090,
+  "complete_for_current_filter": true,
+  "selected_game_relative_file_leads": [
+    {
+      "relative_path": "rumfus.ini",
+      "evidence": [
+        {
+          "entry_index_zero_based": 753,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "SUCCESS",
+          "count": 4
+        },
+        {
+          "entry_index_zero_based": 754,
+          "process": "RumbleLauncher.exe",
+          "operation": "ReadFile",
+          "result": "SUCCESS",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "relative_path": "__TEMP__\\temp.ini",
+      "evidence": [
+        {
+          "entry_index_zero_based": 171,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "SUCCESS",
+          "count": 3
+        },
+        {
+          "entry_index_zero_based": 750,
+          "process": "RumbleLauncher.exe",
+          "operation": "ReadFile",
+          "result": "SUCCESS",
+          "count": 1
+        },
+        {
+          "entry_index_zero_based": 939,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "NAME NOT FOUND",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "relative_path": "__TEMP__\\wufilelist.ini",
+      "evidence": [
+        {
+          "entry_index_zero_based": 751,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "SUCCESS",
+          "count": 7
+        },
+        {
+          "entry_index_zero_based": 752,
+          "process": "RumbleLauncher.exe",
+          "operation": "ReadFile",
+          "result": "SUCCESS",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "relative_path": "__TEMP__\\rumfus.ini",
+      "evidence": [
+        {
+          "entry_index_zero_based": 756,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "SUCCESS",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "relative_path": "RumbleLauncher.ini",
+      "evidence": [
+        {
+          "entry_index_zero_based": 114,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "NAME NOT FOUND",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "relative_path": "RumbleFighter.exe.Config",
+      "evidence": [
+        {
+          "entry_index_zero_based": 783,
+          "process": "RumbleLauncher.exe",
+          "operation": "CreateFile",
+          "result": "NAME NOT FOUND",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "relative_path": "GameGuard\\RumFUS.ini",
+      "evidence": [
+        {
+          "entry_index_zero_based": 1202,
+          "process": "rumblefighter.exe",
+          "operation": "CreateFile",
+          "result": "SUCCESS",
+          "count": 5
+        },
+        {
+          "entry_index_zero_based": 1203,
+          "process": "rumblefighter.exe",
+          "operation": "ReadFile",
+          "result": "SUCCESS",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "relative_path": "GameGuard\\GameMon.des.Config",
+      "evidence": [
+        {
+          "entry_index_zero_based": 1786,
+          "process": "rumblefighter.exe",
+          "operation": "CreateFile",
+          "result": "NAME NOT FOUND",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "game_vendor_registry": {
+    "key": "HKCU\\Software\\Nimonix\\RumbleFighter",
+    "process": "rumblefighter.exe",
+    "operation": "RegQueryValue",
+    "unique_value_names": 27,
+    "retained_events": 54,
+    "successful_unique_queries": 26,
+    "values_collected": false,
+    "queries": [
+      {
+        "name": "Windowed",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1832
+      },
+      {
+        "name": "NoOSM",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1833
+      },
+      {
+        "name": "WebNotice",
+        "result": "NAME NOT FOUND",
+        "count": 1,
+        "entry_index_zero_based": 1834
+      },
+      {
+        "name": "NoEDGE",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1835
+      },
+      {
+        "name": "BGMOFF",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1836
+      },
+      {
+        "name": "SNDOFF",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1837
+      },
+      {
+        "name": "VOICEOFF",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1838
+      },
+      {
+        "name": "Show_Dmg",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1839
+      },
+      {
+        "name": "Resolution",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1840
+      },
+      {
+        "name": "ScreenRes",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1841
+      },
+      {
+        "name": "Alpha_Msg",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1842
+      },
+      {
+        "name": "Alpha_Edit",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1843
+      },
+      {
+        "name": "Alpha_GiftBox",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1844
+      },
+      {
+        "name": "Volume_BGM",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1845
+      },
+      {
+        "name": "Volume_SND",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1846
+      },
+      {
+        "name": "MappedKey",
+        "result": "SUCCESS",
+        "count": 2,
+        "entry_index_zero_based": 1847
+      },
+      {
+        "name": "MappedJoystick",
+        "result": "SUCCESS",
+        "count": 2,
+        "entry_index_zero_based": 1848
+      },
+      {
+        "name": "SaveID",
+        "result": "SUCCESS",
+        "count": 1,
+        "entry_index_zero_based": 1849
+      },
+      {
+        "name": "PlayID",
+        "result": "SUCCESS",
+        "count": 2,
+        "entry_index_zero_based": 1850
+      },
+      {
+        "name": "MappedMacroStr1",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1862
+      },
+      {
+        "name": "MappedMacroStr2",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1863
+      },
+      {
+        "name": "MappedMacroStr3",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1864
+      },
+      {
+        "name": "MappedMacroStr4",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1865
+      },
+      {
+        "name": "MappedMacroStr5",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1866
+      },
+      {
+        "name": "MappedMacroStr6",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1867
+      },
+      {
+        "name": "MappedMacroStr7",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1868
+      },
+      {
+        "name": "MappedMacroStr8",
+        "result": "SUCCESS",
+        "count": 4,
+        "entry_index_zero_based": 1869
+      }
+    ],
+    "interpretation": "The observed value names include display, audio, input, UI and saved-ID settings; meanings are inferred from names only. No observed name explicitly identifies a game host, port or endpoint. SaveID, PlayID and macro contents are not needed for this conclusion and were not collected."
+  },
+  "other_vendor_namespaces": [
+    {
+      "key": "HKCU\\Software\\INCAInternet\\nProtectGameGuard\\GameMon\\RunFlag",
+      "operation": "RegQueryValue",
+      "result": "SUCCESS",
+      "process": "rumblefighter.exe",
+      "interpretation": "Anti-cheat runtime-state value name; no contents collected."
+    },
+    {
+      "key": "HKCU\\Software\\INCAInternet\\nProtectGameGuard\\Update\\DLL HashValue",
+      "operation": "RegQueryValue",
+      "result": "SUCCESS",
+      "process": "rumblefighter.exe",
+      "interpretation": "Anti-cheat update/hash value name; no contents collected."
+    },
+    {
+      "vendors": [
+        "NVIDIA Corporation",
+        "Intel"
+      ],
+      "interpretation": "Graphics-driver namespaces. Their paths do not establish game-server configuration."
+    }
+  ],
+  "resource_file_reads": {
+    "relative_directory": "res\\070000_snd",
+    "successful_distinct_dat_read_entries": 4,
+    "read_event_count": 6186,
+    "interpretation": "Client reads four .dat files under the sound directory. Their contents were not collected; filenames alone do not prove all contents or justify treating them as endpoint settings."
+  },
+  "endpoint_findings": {
+    "explicit_game_endpoint_registry_name_observed": false,
+    "supported_server_override_identified": false,
+    "generic_network_settings_observed": true,
+    "interpretation": "Windows proxy, TCP/IP, DNS and Winsock paths are present, but path names alone do not identify the game endpoint or provide a supported redirect setting. No registry values or file contents were collected."
+  },
+  "conclusions": [
+    "The uploaded report successfully covers all entries accepted by the current filter: 4,842 unique entries representing 16,090 matching events, with no output truncation.",
+    "The newly visible Nimonix/RumbleFighter namespace conclusively establishes that the client reads per-user game settings. It does not establish that any observed setting selects the server.",
+    "The launcher reads the root rumfus.ini; the client reads a different file at GameGuard/RumFUS.ini. The two paths must not be conflated.",
+    "Missing RumbleLauncher.ini, RumbleFighter.exe.Config and GameGuard/GameMon.des.Config entries are unsuccessful probes, not evidence that those files supply settings.",
+    "No retained file or registry path conclusively identifies an external game endpoint source. Absence from this filtered report does not prove a hardcoded endpoint.",
+    "The existing capture is adequate for this path-name investigation. Another generic startup capture or a dump of private registry values is not justified by these findings.",
+    "A concrete next code-analysis target is the client settings-read/startup path associated with HKCU/Software/Nimonix/RumbleFighter and its networking initialization, subject to the existing protected-client limitation. This report alone does not justify modifying settings, inventing endpoint keys, or labeling the GameGuard INI a game-server config."
+  ],
+  "limitations": [
+    "Only the two named game processes were retained; helper-process activity is outside scope.",
+    "Only CreateFile, ReadFile, QueryOpen, RegOpenKey and RegQueryValue were eligible; other operations, including network activity and many mapping/loading operations, were excluded.",
+    "Only SUCCESS, NAME NOT FOUND and PATH NOT FOUND results were eligible. The current report contains SUCCESS and NAME NOT FOUND only.",
+    "File candidates were restricted by extension/path filtering. Assets, executables, DLLs, .des files and .nsz archives can be absent even if they contain or supply settings.",
+    "637,278 event rows were excluded as non-candidate files, 37,184 for other operations and 3,311 for other results; no other-process rows were present in the input export.",
+    "Registry values, file contents, event Detail fields, timestamps and process IDs were discarded. Counts and first-appearance entry order do not reconstruct exact timing or full data flow.",
+    "Successful CreateFile alone does not establish content read; even successful ReadFile does not establish the purpose of its bytes. Binary resources, IPC, loaded code and remote bootstrap remain possible sources.",
+    "The report does not establish what occurred outside the captured time window, whether login was reached, or whether every original event was recorded without loss."
+  ]
+}

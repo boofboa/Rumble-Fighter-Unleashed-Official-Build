@@ -1,0 +1,257 @@
+{
+  "schema": "rf.gameguard.module-analysis.v1",
+  "scope": "Read-only static inspection of locally supplied files, sanitized protocol metadata, pinned reference source and official product documentation. No client binaries executed, no client modifications, no challenge replay, no synthetic GameGuard reply, no credential/session/body values exported.",
+  "files": [
+    {
+      "path": "analysis/drive/gameguard/GameGuard.des",
+      "size_bytes": 2541208,
+      "sha256": "97e89b41df5b571604c141538f4f99457d6f7e88e8cf3a40caf32b769619988b"
+    },
+    {
+      "path": "analysis/drive/gameguard/GameGuard-root.des",
+      "size_bytes": 2541208,
+      "sha256": "97e89b41df5b571604c141538f4f99457d6f7e88e8cf3a40caf32b769619988b"
+    },
+    {
+      "path": "analysis/drive/gameguard/LocRes.dll",
+      "size_bytes": 1480192,
+      "sha256": "8e2be76f9ad05b9722f4dbe4147b9add4ddeee6ed206069519b12745e4adbe14"
+    }
+  ],
+  "provenance": {
+    "GameGuard.des": "Downloaded from the user-supplied Google Drive game directory, GameGuard subdirectory.",
+    "GameGuard-root.des": "Downloaded from the root game directory, retained under a distinct local filename.",
+    "root_and_subdirectory_gameguard_identical": true,
+    "LocRes.dll": "Downloaded from the user-supplied game directory; root agent performed limited string inspection.",
+    "file_authenticity_limit": "Version-resource and PE metadata are observed. Authenticode certificate presence is not signature verification."
+  },
+  "gameguard_launcher": {
+    "format": "PE32 x86 Windows GUI executable",
+    "dll_flag_set": false,
+    "image_base": "0x400000",
+    "entry_point_va": "0x80bd30",
+    "pe_timestamp_utc": "2024-02-27T14:17:58Z",
+    "version_resource": {
+      "company_name": "INCA Internet Co.,Ltd.",
+      "file_description": "nProtect GameGuard Launcher Rev 346",
+      "file_version": "2024, 2, 27, 1",
+      "product_name": "nProtect GameGuard",
+      "product_version": "2024, 2, 27, 1",
+      "original_filename": "GameGuard.des"
+    },
+    "exports": {
+      "directory_rva": 0,
+      "directory_size": 0,
+      "exported_api_names_observed": []
+    },
+    "sections": [
+      {
+        "name": "TEXT",
+        "rva": "0x1000",
+        "virtual_size": 2916352,
+        "raw_size": 0,
+        "raw_offset": "0x400"
+      },
+      {
+        "name": "DATA",
+        "rva": "0x2c9000",
+        "virtual_size": 1323008,
+        "raw_size": 1323008,
+        "raw_offset": "0x400",
+        "empirical_entropy_bits_per_byte": 7.927
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0x40c000",
+        "virtual_size": 8192,
+        "raw_size": 4608,
+        "raw_offset": "0x143400"
+      }
+    ],
+    "imports_observed": [
+      "ADVAPI32.dll:RegCloseKey",
+      "bcrypt.dll:BCryptGenRandom",
+      "COMCTL32.dll:ordinal17",
+      "CRYPT32.dll:CertCloseStore",
+      "GDI32.dll:BitBlt",
+      "gdiplus.dll:GdipFree",
+      "IPHLPAPI.DLL:GetAdaptersInfo",
+      "KERNEL32.DLL:LoadLibraryA",
+      "KERNEL32.DLL:ExitProcess",
+      "KERNEL32.DLL:GetProcAddress",
+      "KERNEL32.DLL:VirtualProtect",
+      "NETAPI32.dll:Netbios",
+      "ole32.dll:StringFromGUID2",
+      "OLEAUT32.dll:ordinal6",
+      "USER32.dll:GetDC",
+      "VERSION.dll:VerQueryValueA",
+      "WLDAP32.dll:ordinal208",
+      "WS2_32.dll:ordinal16"
+    ],
+    "security_directory": {
+      "file_offset": "0x266f30",
+      "size_bytes": 22376
+    },
+    "packing_assessment": "Zero-raw TEXT with substantial virtual allocation, high-entropy DATA, entry point near its end, and minimal imports strongly indicate a packed loader. No named packer is established.",
+    "api_limit": "No exported startup, query, challenge-generation or authentication-check API is exposed by this executable. Its metadata identifies a client launcher, not a server authentication component."
+  },
+  "other_local_observations": {
+    "publisher_trace_registry_names": [
+      "Software/INCAInternet/nProtectGameGuard",
+      "GameMon",
+      "RunFlag"
+    ],
+    "root_reported_locres_allowlist_scan": "No clear GameGuard/start-null string matched a limited ASCII/UTF-16 allowlist; this is not proof the message is absent.",
+    "historical_patch_manifest_gameguard_file_size": 543464,
+    "historical_patch_manifest_caveat": "This size differs from both identical supplied 2541208-byte files. The historical manifest does not establish corruption or a missing update."
+  },
+  "folder_inventory_reported_by_parent": [
+    {
+      "name": "GameGuard.ver",
+      "size_bytes": 25
+    },
+    {
+      "name": "nplsb.des",
+      "size_bytes": 4220
+    },
+    {
+      "name": "nplsm.des",
+      "size_bytes": 260
+    },
+    {
+      "name": "RumFUS.ini",
+      "size_bytes": 1217
+    },
+    {
+      "name": "GameMon64.des",
+      "size_bytes": 12807032
+    },
+    {
+      "name": "GameMon.des",
+      "size_bytes": 12925904
+    },
+    {
+      "name": "GameGuard.des",
+      "size_bytes": 2541208
+    },
+    {
+      "name": "npgmup.des",
+      "size_bytes": 1189768
+    },
+    {
+      "name": "npgmup.des.new",
+      "size_bytes": 1189768
+    },
+    {
+      "name": "npggNT64.des",
+      "size_bytes": 3016112
+    },
+    {
+      "name": "npggNT.des",
+      "size_bytes": 1925264
+    },
+    {
+      "name": "npsc.des",
+      "size_bytes": 1322496
+    },
+    {
+      "name": "ggerror.des",
+      "size_bytes": 2742704
+    },
+    {
+      "name": "ggscan.des",
+      "size_bytes": 1586072
+    },
+    {
+      "name": "npgg9x.des",
+      "size_bytes": 43420
+    },
+    {
+      "name": "ggsig.des",
+      "size_bytes": 30976
+    }
+  ],
+  "folder_inventory_limit": "Names and sizes alone do not identify exported APIs or establish that any listed module implements the game-server authentication role. Monitors and drivers have not been executed or analyzed here.",
+  "protocol": {
+    "header": "type big-endian u16, total frame length big-endian u16, action little-endian u16",
+    "client_start": {
+      "type": 72,
+      "action": 128,
+      "total_bytes": 6,
+      "body_bytes": 0
+    },
+    "captured_server_start_reply": {
+      "type": 72,
+      "action": 129,
+      "total_bytes": 68,
+      "body_bytes": 62,
+      "body_length_prefix_offset": 0,
+      "body_length_prefix_width": 2,
+      "body_length_prefix_byte_order": "little",
+      "body_length_prefix_value": 60,
+      "opaque_blob_bytes": 60
+    },
+    "pinned_reference_start_reply": {
+      "type": 72,
+      "action": 129,
+      "total_bytes": 84,
+      "body_bytes": 78,
+      "body_length_prefix_value": 76,
+      "opaque_blob_bytes": 76
+    },
+    "captured_later_client_response": {
+      "type": 72,
+      "action": 66,
+      "total_bytes": 116,
+      "body_bytes": 110,
+      "body_length_prefix_value": 108,
+      "opaque_blob_bytes": 108
+    },
+    "reference_enum_later_action": {
+      "name": "ANHS_RESPONSE",
+      "value": 130
+    },
+    "size_difference_conclusion": "The captured68-byte reply and reference84-byte reply share the same length-prefixed wrapper; the opaque blobs differ in length60 versus76. The sixteen-byte difference does not identify algorithm, version, structure or validity.",
+    "pinned_source_limit": "GameGuard.cs sends one fixed84-byte literal; it contains no challenge generator, verifier, SDK call, session state or vendor structure definition. The dispatcher handles only the initial0x80 request.",
+    "capture_limit": "Only one initial server GameGuard reply is available. Stability, freshness, session dependence and blob-generation rules are not established."
+  },
+  "verified_local_test": {
+    "report": "upload/rf-local-handshake-20261016-052311-71d00777.json",
+    "synthetic_login_reply_bytes": 326,
+    "synthetic_login_reply_written": true,
+    "clock_reply_count": 1,
+    "observed_post_login_headers": [
+      {
+        "type": 16,
+        "action": 146,
+        "total_bytes": 6
+      },
+      {
+        "type": 72,
+        "action": 128,
+        "total_bytes": 6
+      }
+    ],
+    "probe_stop_reason": "gameguard_header",
+    "gameguard_reply_written": false,
+    "interpretation": "The local test reached the GameGuard initialization request, then intentionally closed without supplying its response. This explains the unimplemented protocol step, but does not independently establish the exact internal cause of the user-reported Start Null Error or prove installation damage."
+  },
+  "primary_source_context": {
+    "url": "https://nprotect.com/en/products/nprotect/gameguard",
+    "retrieved_date": "2026-10-16",
+    "source_ref": "turn60view0",
+    "summary": "The official product description describes server/client authentication and separate server-authentication modules. It does not publish the exact Rumble Fighter blob schema or establish that a particular server SDK is indispensable to this build."
+  },
+  "next_grounded_step": {
+    "implementable_now": "A bounded parser/serializer for the observed u16-length-prefixed opaque wrapper, and metadata-only recognition of the current0x42 response, are structurally justified. They do not generate a valid initial challenge.",
+    "missing_semantic_dependency": "A verified implementation or documented contract for producing and validating the initialization/authentication blobs used by this exact client integration.",
+    "useful_exact_artifact": "Version-compatible game-server authentication integration headers/library or authorized integration documentation; alternatively a statically identifiable call site and consuming client API that explains the current60-byte initializer.",
+    "available_client_next_analysis": "A bounded PE/import/export/version inspection of GameMon.des or another demonstrated client integration module could identify the API contract, but cannot by itself be assumed to supply server-side generation.",
+    "unsupported_next_actions": [
+      "Sending the pinned84-byte sample or captured68-byte challenge as if valid for new sessions",
+      "Treating zero/empty opaque data as a valid challenge",
+      "Patching or faking client anti-cheat success",
+      "Claiming a reinstall or missing file is established by this report"
+    ]
+  }
+}

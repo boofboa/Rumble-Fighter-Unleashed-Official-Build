@@ -1,0 +1,202 @@
+{
+  "purpose": "Sanitized structural reference for a separate local test account; no captured account or session values included.",
+  "offset_basis": "Offsets refer to decoded complete frames; body offsets exclude 6-byte header.",
+  "evidence": {
+    "public_reference_revision": "c56f4dc",
+    "source_files": [
+      "Gemnet/Network/Packets/Login.cs",
+      "Gemnet/PacketProcessors/Login.cs",
+      "Gemnet/Packets.cs"
+    ],
+    "capture_checks": "Only frame lengths, bounds and terminator presence checked; captured values not output or persisted."
+  },
+  "header": [
+    {
+      "name": "type",
+      "frame_offset": 0,
+      "width": 2,
+      "encoding": "uint16 big-endian",
+      "confidence": "confirmed framing"
+    },
+    {
+      "name": "total_frame_length",
+      "frame_offset": 2,
+      "width": 2,
+      "encoding": "uint16 big-endian including 6-byte header",
+      "confidence": "confirmed framing"
+    },
+    {
+      "name": "action",
+      "frame_offset": 4,
+      "width": 2,
+      "encoding": "uint16 little-endian",
+      "confidence": "confirmed framing"
+    }
+  ],
+  "login_request": {
+    "type": "0x0010",
+    "action": "0x0084",
+    "reference_total_frame_length": 91,
+    "reference_body_length": 85,
+    "observed_frame_count": 2,
+    "observed_total_frame_lengths": [
+      91,
+      91
+    ],
+    "fields": [
+      {
+        "name": "email",
+        "frame_offset": 6,
+        "body_offset": 0,
+        "allocated_span_width": 64,
+        "reference_read_width": 63,
+        "encoding": "ASCII, NUL-terminated",
+        "confidence": "offset/read width explicit in reference; allocated span inferred from next field",
+        "uncertainty": "Reference reads only 63 of the 64 bytes before password; a terminator at offset 69 would not be found by its parser."
+      },
+      {
+        "name": "password",
+        "frame_offset": 70,
+        "body_offset": 64,
+        "allocated_span_width": 21,
+        "reference_read_width": 21,
+        "encoding": "ASCII, NUL-terminated",
+        "confidence": "offset/read width explicit in reference",
+        "uncertainty": "Current client maximum permitted password length is not established."
+      }
+    ]
+  },
+  "login_success": {
+    "type": "0x0010",
+    "action": "0x0085",
+    "reference_total_frame_length": 326,
+    "reference_body_length": 320,
+    "observed_frame_count": 1,
+    "observed_total_frame_lengths": [
+      326
+    ],
+    "fields": [
+      {
+        "name": "user_id",
+        "frame_offset": 6,
+        "body_offset": 0,
+        "width": 4,
+        "encoding": "signed int32 little-endian",
+        "confidence": "explicit reference serializer"
+      },
+      {
+        "name": "in_game_name",
+        "frame_offset": 10,
+        "body_offset": 4,
+        "allocated_span_width": 24,
+        "encoding": "ASCII bytes in zero-initialized response",
+        "confidence": "offset explicit; span inferred from next field"
+      },
+      {
+        "name": "experience",
+        "frame_offset": 34,
+        "body_offset": 28,
+        "width": 4,
+        "encoding": "signed int32 little-endian",
+        "confidence": "explicit reference serializer"
+      },
+      {
+        "name": "carats",
+        "frame_offset": 38,
+        "body_offset": 32,
+        "width": 4,
+        "encoding": "signed int32 little-endian",
+        "confidence": "explicit reference serializer"
+      },
+      {
+        "name": "unknown_42_96",
+        "frame_offset": 42,
+        "body_offset": 36,
+        "width": 55,
+        "encoding": "unknown",
+        "confidence": "unmapped in reference; current capture does not justify treating entire span as padding"
+      },
+      {
+        "name": "guid",
+        "frame_offset": 97,
+        "body_offset": 91,
+        "allocated_span_width": 53,
+        "reference_example_content_width": 36,
+        "encoding": "ASCII text; reference uses hyphenated GUID-shaped placeholder",
+        "confidence": "offset explicit; 53-byte upper bound inferred from next field, actual field width unconfirmed",
+        "uncertainty": "Do not assume all 53 bytes belong to the GUID; the reference example occupies only 36 bytes."
+      },
+      {
+        "name": "medals",
+        "frame_offset": 150,
+        "body_offset": 144,
+        "width": 4,
+        "encoding": "signed int32 little-endian",
+        "confidence": "explicit reference serializer"
+      },
+      {
+        "name": "unknown_154_157",
+        "frame_offset": 154,
+        "body_offset": 148,
+        "width": 4,
+        "encoding": "unknown",
+        "confidence": "unmapped gap in reference"
+      },
+      {
+        "name": "country",
+        "frame_offset": 158,
+        "body_offset": 152,
+        "allocated_span_width": 8,
+        "reference_example_content_width": 2,
+        "encoding": "ASCII text",
+        "confidence": "offset explicit; span inferred from next field"
+      },
+      {
+        "name": "region",
+        "frame_offset": 166,
+        "body_offset": 160,
+        "allocated_span_width": 32,
+        "reference_example_content_width": 2,
+        "encoding": "ASCII text",
+        "confidence": "offset explicit; span inferred from next field"
+      },
+      {
+        "name": "session_token",
+        "frame_offset": 198,
+        "body_offset": 192,
+        "allocated_span_width": 64,
+        "reference_generated_content_width": 30,
+        "encoding": "ASCII text generated independently by server",
+        "confidence": "offset and reference-generated length explicit; span inferred from next field"
+      },
+      {
+        "name": "forum_name",
+        "frame_offset": 262,
+        "body_offset": 256,
+        "allocated_span_width": 64,
+        "encoding": "ASCII text",
+        "confidence": "offset explicit; span inferred from total frame length"
+      }
+    ]
+  },
+  "credential_shape_from_public_reference_only": {
+    "wire_before_transport_encryption": "LoginReq reads password as ASCII and passes it directly to BCrypt.Net.BCrypt.Verify.",
+    "database_storage": "Reference compares the received password string against a stored BCrypt hash.",
+    "application_level_client_hash": "No application-level password hashing step is shown in this reference parser/processor; do not infer that the transmitted field is a BCrypt hash.",
+    "conservative_local_input_limits": {
+      "email_ascii_content_max_bytes": 62,
+      "password_ascii_content_max_bytes": 20
+    },
+    "limits_note": "Conservative limits leave a NUL inside each exact reference read window; these are not a claim about official client UI limits."
+  },
+  "implementation_constraints": [
+    "Use newly created local credentials and newly generated local user/session identifiers; never reuse captured account/session values.",
+    "Allocate exactly 326 response bytes and serialize integers explicitly little-endian; do not rely on host-native byte order.",
+    "Reference string CopyTo calls lack bounds checks. Enforce chosen local field limits and NUL termination explicitly.",
+    "Treat field names/semantics as reference evidence, not complete independent verification against the current proprietary server.",
+    "The unmapped 42..96 range contains modern fields or state not explained by this serializer; all-zero local values remain an untested experiment.",
+    "A structurally valid login success is not proof that the client can reach its lobby or play a match.",
+    "Reference credential handler prints request bytes and session token; do not carry those diagnostic logs into a new implementation.",
+    "Incoming credential slots may contain nonzero bytes after their NUL terminators; ignore that trailing buffer data rather than requiring zero padding. Outgoing local strings remain zero-padded."
+  ]
+}

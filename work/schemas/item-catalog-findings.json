@@ -1,0 +1,245 @@
+{
+  "schema": "rf-item-catalog-findings-v1",
+  "date_utc": "2026-10-16",
+  "result": "Recovered 104 candidate product IDs from the supplied inventory capture and cross-checked three public starter IDs. Full game catalog and complete item-grant support remain unresolved.",
+  "requested_target": "Every item on the private local account, with original server-side item instances and equipment state.",
+  "artifacts": {
+    "observed_catalog": "observed-item-catalog.json",
+    "original_readonly_analyzer": "protocol-lab/catalog_capture.py",
+    "analyzer_sha256": "e1e53b739d34e9226bf9a47429fc914460e254fc46189ee978cb59399acd2984"
+  },
+  "assets_reviewed": [
+    {
+      "asset_path": "res/011600_default_item.nsz",
+      "size_bytes": 7745045,
+      "sha256": "eea1272251fe1231ea096b8fcebb03ee6e897447c9f0a2648a5e4f28aa253056",
+      "size_matches_downloaded_patch_manifest": true,
+      "crc32_matches_downloaded_patch_manifest": true,
+      "status": "recognized_zip_like_nsz_container",
+      "reason": "Directory exposes two entry names, ChrDefaultSphere.NSX and GEMFIGHTER.NST; decoded payload types and contents are unverified, and no server configuration has been identified. ZIP-like compression and encryption flags require format-specific interpretation. The old Watto fixed extra offset differs from these local headers; its Basic plugin has no active decompression exporter. Bounded raw-deflate probes of the first entry did not validate; no assets were extracted or decrypted."
+    },
+    {
+      "asset_path": "res/060501_gamekey.nsz",
+      "size_bytes": 31888,
+      "sha256": "8707ac4949e8fae5b5404638522fe90bb3fcd902a5e6f0e4700f6dd83104b9f5",
+      "size_matches_downloaded_patch_manifest": true,
+      "crc32_matches_downloaded_patch_manifest": true,
+      "status": "opaque_unrecognized_container",
+      "reason": "Does not match the published Watto NSZ!/NSZj header or bounded directory offset. Filename alone does not establish contents or server-setting purpose. No extraction or decryption performed."
+    },
+    {
+      "asset_path": "res/100000_table.nsz",
+      "size_bytes": 2212,
+      "sha256": "155cb5f6754b273624abb14504243baa01a104c9fdb34eac4f9c55141a4b8960",
+      "size_matches_downloaded_patch_manifest": true,
+      "crc32_matches_downloaded_patch_manifest": true,
+      "status": "opaque_unrecognized_container",
+      "reason": "Does not match the published Watto NSZ!/NSZj header or bounded directory offset. Filename alone does not establish contents or server-setting purpose. No extraction or decryption performed."
+    }
+  ],
+  "nsz_zip_like_details": {
+    "file": "res/011600_default_item.nsz",
+    "local_signature": "NSZ!",
+    "directory_signature": "PK0102",
+    "end_signature": "PK0506",
+    "entries": 2,
+    "version_needed": 20,
+    "flags_hex": "000d",
+    "compression_method": 8,
+    "standard_zip_flag_interpretation": "Bit0 encrypted and bit3 data descriptor are set. This supports an encrypted ZIP-like payload hypothesis, not proof of the exact NSZ cipher/password.",
+    "local_extra_fields": [
+      {
+        "tag_hex": "4453",
+        "length": 101
+      },
+      {
+        "tag_hex": "5455",
+        "length": 13
+      }
+    ],
+    "aes_9901_or_strong_encryption_0017_extra_field_present": false,
+    "entry_metadata": [
+      {
+        "name": "ChrDefaultSphere.NSX",
+        "data_offset": 172,
+        "compressed_bytes": 685,
+        "uncompressed_bytes": 2293,
+        "pk0708_descriptor_matches_central_crc_and_sizes": true
+      },
+      {
+        "name": "GEMFIGHTER.NST",
+        "data_offset": 1039,
+        "compressed_bytes": 7743808,
+        "uncompressed_bytes": 14473100,
+        "pk0708_descriptor_matches_central_crc_and_sizes": true
+      }
+    ],
+    "published_plugin_limit": "The locally inspected GameExtractor NSZ plugin has no active decompression exporter and uses a fixed142 extra offset; supplied archives declare122 local extra bytes. NSZj plugin only implements bounded filename XOR, not payload decoding.",
+    "password_or_payload_decoder_recovered": false,
+    "extractor_emitted": false,
+    "reason_no_extractor": "Container metadata is grounded; payload decryption and decoding are not. No password guessing or brute force was performed."
+  },
+  "capture_evidence": {
+    "input": "User supplied original startup capture, already reassembled server-to-client stream",
+    "inspection": "Only inventory/equipment response bodies were decrypted in memory by the new analyzer; unrelated bodies advanced through the cipher using synthetic zero bytes.",
+    "property_page_counts": [
+      80,
+      80,
+      44
+    ],
+    "active_instances": 204,
+    "distinct_candidate_catalog_ids": 104,
+    "record_stride": 49,
+    "count_field_bytes": 2,
+    "record_start_body_offset": 2,
+    "catalog_id_record_offset": 4,
+    "all_active_instance_ids_unique": true,
+    "all10_equipment_replies_reference_preceding_inventory_instances": true,
+    "all10_equipment_unknown_180byte_tails_zero": true,
+    "final_page_warning": "Count44 controls validity despite55 nonzero capacity records; unused record capacity must not be interpreted as extra items.",
+    "private_data_persisted": false,
+    "persisted_fields": "Deduplicated product IDs, aggregate unknown-field distributions, public starter names, structural booleans and source hashes only. No owner, instance, avatar, credential, session or raw-record data."
+  },
+  "starter_fixture_evidence": {
+    "public_source_url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/Login.cs",
+    "local_reference_sha256": "2abec297b7efe36bfd95fc4a05cac5745551a954e90845956cb36406f2e88a61",
+    "source_semantics": "CreateAccount inserts the selected class, fishing rod and class-specific default Exo with END=1000, then creates10 avatars using the class item instance as JobServerID and Exo item instance as ExoID.",
+    "current_capture_cross_checked_items": [
+      {
+        "catalog_id": 1000175,
+        "public_name": "Striker (M)",
+        "unknown_u32_at_record8": 85593,
+        "source_item_end_at_record29": 1000,
+        "source_stat_modifier_at_record33": 0
+      },
+      {
+        "catalog_id": 2040034,
+        "public_name": "Default Striker Exo",
+        "unknown_u32_at_record8": 85582,
+        "source_item_end_at_record29": 1000,
+        "source_stat_modifier_at_record33": 0
+      },
+      {
+        "catalog_id": 5135224,
+        "public_name": "Fishing Rod",
+        "unknown_u32_at_record8": 85582,
+        "source_item_end_at_record29": 1000,
+        "source_stat_modifier_at_record33": 0
+      }
+    ],
+    "unknown_fields": "Meaning of integer+8 and opaque17-byte region+12..28 remains unknown. In these3 records+12..22 is zero and+23..28 contains nonzero opaque data; these opaque values were not persisted.",
+    "proposed_original_candidate": "Use local instances1=class,2=Exo,3=rod; observed nonidentifying unknown integer words at+8; END1000; stat0; synthetic zero fill for all remaining fields. Ten invented avatars1..10 each use Job1 and ExoA2, equipped avatar1. This does not replay a captured record.",
+    "candidate_limit": "The real client has not yet validated the populated starter serializer or zeroing the unknown17-byte region. It provides three starter items, not every item.",
+    "additional_public_class_candidates_unverified_on_current_client": [
+      {
+        "catalog_id": 1000175,
+        "name": "Striker (M)",
+        "default_exo_catalog_id": 2040034,
+        "current_capture_cross_checked": true
+      },
+      {
+        "catalog_id": 1000176,
+        "name": "Soul Fighter (M)",
+        "default_exo_catalog_id": 2040035,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1000177,
+        "name": "Elementalist (M)",
+        "default_exo_catalog_id": 2040037,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1000178,
+        "name": "Alchemist (M)",
+        "default_exo_catalog_id": 2040038,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1000247,
+        "name": "Striker (F)",
+        "default_exo_catalog_id": 2040034,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1000248,
+        "name": "Soul Fighter (F)",
+        "default_exo_catalog_id": 2040035,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1000249,
+        "name": "Elementalist (F)",
+        "default_exo_catalog_id": 2040037,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1000250,
+        "name": "Alchemist (F)",
+        "default_exo_catalog_id": 2040038,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1001792,
+        "name": "Shaman (M)",
+        "default_exo_catalog_id": 2040086,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1001793,
+        "name": "Shaman (F)",
+        "default_exo_catalog_id": 2040086,
+        "current_capture_cross_checked": false
+      },
+      {
+        "catalog_id": 1002689,
+        "name": "Android (F)",
+        "default_exo_catalog_id": null,
+        "current_capture_cross_checked": false
+      }
+    ]
+  },
+  "pagination": {
+    "request_body_bytes": 11,
+    "owner_bytes": 4,
+    "opaque_tail_bytes": 7,
+    "same_owner_all3_requests": true,
+    "tail_byte_offsets_constant_across_requests": [
+      0,
+      1,
+      2
+    ],
+    "previous_page_last_active_instance_matches_any_tail_u32_window": false,
+    "previous_page_record_count_matches_any_tail_u16_window": false,
+    "any_1to4_byte_little_or_big_endian_tail_window_matches_0_1_2_or_1_2_3_or_0_80_160_or_constant80": false,
+    "conclusion": "No grounded cursor/page model recovered. Do not emit all104 IDs as if one80-slot response can contain them or repeat a guessed next-page response."
+  },
+  "remaining_work": [
+    "Locate the actual NSZ resource decode/read routines or a matching validated decoder to recover the full catalog and names/categories.",
+    "Validate a small original three-item starter response and coherent avatar/equipment fixture on the exact client.",
+    "Recover pagination/filter semantics and item duration/flags before larger grants.",
+    "Add persistent local item ownership and equipment mutation after wire acceptance."
+  ],
+  "upload_guidance": {
+    "additional_user_upload_required_now": false,
+    "reason": "All3 selected resource files match downloaded patch-manifest size and CRC32, so re-uploading them would not fix the unknown decoding format.",
+    "known_missing_catalog_file": null,
+    "scope_limit": "The cached Drive resource list contains only1000 children and the original upload was incomplete. No exact missing catalog asset has been established; filenames alone do not prove where the table resides."
+  },
+  "validation": {
+    "observed_capture_analyzer_completed": true,
+    "expected104_unique_product_ids": true,
+    "expected204_distinct_instances_without_id_export": true,
+    "all10_equipment_correlations_pass": true,
+    "empty_truncated_and_over_capacity_inputs_rejected": true,
+    "windows_gameplay_validation": false
+  },
+  "read_only_followup": {
+    "archive_metadata_report": "resource-directory-report.json",
+    "source_inventory": "catalog-source-followup.json",
+    "asset_map": "catalog-asset-map.json",
+    "new_archives_inspected": 3,
+    "new_catalog_ids_verified": 0,
+    "additional_user_upload_required": false
+  }
+}

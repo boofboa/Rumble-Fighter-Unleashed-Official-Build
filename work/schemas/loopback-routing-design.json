@@ -1,0 +1,71 @@
+{
+  "schema": "rf-loopback-routing-design-v1",
+  "status": "Candidate implemented as guarded Windows test; Windows execution unverified.",
+  "recommended_design": "Discover the actual IPv4 interface owning127.0.0.1, verify it is software loopback, attempt temporary5.188.32.117/32 address withSkipAsSource, verify local ownership and route, then use an original fixed-endpoint local TCP bridge or one-shot version listener. No binary patch or hostname mapping required.",
+  "important_scope": "An IP alias reroutes all local-process traffic destined to this one IPv4 address, regardless of port. Only TCP7000 is serviced by the test. This is not process-specific or port-specific interception.",
+  "primary_sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-floating-ip",
+      "supports": "Windows Server example explicitly assigns a non127IPv4 address to Loopback Pseudo-Interface1 using netsh. The same page also instructs adding a loopback adapter, so this is not unequivocal Win11 built-in-interface compatibility evidence."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/nettcpip/new-netipaddress?view=windowsserver2025-ps",
+      "supports": "InterfaceIndex, PrefixLength, SkipAsSource, explicit ActiveStore. Omitting PolicyStore creates persistent entries too. Do not target the active internet adapter."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-interface",
+      "supports": "Optional local TCP portproxy rule syntax; no outbound interception by itself."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/deployment/do/mcc-ent-prerequisites",
+      "supports": "IP Helper service must run for portproxy. Prefer original fixed TCP bridge to avoid that dependency and persistent rule cleanup."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/nettcpip/remove-netipaddress?view=windowsserver2025-ps",
+      "supports": "Remove exact address on exact interface in ActiveStore."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/setup-upgrade-and-drivers/microsoft-loopback-adapter-rename",
+      "supports": "Fallback manual built-in adapter: Add Hardware Wizard, Microsoft manufacturer, Microsoft KM-TEST Loopback Adapter; do not install automatically."
+    }
+  ],
+  "verified_syntax_templates": {
+    "discover": "Get-NetIPAddress -AddressFamily IPv4 -IPAddress 127.0.0.1 -PolicyStore ActiveStore",
+    "add": "New-NetIPAddress -InterfaceIndex $rfLoopIndex -AddressFamily IPv4 -IPAddress 5.188.32.117 -PrefixLength 32 -SkipAsSource $true -PolicyStore ActiveStore -ErrorAction Stop",
+    "ownership": "Get-NetIPAddress -InterfaceIndex $rfLoopIndex -AddressFamily IPv4 -IPAddress 5.188.32.117 -PolicyStore ActiveStore",
+    "route": "Get-NetRoute -AddressFamily IPv4 -DestinationPrefix 5.188.32.117/32 -PolicyStore ActiveStore",
+    "portproxy_optional": "netsh.exe interface portproxy add v4tov4 listenaddress=5.188.32.117 listenport=7000 connectaddress=127.0.0.1 connectport=17000 protocol=tcp",
+    "portproxy_delete_optional": "netsh.exe interface portproxy delete v4tov4 listenaddress=5.188.32.117 listenport=7000 protocol=tcp",
+    "remove": "Remove-NetIPAddress -InterfaceIndex $rfLoopIndex -AddressFamily IPv4 -IPAddress 5.188.32.117 -PolicyStore ActiveStore -Confirm:$false -ErrorAction Stop"
+  },
+  "preconditions": [
+    "Game and launcher closed; no existing connections to target.",
+    "Administrator token and NetTCPIP cmdlets available.",
+    "Exactly one validated software loopback interface owns127.0.0.1; reject physical adapters and ambiguous selection.",
+    "Target IP absent from ActiveStore andPersistentStore, no preexisting conflicting specific routes or listeners; no overwriting existing portproxy rules.",
+    "Original probe already owns127.0.0.1:17000; VIP7000 andwildcard7000 listeners absent."
+  ],
+  "apply_and_test": [
+    "Record an ownership marker before mutation so cleanup never deletes preexisting configuration.",
+    "Attempt only the selected loopback address addition, with no gateway, DNS, physical-interface,weakhost orfirewall changes. Stop andreport ifrejected.",
+    "Verify IPAddress, InterfaceIndex, PrefixLength32, SkipAsSource true, AddressStatePreferred. Verify route5.188.32.117/32 onthat interface withNextHop0.0.0.0. Do notconnect toVIP unlessall checks pass.",
+    "Start fixed bridge orlistener; do notbind0.0.0.0. Use bounded synthetic local preflight and a local-only marker before permitting game launch.",
+    "After preflight, user launches normalgame. Probe accepts onlyinitialversionrequest type0x10 action0x90 expected26bytes, optionally sends6-byte type0x10 action0x91,thencloses. Recordmetadata only; do notcollectloginbody.",
+    "Closegame before removingalias, preventingautomatic retry towardofficialserver afterroute restoration. Closeourlistener/bridge andremoveonlyourownedaddress.",
+    "Verifyouraddress andlistener aregone; ifoptionalportproxyused,deleteonlyexactownedrule andverify. No globalreset."
+  ],
+  "limits": [
+    "NoWindowsruntime availablehere; actualinterfaceacceptance andlocalTCP behavior mustbetested onuserWindows11.",
+    "No need tocopy Azureweakhost/firewall allowances: thoseaddresscross-interface externalincomingtraffic; ourlocaltestdoesnotrequireopeningincomingLANports.",
+    "Ifbuilt-inpseudo-interfacerejectsaddress, stop. DedicatedKM-Testadapter is fallbackwithmanualcreation andseparateexplicitselection; no driverdownload needed.",
+    "Officiallauncher/GameGuard mayrequireother endpoints orrejectenvironment; routingfirstversion doesnotproveofflinegameplay.",
+    "EmptyDNSresult means nocachedrecordfound, notproof ofhardcodedIP.",
+    "Reboot removesActiveStorealias, but anoptionalportproxy rule isseparatepersistentstate; explicitcleanup required."
+  ],
+  "selected_implementation": {
+    "listener": "Original C# fixed-endpoint one-shot version probe; no TCP bridge or portproxy is installed.",
+    "wrapper": "Test-RF-LocalHandshake.ps1",
+    "recovery": "CleanupLocalHandshake.cmd",
+    "prior_design_options": "Other syntax templates in this report are research alternatives, not additional user instructions."
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "archive": "RumbleFighter-Preservation-Backup-2026-10-21_160241.zip",
+  "archive_sha256": "147a2cf75034a94216a54ac772e2a041e326379f1e218d5965ef75355c19d912",
+  "active_checkpoint": "v1.28",
+  "files": [
+    {
+      "path": "work/build-identity.json",
+      "sha256": "99678fb1d24aebeac6371caed85125515234f0fcf4f2e30291f11367c71ec67b"
+    },
+    {
+      "path": "work/capture/integrity-summary.json",
+      "sha256": "7dcfd53552c227895e6995e0a12f6e71dff106c3f24c95a7c859045b5f6e374a"
+    },
+    {
+      "path": "work/capture/protocol-report.json",
+      "sha256": "a38a364d7f17f9b223d0967d5dbd6181fc569fe903b58406da35777ab934596c"
+    },
+    {
+      "path": "work/capture/upstream_opcode_coverage.json",
+      "sha256": "71d6317ace027a76f5e65a89566ed1773fa3b0be61749526119530a284e3486c"
+    },
+    {
+      "path": "work/protocol-lab/CleanupLocalHandshake.cmd",
+      "sha256": "3a68a951fc16935cac132d7ebaa91783b7749bd0125accd84f13c8ff03727413"
+    },
+    {
+      "path": "work/protocol-lab/Collect-RF-Diagnostics.ps1",
+      "sha256": "cb42be6b6be813defacfc67c75225ca93eb80480d43bef45d3b3b11bcb15e451"
+    },
+    {
+      "path": "work/protocol-lab/CollectDiagnostics.cmd",
+      "sha256": "0c7ddc82c724e1ee0800fb72c966112755df809d6676e5a4f1ccfaa7fcc800c0"
+    },
+    {
+      "path": "work/protocol-lab/CreateLocalAccount.cmd",
+      "sha256": "e629e70bd0e27a5858b60ac38dfd6b0ba8edab513b629d441fb934a70386fad7"
+    },
+    {
+      "path": "work/protocol-lab/RFAccount.cs",
+      "sha256": "ee2d6b4dcca6be691abb88a7c7dba96869d86a681b96cad04ab59695685d0d20"
+    },
+    {
+      "path": "work/protocol-lab/RFAdmin.cmd",
+      "sha256": "2aa83206c21d62e15ab379a0dfd38ba1afa97ae43786253a6f2150829eb9359d"
+    },
+    {
+      "path": "work/protocol-lab/RFAdmin.ps1",
+      "sha256": "bda05de084c7dab66501312edecab53bedcc0da532865873f45d5875a54eb504"
+    },
+    {
+      "path": "work/protocol-lab/RFHandshakeProbe.cs",
+      "sha256": "92f21f1beaca8987b7a8036e7c4adbcb79047363df25279f658ab0e17594489a"
+    },
+    {
+      "path": "work/protocol-lab/RFItemGen.cmd",
+      "sha256": "323c201c52968406f832d07a5337a77479b335899b95f76646310abbb271e06d"
+    },
+    {
+      "path": "work/protocol-lab/RFItemGen.ps1",
+      "sha256": "55f1898c986869565e8af033f853e4b8f3c90fac1b33be2c0a451c9fd520bdbd"
+    },
+    {
+      "path": "work/protocol-lab/RFPlaza.cs",
+      "sha256": "52c070e97118f7bdc737ef41c9a837a1fb9f2b581bcae8fc2cf95be806d4a7a3"
+    },
+    {
+      "path": "work/protocol-lab/Restore-Checkpoint.ps1",
+      "sha256": "81ad6f534a8312a0509f2d29836fac198b40ea1a328f9e88d1da32dece987e6d"
+    },
+    {
+      "path": "work/protocol-lab/RestoreCheckpoint.cmd",
+      "sha256": "75748b68b6421b18a1433798289806b0d7ffd5a4f2377cbc1de0a0bfe53b994d"
+    },
+    {
+      "path": "work/protocol-lab/Run-PersistenceChecks.ps1",
+      "sha256": "ddec314fcc2be7bd8553277a1931bb3af9b6d2f9432729057afd077822abd230"
+    },
+    {
+      "path": "work/protocol-lab/Run-ScriptedLobby.ps1",
+      "sha256": "01b071bab1d68a2b2347592500f7da17d1acc542a54411020a02b4eade72cbac"
+    },
+    {
+      "path": "work/protocol-lab/RunLocalHandshake-EmptyCharacter.cmd",
+      "sha256": "c4a91dc2881ea0e814bdc7c5da02f63c6aac2613a6cd65dde1c3e08ac50e58ce"
+    },
+    {
+      "path": "work/protocol-lab/RunLocalHandshake.cmd",
+      "sha256": "a6230eb5ea5862a5fbe7d33b06d549f82d5aea92a2cf5049ed40633519a7a81e"
+    },
+    {
+      "path": "work/protocol-lab/RunLocalServer-Admin.cmd",
+      "sha256": "a1277d40e36aaac7f89ddd460452d1c63ed6d3ceaa486ca1cb7c71f0d8c49955"
+    },
+    {
+      "path": "work/protocol-lab/RunLocalServer-EquipTest.cmd",
+      "sha256": "5a5639f6fb9fc0c8e52bf8ef8e788567d3351cf1a3bc39d52053a97fa55e4fed"
+    },
+    {
+      "path": "work/protocol-lab/RunSelfTest.cmd",
+      "sha256": "28b558fe1fa904a6f1a93f9b2fb812e16f20119d7d434bd270add081aed1d2a6"
+    },
+    {
+      "path": "work/protocol-lab/Send-ConsoleCtrl.ps1",
+      "sha256": "6744a704a19e454f06e975bcddc31b1cd68fb2d9f76165ae75f9a8361b94d59b"
+    },
+    {
+      "path": "work/protocol-lab/StartLocalServer.cmd",
+      "sha256": "11f21845400ff47ea632a5e8bbaf23471d23e24e730bba6e36d9243fc9038dcd"
+    },
+    {
+      "path": "work/protocol-lab/StartupTraceReview.html",
+      "sha256": "238aa87e8e9ca5f896c991f5462b089498265976ca4fa4bad0ef3e7684f9c294"
+    },
+    {
+      "path": "work/protocol-lab/Test-RF-LocalHandshake.ps1",
+      "sha256": "d8bfa02c9aec67482f0ba8a200a02982d2b42e39cdc6f7b32a84af65d0c50239"
+    },
+    {
+      "path": "work/protocol-lab/_RunPython.cmd",
+      "sha256": "cfe41b7a735cd67c0fa52a0166144339574d657b05e655bff33d1f0d100286a4"
+    },
+    {
+      "path": "work/protocol-lab/analyze_rf_capture.py",
+      "sha256": "b150785def363f6881d55595bce22288b2f18c5b2574618562ed0fb72fc1e5f1"
+    },
+    {
+      "path": "work/protocol-lab/capture_endpoints.py",
+      "sha256": "e8c4f36e619c04fe3e22c986f39682a17a3fd2ae94185207b12db8d2e6308d61"
+    },
+    {
+      "path": "work/protocol-lab/catalog_capture.py",
+      "sha256": "e1e53b739d34e9226bf9a47429fc914460e254fc46189ee978cb59399acd2984"
+    },
+    {
+      "path": "work/protocol-lab/character_wire.py",
+      "sha256": "d6b8449b90a03146ac121f5c665c77105e8b14d1c03011e9c45d112b6dd10fd3"
+    },
+    {
+      "path": "work/protocol-lab/find_strings.py",
+      "sha256": "8c1f84816bc57a0b57b9c7bdb4bd2553ccd68aff9b273c2ebd859f1ad607fe0c"
+    },
+    {
+      "path": "work/protocol-lab/handshake_probe.py",
+      "sha256": "7185037b695029480b81743fbee952f29de65dc56bd051c6d38c1d0ab908114f"
+    },
+    {
+      "path": "work/protocol-lab/inspect_capture.py",
+      "sha256": "2647ff487d03c03cf120eed594de1b1eeb4a8dfdd638f2679edf0dde6e9167ab"
+    },
+    {
+      "path": "work/protocol-lab/inspect_client_stage1.py",
+      "sha256": "d8ea50650601c850c382461ad05f9c01fa751a8a22f852387f044b3f5ac94698"
+    },
+    {
+      "path": "work/protocol-lab/inspect_dispatch_startup.py",
+      "sha256": "57add1eeac1622a3aa0d430040e92db604e0aa2eab9785fce5508fe12310a726"
+    },
+    {
+      "path": "work/protocol-lab/inspect_resource_directory.py",
+      "sha256": "476303d19f67faf99bb142996b381dc6da2f659734f413ae7de649a591ceb394"
+    },
+    {
+      "path": "work/protocol-lab/lobby_wire.py",
+      "sha256": "30557534c893d389655c73b698a8cfe75eb143d355e75c7bb5f6331591d478c9"
+    },
+    {
+      "path": "work/protocol-lab/local_backend.py",
+      "sha256": "5ac3018d03f0dead730277635aab28c8ef048382ccf0d236551a1e05d2c64143"
+    },
+    {
+      "path": "work/protocol-lab/local_store.py",
+      "sha256": "95d1b536aa23903d0cdbe9a3a5e3dd166fc73d0645471c480b61a40a988c54f9"
+    },
+    {
+      "path": "work/protocol-lab/login_wire.py",
+      "sha256": "d00f9969c0c5420471ea1aedcb232924b1b2030226301918e0a7348831d8ea77"
+    },
+    {
+      "path": "work/protocol-lab/protocol_probe.py",
+      "sha256": "fb4f1ce214b9be20f20e996b3270b2196d4e84a3a2b041c56a5e365f6eacbef6"
+    },
+    {
+      "path": "work/protocol-lab/rf_40a6_check.py",
+      "sha256": "2efc4e9d93b9335eff0bf91c9b78904c6728617a5c9db6e3bfdbb8019e39fae5"
+    },
+    {
+      "path": "work/protocol-lab/rf_additem_check.py",
+      "sha256": "63fdfa216b42eea797b7ac5c97fb8ea7eb56e1d80b7595ede0eb4cc0fafdb8ae"
+    },
+    {
+      "path": "work/protocol-lab/rf_avatar_check.py",
+      "sha256": "0be141a70e40c1ec101da628aafd949a2b69b9c73700192532d6b1dfb2b1ff89"
+    },
+    {
+      "path": "work/protocol-lab/rf_b4_check.py",
+      "sha256": "0b789fd6fc43a7c4b27587392e5ff76a6eb41936fd46a1f153a4674e143ac5a1"
+    },
+    {
+      "path": "work/protocol-lab/rf_cc_check.py",
+      "sha256": "1be32f304373e0a140cbc5c540a2416b346b70fdb9d47ef3c750c014f34cf7f0"
+    },
+    {
+      "path": "work/protocol-lab/rf_cc_text.py",
+      "sha256": "7aea8f6f5dbcc1a6eec0569ecf3ede99d3cc9eedff9f8802d17978e69720f003"
+    },
+    {
+      "path": "work/protocol-lab/rf_dns_names.py",
+      "sha256": "4f7862653d6ad7ed43b877c636c3c7af9f72d9ada8c44d88be6979a6c3e8f39c"
+    },
+    {
+      "path": "work/protocol-lab/rf_equip_trace.py",
+      "sha256": "d5d3737dc97c62f667bb6e803cab00861a4f25ef82059ac18c1b455489cb5f87"
+    },
+    {
+      "path": "work/protocol-lab/rf_equipped_catalogs.py",
+      "sha256": "271540c1118de0d07dc3dd8193dd7519e6555691c17e68e623deee5d89dd8d15"
+    },
+    {
+      "path": "work/protocol-lab/rf_exo_check.py",
+      "sha256": "8409622729d950d2b535f0db518623e4b89da485a82d40ddbe074e8c0260ffe6"
+    },
+    {
+      "path": "work/protocol-lab/rf_flows.py",
+      "sha256": "f984b8ed9e9ca9cccdbd9d05128d3eabe637c69f0b324470cfb6aa97c1e39af8"
+    },
+    {
+      "path": "work/protocol-lab/rf_grade_check.py",
+      "sha256": "66f18553f03231ba6b463a811f16d2e916cebd535303aa77cf8dc69382f0971a"
+    },
+    {
+      "path": "work/protocol-lab/rf_grade_common.py",
+      "sha256": "6f906112e84fbc79d1216d6a8f561054aae47fc196e6efccac6e7d83de1a79ce"
+    },
+    {
+      "path": "work/protocol-lab/rf_grade_records.py",
+      "sha256": "b41ab09ab871877966f22219087b72c0784e82e09ad5d1bffadff97d3b1f9175"
+    },
+    {
+      "path": "work/protocol-lab/rf_grade_values.py",
+      "sha256": "9313daac62de1975172663559913605b39f29d6b754ee307e1ae690d4fd7ea84"
+    },
+    {
+      "path": "work/protocol-lab/rf_grant_format.py",
+      "sha256": "1c8cbed342eb7dbcee58ee4ecbd7e03b34928710802824b0da1ce91b3c553e12"
+    },
+    {
+      "path": "work/protocol-lab/rf_inventory_check.py",
+      "sha256": "ec29c914ba42259e3e41fa50e4c06206cc20e1208c08220391545b79f6a53f80"
+    },
+    {
+      "path": "work/protocol-lab/rf_inventory_facts.py",
+      "sha256": "707f26327d8d425a476a8fcc670cec44f00c9d11bae7379fa90a79f8264fdaa5"
+    },
+    {
+      "path": "work/protocol-lab/rf_item_records.py",
+      "sha256": "9adf54625e7713e9c4d73b294321f908ac6b0a91a4b44f819c8d837a87c2fcdb"
+    },
+    {
+      "path": "work/protocol-lab/rf_level_check.py",
+      "sha256": "5f40b3f2e5b090d6b3c27ee66aa8590967c268864abb7f207adf03cf582a47f4"
+    },
+    {
+      "path": "work/protocol-lab/rf_level_pairs.py",
+      "sha256": "ca2cd72ce0163067e8b771e307d6d0cb3159998f9fb532a903b09a20a83e7a32"
+    },
+    {
+      "path": "work/protocol-lab/rf_lobby_evidence.py",
+      "sha256": "8df60ac75a8a61d1c23e408f3cdb5a2984b645cff85f8a4c1f13e42082d26357"
+    },
+    {
+      "path": "work/protocol-lab/rf_lobby_followup.py",
+      "sha256": "e44ac206ea977fff81bf051a62689d161af51acd7759993a056d85443959acfd"
+    },
+    {
+      "path": "work/protocol-lab/rf_lobby_poll_check.py",
+      "sha256": "74b189d0a7039f42cd72a242f31c35229a5639002b525628a516527e0223987b"
+    },
+    {
+      "path": "work/protocol-lab/rf_make_lobby_fixture.py",
+      "sha256": "eddd4f60e87ebf4daef528adeabebc29a6869d25aa5dc76ec318523d231ba849"
+    },
+    {
+      "path": "work/protocol-lab/rf_menu_check.py",
+      "sha256": "73cbdda8ca9ec22968c9d2c42fc07ca6cb49da17e9406f07f96c1d4395f10b38"
+    },
+    {
+      "path": "work/protocol-lab/rf_nsz_list.py",
+      "sha256": "9ab764f7912f6cc03ad40d7d3d57c15c61f1d69a6328ca7eb5b68ae26b76137f"
+    },
+    {
+      "path": "work/protocol-lab/rf_official_hint.py",
+      "sha256": "e42776ef02d21579f2dfb990a391eb298efbcd0abe9a87bea59cc2c3a5a7961d"
+    },
+    {
+      "path": "work/protocol-lab/rf_opaque_check.py",
+      "sha256": "cae67b7f6b476a6c8d4df7b728b900703ea6829cea616bbbe0a8aa6f2a45c514"
+    },
+    {
+      "path": "work/protocol-lab/rf_peek.py",
+      "sha256": "d07198950a30a2c872feefbe66d632aca3aa32b23051920821431e1b18ac16b2"
+    },
+    {
+      "path": "work/protocol-lab/rf_port_timeline.py",
+      "sha256": "8394fb83f19c49df88d4cdb91aa0bf64c530f1cbef5c9f3002f4e355d6939274"
+    },
+    {
+      "path": "work/protocol-lab/rf_profile_compare.py",
+      "sha256": "06add87abafa6eccd53065b272e3cd975eefc9c6304948f369d8d0459913bd86"
+    },
+    {
+      "path": "work/protocol-lab/rf_profile_zero_check.py",
+      "sha256": "8e0abec0f255c3caf1c3a6be882df6b138b17d25b4a3ca87b17bb8f0d9ee2d0a"
+    },
+    {
+      "path": "work/protocol-lab/rf_property_pages.py",
+      "sha256": "a8dcd68eff8a40a8235cbc487dddde4ff4d74c3ffb5f3a555a14f39720456667"
+    },
+    {
+      "path": "work/protocol-lab/rf_proudnet_frames.py",
+      "sha256": "cf49a4ae5f76b48cb1898e99209590b47158bf756dfe22e81100f6ec05cb0427"
+    },
+    {
+      "path": "work/protocol-lab/rf_proudnet_handshake.py",
+      "sha256": "dbaff567743063bcacdef9bb7c5df1eee950b54b50ed1910a20ad68a7568ceaa"
+    },
+    {
+      "path": "work/protocol-lab/rf_quest_lobby_check.py",
+      "sha256": "ae6a2a3d59a18bc3fea8e5884f5fdf17b465c357f6462738c909668cbcecd0e5"
+    },
+    {
+      "path": "work/protocol-lab/rf_rod_check.py",
+      "sha256": "7d8c0af725b336ceabb6d7e1dbccc76841741a6ae6f535e6d5833fbd6455b951"
+    },
+    {
+      "path": "work/protocol-lab/rf_sequence.py",
+      "sha256": "fb2113706925484943337f42ed3db39a066d52cfed656715f7597b0df25d2b45"
+    },
+    {
+      "path": "work/protocol-lab/rf_userinfo_fields.py",
+      "sha256": "bd801c9752d13402b21210a129f16b656d38a16ecac72a6e34d512fcacb46ca4"
+    },
+    {
+      "path": "work/protocol-lab/test_backend.py",
+      "sha256": "16e46528628476d6b035d6201203589af0d4b5c718b6be69fc09fff5ef2bfa6f"
+    },
+    {
+      "path": "work/protocol-lab/test_character_wire.py",
+      "sha256": "d28098fec65f4423d84a3e63eb0dc51b5cf4185f7fd09b2c240816f4dd5b384d"
+    },
+    {
+      "path": "work/protocol-lab/test_lobby_wire.py",
+      "sha256": "aede18c448b9b564f1cffd63a0f199b081ecda57dc24191c2d71d01a59a0ca71"
+    },
+    {
+      "path": "work/protocol-lab/test_login_wire.py",
+      "sha256": "409642366880bb3b8c23792253717ab2026cf45b13d49c6cf84ddafe350fa1ff"
+    },
+    {
+      "path": "work/protocol-lab/test_protocol.py",
+      "sha256": "a506796f8e1dec78a8d43ceb63798653f0beb38c89aa788b20fe433e9e41d65b"
+    },
+    {
+      "path": "work/protocol-lab/test_trace_sanitizer.js",
+      "sha256": "5b119ce511001f792b50141fa2150bdf29251da30f23eea956c9373bb1d766f1"
+    },
+    {
+      "path": "work/protocol-lab/test_v124_evidence.py",
+      "sha256": "46013be5ac83d98e6553566fcbae510e87063e418cbb74c813e18fd9d51bf2a3"
+    },
+    {
+      "path": "work/protocol-lab/trace_sanitizer.js",
+      "sha256": "f012b614813fec23ad1a43dce23712352a9e71a913b380efb6386f02e9364588"
+    },
+    {
+      "path": "work/schemas/bootstrap-status-cash-validation.json",
+      "sha256": "995cbe6343751c408407393232b4e54704b57f53eedbf80822181255fe5d39ed"
+    },
+    {
+      "path": "work/schemas/catalog-asset-map.json",
+      "sha256": "501e689506cc47c24c80ce03a543c3285a7da7c6694f26e0131ce5bd8cf587dd"
+    },
+    {
+      "path": "work/schemas/catalog-source-followup.json",
+      "sha256": "24dc9a74f2920243bef16b72785e18920271c9daab994a55b976b993b531f670"
+    },
+    {
+      "path": "work/schemas/character-inventory-layout.json",
+      "sha256": "3bb4275850900e638be5fb26f3527c1aad050ec0e77e41dcf22afd4363cc0313"
+    },
+    {
+      "path": "work/schemas/client-test-blockers.json",
+      "sha256": "4ab0624c04308e3149849e634c1f44e3c8b6c49451b4abc2c187ccb4fb7a8fa1"
+    },
+    {
+      "path": "work/schemas/direct-launch-analysis.json",
+      "sha256": "d0684772c3cdb7078def41acbf3cfb87f2634c0e21bace21379c5027659ea567"
+    },
+    {
+      "path": "work/schemas/empty-gift-validation.json",
+      "sha256": "b35174a386ac5b07e0e019a287ac408143f7ed43cab4445e5685f0a56a89b4fa"
+    },
+    {
+      "path": "work/schemas/empty-property-validation.json",
+      "sha256": "17f15489b5f69bcba3d223855d2ab830a3b0566c5a15c52e652a43c2b76890d1"
+    },
+    {
+      "path": "work/schemas/endpoint-static-followup.json",
+      "sha256": "08c121b281af565ab619e8068fe1ee653bff119180542c39372eadb02aa364c1"
+    },
+    {
+      "path": "work/schemas/first-stage-decompression.json",
+      "sha256": "4d87df985d48a885d80751801f4f0bf90d525102a25485fe8216558dafa4c37a"
+    },
+    {
+      "path": "work/schemas/gameguard-initial-response-analysis.json",
+      "sha256": "ae6e202fbeb4c3247021213f64b4331567d6d54e213edc9fff1315ef129ea828"
+    },
+    {
+      "path": "work/schemas/gameguard-module-analysis.json",
+      "sha256": "fadf4ee61c8f34c61d2aea02323936a72efad5420b316d788bbf7737cc2be210"
+    },
+    {
+      "path": "work/schemas/gameguard-replay-fixture-validation.json",
+      "sha256": "edba0dccb8320e137fafc2097b25018206972633ea369dae2b2442f6da33a254"
+    },
+    {
+      "path": "work/schemas/handshake-eighth-windows-run.json",
+      "sha256": "85a4a9d63b7b75dfe5510837064c50e6a5c7c8cb6906d695b9d77e37b3c9110b"
+    },
+    {
+      "path": "work/schemas/handshake-fifth-windows-run.json",
+      "sha256": "7809d092924e95012ec32e891acf2d973f0dcabe5d25d898bb85388545f15e2a"
+    },
+    {
+      "path": "work/schemas/handshake-first-windows-run.json",
+      "sha256": "4636e36e686c9b5988efa83ad13be3f5d637b49dceef59581c600a7aef448649"
+    },
+    {
+      "path": "work/schemas/handshake-fourth-windows-run.json",
+      "sha256": "247f7b81ed00f119144a7c34e56fcb1d2601c63c6bd6a1eb0c39473ac7cff0a4"
+    },
+    {
+      "path": "work/schemas/handshake-ninth-windows-run.json",
+      "sha256": "4bedfb82b9809774ca1c0d01be0b6d7878b74ee0ca6a9c52501a0f14fc14a4e3"
+    },
+    {
+      "path": "work/schemas/handshake-second-windows-run.json",
+      "sha256": "0657d6667948a0afa48b569d3fc6000c9f475adf75923b7fdd05274bd0d41188"
+    },
+    {
+      "path": "work/schemas/handshake-seventh-windows-run.json",
+      "sha256": "90061e83e88f65249a7dccaaf933ac58953efdf5c7a0b7afd2f7205a9ad3fad9"
+    },
+    {
+      "path": "work/schemas/handshake-sixth-windows-run.json",
+      "sha256": "0612332ba3b138214e28dd8cdf224540b6af18295756ebd4a1803673d8f575fe"
+    },
+    {
+      "path": "work/schemas/handshake-third-windows-run.json",
+      "sha256": "3b8087b4472cf00cc2af1d4e89de7fc41a7b814a714139e201b3bd373468d439"
+    },
+    {
+      "path": "work/schemas/item-catalog-findings.json",
+      "sha256": "70d49fe3e4a5262efc5d9bc8316265d5da5ffcda4a0065c210abbe2f5be3b349"
+    },
+    {
+      "path": "work/schemas/lobby-bootstrap-evidence.json",
+      "sha256": "4be62acd7e152a7db4e135f2f542cf03dc2388911ed2bc55bcd4296f519a64d5"
+    },
+    {
+      "path": "work/schemas/lobby-bootstrap-validation.json",
+      "sha256": "70e3184d75abe5f3140d109acb9775cd1535d46b8844242c1f373db971a2e9db"
+    },
+    {
+      "path": "work/schemas/local-handshake-validation.json",
+      "sha256": "fce9876c4d0616917f638619c84d8bf7c5dcc10c0033c895e1d1f6151bfde1f7"
+    },
+    {
+      "path": "work/schemas/login-layout.json",
+      "sha256": "146ee7f3d3918905b62d3c71db3a8154a5f1ae0503aa5b8eb6037ac5d21e1bb6"
+    },
+    {
+      "path": "work/schemas/login-success-vectors.json",
+      "sha256": "382a2cb2986da24c013112f568c06ed636e75cfe41b850f930878069d3bfbb43"
+    },
+    {
+      "path": "work/schemas/loopback-routing-design.json",
+      "sha256": "da9b94f499851c11caa862666e0d62d33a6f7d9b0d00778723fb7cb10ef2359f"
+    },
+    {
+      "path": "work/schemas/nsz-source-comparison.json",
+      "sha256": "34c5eb7d78e2a73513c55e0d0b805f6cd42647e6ee4512b696df4518d926b8a3"
+    },
+    {
+      "path": "work/schemas/observed-item-catalog.json",
+      "sha256": "93f23cb25bb628ad03be0521aeca71c3ced2a57312d2b03ed9c6b47da9ac0372"
+    },
+    {
+      "path": "work/schemas/private-server-source-options.json",
+      "sha256": "f8dd3ea733f6066a820776d960c51f727914c4087a5de5bfb2c02bbf47240f54"
+    },
+    {
+      "path": "work/schemas/resource-directory-report.json",
+      "sha256": "ada0a2a4186ca00bc8492cccfe9ccfcaa18b76decf86f2f03846a66374ae557a"
+    },
+    {
+      "path": "work/schemas/resource-directory-validation.json",
+      "sha256": "f07683d114fbcbd73bfe772f0d6860a48fa3ad2c9ebf9b7871cd05a021c022f3"
+    },
+    {
+      "path": "work/schemas/rumfus-format.json",
+      "sha256": "ba5e3ddeb871093f9425c0975f2de0b287ec188960af577760b61d4e1e703092"
+    },
+    {
+      "path": "work/schemas/rumfus-launcher-followup.json",
+      "sha256": "b5ea9b1211f295ba1fce537c901dc60fa14c2493ea983b8c70b1ab2dde8e0403"
+    },
+    {
+      "path": "work/schemas/stage1-reproducible-check.json",
+      "sha256": "3edb9c2a52a22823f9ba21252972bf04667b559cf9b6c9343a8423ef4c075ed2"
+    },
+    {
+      "path": "work/schemas/stage1-review.json",
+      "sha256": "623823b2bc0600240f7066973a2e65b7b52e6eb4d521fb592ab0a66744c8ed48"
+    },
+    {
+      "path": "work/schemas/stage2-startup-map.json",
+      "sha256": "2ab669294ed0f1198cd021937e90118a2cdc5a026e482788a226df7c962916d9"
+    },
+    {
+      "path": "work/schemas/startup-complete-review.json",
+      "sha256": "c115491bd445661a2523b5ffd5dcb0cdc416c26a461a9148e4ea375d94a0b755"
+    },
+    {
+      "path": "work/schemas/startup-trace-findings.json",
+      "sha256": "37b54edff7dc4bbedef35c5b7b29358e50d37304740855e6f6ce40519a25e688"
+    },
+    {
+      "path": "work/schemas/windows-diagnostic-findings.json",
+      "sha256": "4ea0d21bcba7380346c2a5e6c21260c25c0eb7c96a86181d1a194f90ec1482e4"
+    }
+  ],
+  "excluded_from_git": [
+    "private/",
+    "historical run reports",
+    "duplicate checkpoints and versions",
+    "Python bytecode caches",
+    "empty root RFPlaza.cs"
+  ]
+}

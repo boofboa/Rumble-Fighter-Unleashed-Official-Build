@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only offline inspection of existing launcher, public patch manifest and sanitized Process Monitor path metadata. No executable execution, modification, network request, current file decoding or account values.",
+  "inputs": {
+    "launcher_sha256": "21dd6e1efb35d140876db353cbf57130f215e7173b80bb6df7d0f29c66e1b77b",
+    "public_manifest_sha256": "3c3da0ed8d78a478d0a4138a481d23952c6f63bf75297fb5571a681570fe01a6",
+    "sanitized_trace_sha256": "3721f38782f889c1c7bcba46d8e15648beacc0b80f373d0bb661804e11919ced",
+    "trace_truncated": true,
+    "trace_has_call_stacks": false
+  },
+  "distinct_relative_files": [
+    {
+      "path": "rumfus.ini",
+      "process": "RumbleLauncher.exe",
+      "successful_readfile_rows": 1,
+      "role_evidence": "Root-level file is [FILE_1] in the public patch manifest; generic updater verifies package file sizes and CRCs. The observed read is consistent with this verification; exact runtime caller cannot be assigned from this trace."
+    },
+    {
+      "path": "__TEMP__/rumfus.ini",
+      "process": "RumbleLauncher.exe",
+      "successful_createfile_rows": 2,
+      "successful_readfile_rows_retained": 0,
+      "role_evidence": "Temporary counterpart observed. CreateFile alone does not identify access mode or establish a successful content read."
+    },
+    {
+      "path": "GameGuard/RumFUS.ini",
+      "process": "rumblefighter.exe",
+      "successful_readfile_rows": 4,
+      "role_evidence": "Separate subdirectory file. Its content was not provided and has not been decoded; path/name alone does not establish precise semantics."
+    }
+  ],
+  "manifest_entry": {
+    "section": "FILE_1",
+    "PATHNAME": "rumfus.ini",
+    "DOWNLOADNAME": "rumfus.ini.gz",
+    "COMPRESSTYPE": "GZ",
+    "FILESIZE": 1203,
+    "FILECRC_signed": -158210510,
+    "FILEHEADCRC_signed": -1814032302,
+    "UPDATETYPE": "REPLACE",
+    "COMPRESSEDFILESIZE": 1226
+  },
+  "root_file_comparison": {
+    "earlier_size_bytes": 1217,
+    "earlier_sha256": "2daef705b079d1f6bfa868107af2a79a1794ae09f24c473ff99083f57c5d39ae",
+    "diagnostic_size_bytes": 1203,
+    "diagnostic_sha256": "51f408116cdf2f4fe8d5e03e9bc3fa5bfcc18baef90ff0217a5678fa94e5ab48",
+    "inference": "The current diagnostic size matches the public packaged update. Update replacement is an evidenced alternative explanation for the earlier changed size/hash; mutability does not demonstrate personal settings persistence.",
+    "limit": "Current root bytes and corresponding CRC were not provided. Size equality alone does not prove content identity with the public package."
+  },
+  "findings": [
+    {
+      "finding": "The root rumfus.ini is a packaged update payload; wufilelist.ini is the launcher patch manifest. Calling the root file itself the launcher manifest is unsupported.",
+      "confidence": "high"
+    },
+    {
+      "finding": "The launcher has a generic raw-byte size/CRC verification flow applicable to root rumfus.ini. Its retained ReadFile event does not establish parsing or decryption of that file.",
+      "confidence": "high_for_static_flow; runtime_callsite_unproven"
+    },
+    {
+      "finding": "The root file and GameGuard/RumFUS.ini must remain distinct evidence items. No common content, copying relationship, endpoint grammar or decoder has been established.",
+      "confidence": "high_for_path_distinction"
+    },
+    {
+      "finding": "No supported game server override or offline switch is identified by this follow-up.",
+      "confidence": "bounded_to_examined_evidence"
+    }
+  ],
+  "evidence": [
+    {
+      "va": "0x0041c9f0",
+      "rva": "0x0001c9f0",
+      "meaning": "Start of patch manifest processing routine."
+    },
+    {
+      "va": "0x0041cad1",
+      "rva": "0x0001cad1",
+      "meaning": "Supplies FILE_COUNT with GENERAL to integer INI helper."
+    },
+    {
+      "va": "0x0041cc0e",
+      "rva": "0x0001cc0e",
+      "meaning": "Supplies PATHNAME to manifest string accessor; stores each package-relative filename."
+    },
+    {
+      "va": "0x0041cc89",
+      "rva": "0x0001cc89",
+      "meaning": "Supplies FILESIZE; integer value stored at per-file record offset 0x08."
+    },
+    {
+      "va": "0x0041ccac",
+      "rva": "0x0001ccac",
+      "meaning": "Supplies FILECRC; integer value stored at per-file record offset 0x10."
+    },
+    {
+      "va": "0x0041cccf",
+      "rva": "0x0001cccf",
+      "meaning": "Supplies FILEHEADCRC; integer value stored at per-file record offset 0x14."
+    },
+    {
+      "va": "0x0041d155",
+      "rva": "0x0001d155",
+      "meaning": "Calls 0x425050 to obtain existing local file size, then compares against stored FILESIZE at 0x41d162."
+    },
+    {
+      "va": "0x0041d1d7",
+      "rva": "0x0001d1d7",
+      "meaning": "Calls 0x424ad0 with offset 0 and length -1 for full-file CRC on extensions outside the special .igx/.nsz/.gmf/.ogg/.wav set."
+    },
+    {
+      "va": "0x0041d1e5",
+      "rva": "0x0001d1e5",
+      "meaning": "Compares computed full-file CRC with the manifest FILECRC."
+    },
+    {
+      "va": "0x0041d206",
+      "rva": "0x0001d206",
+      "meaning": "Special media/archive path calls the same checksum helper with limit 0x400; compares FILEHEADCRC."
+    },
+    {
+      "va": "0x00424ad0",
+      "rva": "0x00024ad0",
+      "meaning": "File checksum helper uses CreateFileA at 0x424b00, optional GetFileSize at 0x424b28, SetFilePointer at 0x424b3d, ReadFile via imported pointer 0x4380e4, 4096-byte chunks and CRC accumulator 0x424990; no content-field parsing in this routine."
+    },
+    {
+      "va": "0x00424990",
+      "rva": "0x00024990",
+      "meaning": "CRC accumulator uses complemented initial/final value and reflected byte-table recurrence."
+    },
+    {
+      "va": "0x0043d6b0",
+      "rva": "0x0003d6b0",
+      "meaning": "All 256 DWORD table values exactly match standard reflected CRC32 polynomial 0xedb88320; file offset 0x3cab0."
+    },
+    {
+      "va": "0x00425050",
+      "rva": "0x00025050",
+      "meaning": "File size helper opens the path, calls GetFileSize, closes handle and returns size; no content parsing."
+    }
+  ],
+  "decoder_status": {
+    "validated_root_decoder": false,
+    "validated_gameguard_decoder": false,
+    "reason": "The traced launcher path reads generic package files for CRC checking. There is no evidenced format-specific parser here to translate into a decoder."
+  }
+}

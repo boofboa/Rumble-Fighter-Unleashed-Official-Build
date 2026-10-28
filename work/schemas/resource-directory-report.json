@@ -1,0 +1,5994 @@
+{
+  "schema": "rf-resource-directory-batch-v1",
+  "scope": "Read-only archive metadata. No payload decoding or item ID inference from filenames.",
+  "sources": [
+    "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT"
+  ],
+  "files": [
+    {
+      "schema": "rf-resource-directory-v1",
+      "bytes": 2520738,
+      "sha256": "ea644832f0cf3c0427933eb6f4938e824a955af42fb0510190ce0ad88049b91d",
+      "crc32_hex": "164237ce",
+      "payload_extracted_or_decrypted": false,
+      "status": "metadata_validated_payload_unverified",
+      "entry_count": 138,
+      "directory_offset": 2508541,
+      "entries": [
+        {
+          "name": "C00_MatialArtSoul_Boots00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 0,
+          "data_offset": 201,
+          "compressed_bytes": 5037,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "0cae5a03",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "C00_MatialArtSoul_Glove00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 5254,
+          "data_offset": 5455,
+          "compressed_bytes": 5066,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "aef28ca8",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH00_MuhonsHook_BT_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 10537,
+          "data_offset": 10733,
+          "compressed_bytes": 27074,
+          "uncompressed_bytes": 60369,
+          "entry_crc32_hex": "ffe0f48b",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH00_MuhonsHook_BT_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 37823,
+          "data_offset": 38019,
+          "compressed_bytes": 22492,
+          "uncompressed_bytes": 49697,
+          "entry_crc32_hex": "d054a752",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH00_MuhonsHook_GV.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 60527,
+          "data_offset": 60721,
+          "compressed_bytes": 39571,
+          "uncompressed_bytes": 69019,
+          "entry_crc32_hex": "45d87a63",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH02_CragElemental_BT_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 100308,
+          "data_offset": 100507,
+          "compressed_bytes": 28723,
+          "uncompressed_bytes": 61093,
+          "entry_crc32_hex": "fb6f69f2",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH02_CragElemental_BT_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 129246,
+          "data_offset": 129445,
+          "compressed_bytes": 18031,
+          "uncompressed_bytes": 39324,
+          "entry_crc32_hex": "a35a52a9",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH02_CragElemental_GV.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 147492,
+          "data_offset": 147689,
+          "compressed_bytes": 35760,
+          "uncompressed_bytes": 65404,
+          "entry_crc32_hex": "4bbebad9",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "CH02_SkyHorn_10022_Slice_Upper.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 183465,
+          "data_offset": 183671,
+          "compressed_bytes": 34182,
+          "uncompressed_bytes": 74759,
+          "entry_crc32_hex": "0ab5a74f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "DarkBlade_BT.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 217869,
+          "data_offset": 218057,
+          "compressed_bytes": 17711,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "a60229ce",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "DarkBlade_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 235784,
+          "data_offset": 235972,
+          "compressed_bytes": 18305,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "18016352",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "DevilFang_BT.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 254293,
+          "data_offset": 254481,
+          "compressed_bytes": 16635,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "95c2c820",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "DevilFang_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 271132,
+          "data_offset": 271320,
+          "compressed_bytes": 15620,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "9f7d3f18",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PA.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 286956,
+          "data_offset": 287134,
+          "compressed_bytes": 19803,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "069dbca2",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_BT_PhantomCore.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 306953,
+          "data_offset": 307146,
+          "compressed_bytes": 87366,
+          "uncompressed_bytes": 131200,
+          "entry_crc32_hex": "4c3d63f1",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_BT_PhantomCore_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 394528,
+          "data_offset": 394723,
+          "compressed_bytes": 41258,
+          "uncompressed_bytes": 80752,
+          "entry_crc32_hex": "5c371941",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_BT_PhantomCore_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 435997,
+          "data_offset": 436192,
+          "compressed_bytes": 40083,
+          "uncompressed_bytes": 78912,
+          "entry_crc32_hex": "d6d2156c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_CyberNinja_CB.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 476291,
+          "data_offset": 476487,
+          "compressed_bytes": 1618,
+          "uncompressed_bytes": 2176,
+          "entry_crc32_hex": "8819eff8",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_CyberNinja_CG.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 478121,
+          "data_offset": 478317,
+          "compressed_bytes": 5744,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "0e5fa1a6",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_CycloneCharger.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 484077,
+          "data_offset": 484274,
+          "compressed_bytes": 6337,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "fc6c320d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_CycloneCharger_Boots.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 490627,
+          "data_offset": 490830,
+          "compressed_bytes": 6200,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "59c07427",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_CycloneCharger_boots.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 497046,
+          "data_offset": 497249,
+          "compressed_bytes": 18584,
+          "uncompressed_bytes": 49234,
+          "entry_crc32_hex": "3cdd7790",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_CycloneCharger_boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 515849,
+          "data_offset": 516054,
+          "compressed_bytes": 16788,
+          "uncompressed_bytes": 45216,
+          "entry_crc32_hex": "cecf568e",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_FireCharger_CB.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 532858,
+          "data_offset": 533055,
+          "compressed_bytes": 3368,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "481dd689",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_FireCharger_CG.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 536439,
+          "data_offset": 536636,
+          "compressed_bytes": 4026,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "203b331d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_GiantGauntlet_Bootsv00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 540678,
+          "data_offset": 540883,
+          "compressed_bytes": 1685,
+          "uncompressed_bytes": 2176,
+          "entry_crc32_hex": "b8567b69",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_GiantGauntlet_Glovev00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 542584,
+          "data_offset": 542789,
+          "compressed_bytes": 5061,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "55cb1909",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_Ninja_Boots00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 547866,
+          "data_offset": 548062,
+          "compressed_bytes": 3629,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "09fc86a1",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_Ninja_BT.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 551707,
+          "data_offset": 551898,
+          "compressed_bytes": 6708,
+          "uncompressed_bytes": 24208,
+          "entry_crc32_hex": "a12e49c0",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_Ninja_Glove00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 558622,
+          "data_offset": 558818,
+          "compressed_bytes": 3864,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "13a4d61f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_Ninja_GV.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 562698,
+          "data_offset": 562889,
+          "compressed_bytes": 10351,
+          "uncompressed_bytes": 40403,
+          "entry_crc32_hex": "f4a4c416",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_Ninja_missilev00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 573256,
+          "data_offset": 573455,
+          "compressed_bytes": 3489,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "c0779ff7",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_ThunderStormCharger_CB.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 576960,
+          "data_offset": 577165,
+          "compressed_bytes": 5389,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "91c6c3a5",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C00_ThunderStormCharger_CG.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 582570,
+          "data_offset": 582775,
+          "compressed_bytes": 5641,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "09b724bb",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_DragonGauntlet_CB.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 588432,
+          "data_offset": 588632,
+          "compressed_bytes": 1488,
+          "uncompressed_bytes": 2176,
+          "entry_crc32_hex": "d3f2eb68",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_DragonGauntlet_CG.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 590136,
+          "data_offset": 590336,
+          "compressed_bytes": 4685,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "df973aca",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_KnightBlade_Boots00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 595037,
+          "data_offset": 595239,
+          "compressed_bytes": 6801,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "30a8d4a3",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_KnightBlade_boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 602056,
+          "data_offset": 602258,
+          "compressed_bytes": 14551,
+          "uncompressed_bytes": 37986,
+          "entry_crc32_hex": "e12408b4",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_KnightBlade_boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 616825,
+          "data_offset": 617027,
+          "compressed_bytes": 12690,
+          "uncompressed_bytes": 33130,
+          "entry_crc32_hex": "24bd970f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_KnightBlade_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 629733,
+          "data_offset": 629933,
+          "compressed_bytes": 11805,
+          "uncompressed_bytes": 20492,
+          "entry_crc32_hex": "5e58367f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_KnightBlade_Glove00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 641754,
+          "data_offset": 641956,
+          "compressed_bytes": 4833,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "0f9681be",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_MaximumImpact_Boots.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 646805,
+          "data_offset": 647007,
+          "compressed_bytes": 6678,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "162d924a",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_MaximumImpact_Boots.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 653701,
+          "data_offset": 653903,
+          "compressed_bytes": 10915,
+          "uncompressed_bytes": 28832,
+          "entry_crc32_hex": "ec5901fd",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_MaximumImpact_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 664834,
+          "data_offset": 665038,
+          "compressed_bytes": 9825,
+          "uncompressed_bytes": 25920,
+          "entry_crc32_hex": "9ced08ca",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_MaximumImpact_Glove.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 674879,
+          "data_offset": 675081,
+          "compressed_bytes": 6764,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "ed65f663",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C01_MaximumImpact_glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 681861,
+          "data_offset": 682063,
+          "compressed_bytes": 15931,
+          "uncompressed_bytes": 28784,
+          "entry_crc32_hex": "37a5d075",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C02_DesertMob.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 698010,
+          "data_offset": 698202,
+          "compressed_bytes": 24223,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "4ffcf374",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C02_ThunderSpirit_boots.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 722441,
+          "data_offset": 722643,
+          "compressed_bytes": 12958,
+          "uncompressed_bytes": 30004,
+          "entry_crc32_hex": "2ac084b1",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C02_ThunderSpirit_Boots00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 735617,
+          "data_offset": 735821,
+          "compressed_bytes": 6063,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "be0afc10",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C02_ThunderSpirit_boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 741900,
+          "data_offset": 742104,
+          "compressed_bytes": 11887,
+          "uncompressed_bytes": 26996,
+          "entry_crc32_hex": "340fb4df",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C02_ThunderSpirit_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 754007,
+          "data_offset": 754209,
+          "compressed_bytes": 19233,
+          "uncompressed_bytes": 35020,
+          "entry_crc32_hex": "c5b3a1e5",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C02_ThunderSpirit_Glove00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 773458,
+          "data_offset": 773662,
+          "compressed_bytes": 6299,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "a4c80be3",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C03_BarrelCannon_v00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 779977,
+          "data_offset": 780176,
+          "compressed_bytes": 62526,
+          "uncompressed_bytes": 131200,
+          "entry_crc32_hex": "d248f279",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C03_FullMetalArm_CB.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 842718,
+          "data_offset": 842916,
+          "compressed_bytes": 1349,
+          "uncompressed_bytes": 2176,
+          "entry_crc32_hex": "fb176314",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C03_FullMetalArm_CG.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 844281,
+          "data_offset": 844479,
+          "compressed_bytes": 4826,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "8541f86a",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C03_MetalCannon_Glove00.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 849321,
+          "data_offset": 849523,
+          "compressed_bytes": 3737,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "2dc3a3c9",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C03_RoboHands_CB.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 853276,
+          "data_offset": 853471,
+          "compressed_bytes": 1605,
+          "uncompressed_bytes": 2176,
+          "entry_crc32_hex": "27d59a07",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_C03_RoboHands_CG.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 855092,
+          "data_offset": 855287,
+          "compressed_bytes": 6106,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "92008f72",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_Cyber_Ninja_Boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 861409,
+          "data_offset": 861612,
+          "compressed_bytes": 13260,
+          "uncompressed_bytes": 23760,
+          "entry_crc32_hex": "655ca66d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_Cyber_Ninja_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 874888,
+          "data_offset": 875091,
+          "compressed_bytes": 10393,
+          "uncompressed_bytes": 21920,
+          "entry_crc32_hex": "c2c03f49",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_Cyber_Ninja_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 885500,
+          "data_offset": 885701,
+          "compressed_bytes": 13636,
+          "uncompressed_bytes": 25573,
+          "entry_crc32_hex": "e2a9ef1e",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_CycloneCharger_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 899353,
+          "data_offset": 899557,
+          "compressed_bytes": 19403,
+          "uncompressed_bytes": 40754,
+          "entry_crc32_hex": "8580c6d6",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_GiantGauntlet_Boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 918976,
+          "data_offset": 919181,
+          "compressed_bytes": 9973,
+          "uncompressed_bytes": 20100,
+          "entry_crc32_hex": "378b2b2e",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_GiantGauntlet_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 929170,
+          "data_offset": 929375,
+          "compressed_bytes": 9958,
+          "uncompressed_bytes": 20100,
+          "entry_crc32_hex": "0933eaa2",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_GiantGauntlet_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 939349,
+          "data_offset": 939552,
+          "compressed_bytes": 18060,
+          "uncompressed_bytes": 35895,
+          "entry_crc32_hex": "6cf81ae6",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_MatialArtSoul_Boots.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 957628,
+          "data_offset": 957831,
+          "compressed_bytes": 6813,
+          "uncompressed_bytes": 11064,
+          "entry_crc32_hex": "8728262a",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_MatialArtSoul_Boots.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 964660,
+          "data_offset": 964863,
+          "compressed_bytes": 8694,
+          "uncompressed_bytes": 18009,
+          "entry_crc32_hex": "40337228",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_MatialArtSoul_Glove.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 973573,
+          "data_offset": 973776,
+          "compressed_bytes": 7014,
+          "uncompressed_bytes": 11064,
+          "entry_crc32_hex": "50fbb6c4",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_MatialArtSoul_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 980806,
+          "data_offset": 981009,
+          "compressed_bytes": 10598,
+          "uncompressed_bytes": 22289,
+          "entry_crc32_hex": "6775ac89",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_ThunderStorm_Charger_Boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 991623,
+          "data_offset": 991835,
+          "compressed_bytes": 25976,
+          "uncompressed_bytes": 70042,
+          "entry_crc32_hex": "32952414",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_ThunderStorm_Charger_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1017827,
+          "data_offset": 1018039,
+          "compressed_bytes": 20479,
+          "uncompressed_bytes": 59282,
+          "entry_crc32_hex": "1f517513",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH00_ThunderStorm_Charger_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1038534,
+          "data_offset": 1038744,
+          "compressed_bytes": 19257,
+          "uncompressed_bytes": 47506,
+          "entry_crc32_hex": "598a2053",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH01_BladeSpirit_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1058017,
+          "data_offset": 1058218,
+          "compressed_bytes": 13535,
+          "uncompressed_bytes": 29513,
+          "entry_crc32_hex": "f99700c1",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH01_DragonGauntlet_Boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1071769,
+          "data_offset": 1071975,
+          "compressed_bytes": 11515,
+          "uncompressed_bytes": 22748,
+          "entry_crc32_hex": "877b6fb8",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH01_DragonGauntlet_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1083506,
+          "data_offset": 1083712,
+          "compressed_bytes": 9887,
+          "uncompressed_bytes": 19772,
+          "entry_crc32_hex": "2a9be1f5",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH01_DragonGauntlet_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1093615,
+          "data_offset": 1093819,
+          "compressed_bytes": 10661,
+          "uncompressed_bytes": 20575,
+          "entry_crc32_hex": "05b46ace",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH03_FullMetalArm_Boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1104496,
+          "data_offset": 1104700,
+          "compressed_bytes": 14016,
+          "uncompressed_bytes": 38642,
+          "entry_crc32_hex": "e23b8b49",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH03_FullMetalArm_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1118732,
+          "data_offset": 1118936,
+          "compressed_bytes": 6301,
+          "uncompressed_bytes": 17442,
+          "entry_crc32_hex": "882d7e32",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH03_FullMetalArm_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1125253,
+          "data_offset": 1125455,
+          "compressed_bytes": 11871,
+          "uncompressed_bytes": 24814,
+          "entry_crc32_hex": "fa8db4ff",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH03_MetalCannon_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1137342,
+          "data_offset": 1137543,
+          "compressed_bytes": 9976,
+          "uncompressed_bytes": 16702,
+          "entry_crc32_hex": "d88dbf59",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH04_FireChager_Boots_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1147535,
+          "data_offset": 1147737,
+          "compressed_bytes": 15899,
+          "uncompressed_bytes": 40674,
+          "entry_crc32_hex": "b345545d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH04_FireChager_Boots_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1163652,
+          "data_offset": 1163854,
+          "compressed_bytes": 14135,
+          "uncompressed_bytes": 36234,
+          "entry_crc32_hex": "8b6c48db",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_CH04_FireChager_Glove.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1178005,
+          "data_offset": 1178205,
+          "compressed_bytes": 7887,
+          "uncompressed_bytes": 20370,
+          "entry_crc32_hex": "f36d5317",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_GoldenLion_BT.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1186108,
+          "data_offset": 1186300,
+          "compressed_bytes": 6475,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "25a23b6c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_GoldenLion_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1192791,
+          "data_offset": 1192983,
+          "compressed_bytes": 6609,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "75c5edbc",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_GV_PhantomCore.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1199608,
+          "data_offset": 1199801,
+          "compressed_bytes": 98741,
+          "uncompressed_bytes": 131200,
+          "entry_crc32_hex": "cfbfe48c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_GV_PhantomCore.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1298558,
+          "data_offset": 1298751,
+          "compressed_bytes": 66154,
+          "uncompressed_bytes": 129340,
+          "entry_crc32_hex": "6ce779ac",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_SkyHorn_Blue.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1364921,
+          "data_offset": 1365112,
+          "compressed_bytes": 25696,
+          "uncompressed_bytes": 52479,
+          "entry_crc32_hex": "aff51f3b",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_SkyHorn_Blue_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1390824,
+          "data_offset": 1391018,
+          "compressed_bytes": 22598,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "4b557320",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_SkyHorn_Green.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1413632,
+          "data_offset": 1413824,
+          "compressed_bytes": 25695,
+          "uncompressed_bytes": 52480,
+          "entry_crc32_hex": "d4fe21cd",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_SkyHorn_Green_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1439535,
+          "data_offset": 1439730,
+          "compressed_bytes": 24093,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "7e77cfea",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_SkyHorn_Red.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1463839,
+          "data_offset": 1464029,
+          "compressed_bytes": 25695,
+          "uncompressed_bytes": 52478,
+          "entry_crc32_hex": "b0e63383",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PS_SkyHorn_Red_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1489740,
+          "data_offset": 1489933,
+          "compressed_bytes": 21788,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "812bd449",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicAlchemy.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1511737,
+          "data_offset": 1511931,
+          "compressed_bytes": 5178,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "571fcf8a",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicAlchemy_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1517125,
+          "data_offset": 1517321,
+          "compressed_bytes": 9980,
+          "uncompressed_bytes": 20807,
+          "entry_crc32_hex": "7d1bfb05",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicAlchemy_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1527317,
+          "data_offset": 1527513,
+          "compressed_bytes": 6533,
+          "uncompressed_bytes": 13655,
+          "entry_crc32_hex": "b4b56ac9",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicElement.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1534062,
+          "data_offset": 1534256,
+          "compressed_bytes": 5835,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "c2f6e660",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicElement_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1540107,
+          "data_offset": 1540303,
+          "compressed_bytes": 8860,
+          "uncompressed_bytes": 19085,
+          "entry_crc32_hex": "b83de52c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicElement_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1549179,
+          "data_offset": 1549375,
+          "compressed_bytes": 6811,
+          "uncompressed_bytes": 14515,
+          "entry_crc32_hex": "aca88739",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_BasicSoulGem.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1556202,
+          "data_offset": 1556396,
+          "compressed_bytes": 8298,
+          "uncompressed_bytes": 16255,
+          "entry_crc32_hex": "99d160ab",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_GoldenLion_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1564710,
+          "data_offset": 1564904,
+          "compressed_bytes": 12449,
+          "uncompressed_bytes": 30236,
+          "entry_crc32_hex": "9ee869c5",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_GoldenLion_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1577369,
+          "data_offset": 1577563,
+          "compressed_bytes": 11531,
+          "uncompressed_bytes": 27396,
+          "entry_crc32_hex": "ec9f54c7",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_IceSpirit.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1589110,
+          "data_offset": 1589301,
+          "compressed_bytes": 25825,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "e697bb52",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_IceSpirit.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1615142,
+          "data_offset": 1615333,
+          "compressed_bytes": 22840,
+          "uncompressed_bytes": 38795,
+          "entry_crc32_hex": "c4ceb6e7",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_StdSoul.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1638189,
+          "data_offset": 1638378,
+          "compressed_bytes": 5466,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "cd8b0bb1",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_Surya.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1643860,
+          "data_offset": 1644047,
+          "compressed_bytes": 31153,
+          "uncompressed_bytes": 67113,
+          "entry_crc32_hex": "5fef8adf",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_Surya_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1675216,
+          "data_offset": 1675405,
+          "compressed_bytes": 30855,
+          "uncompressed_bytes": 65877,
+          "entry_crc32_hex": "459ee75f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_WhiteEvil_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1706276,
+          "data_offset": 1706469,
+          "compressed_bytes": 51401,
+          "uncompressed_bytes": 138254,
+          "entry_crc32_hex": "4884adf6",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_WhiteEvil_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1757886,
+          "data_offset": 1758079,
+          "compressed_bytes": 34782,
+          "uncompressed_bytes": 79644,
+          "entry_crc32_hex": "09063991",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_YakiCanon.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1792877,
+          "data_offset": 1793068,
+          "compressed_bytes": 20599,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "51d60f8e",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_YakiCanon_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1813683,
+          "data_offset": 1813876,
+          "compressed_bytes": 39547,
+          "uncompressed_bytes": 84232,
+          "entry_crc32_hex": "956d8d83",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_YakiCanon_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1853439,
+          "data_offset": 1853632,
+          "compressed_bytes": 27893,
+          "uncompressed_bytes": 64776,
+          "entry_crc32_hex": "4807e9d8",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_ZeroDisk.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1881541,
+          "data_offset": 1881731,
+          "compressed_bytes": 24043,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "d8dee533",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_ZeroDisk_A.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1905790,
+          "data_offset": 1905982,
+          "compressed_bytes": 24870,
+          "uncompressed_bytes": 56569,
+          "entry_crc32_hex": "f3abf9ce",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_BT_ZeroDisk_B.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1930868,
+          "data_offset": 1931060,
+          "compressed_bytes": 10435,
+          "uncompressed_bytes": 23016,
+          "entry_crc32_hex": "b37641c4",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_CH01_HellHandCharger.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1941511,
+          "data_offset": 1941710,
+          "compressed_bytes": 46178,
+          "uncompressed_bytes": 92109,
+          "entry_crc32_hex": "5aab8341",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GC_BarelCannon.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1987904,
+          "data_offset": 1988097,
+          "compressed_bytes": 5147,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "ab21e466",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GC_BarrelCannon.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 1993260,
+          "data_offset": 1993454,
+          "compressed_bytes": 17755,
+          "uncompressed_bytes": 34583,
+          "entry_crc32_hex": "bab8b705",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_BasicAlchemy.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2011225,
+          "data_offset": 2011419,
+          "compressed_bytes": 5918,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "e5bc8cb7",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_BasicAlchemy.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2017353,
+          "data_offset": 2017547,
+          "compressed_bytes": 8358,
+          "uncompressed_bytes": 14679,
+          "entry_crc32_hex": "1ff9dfea",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_BasicElement.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2025921,
+          "data_offset": 2026115,
+          "compressed_bytes": 4809,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "536d207c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_BasicElement.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2030940,
+          "data_offset": 2031134,
+          "compressed_bytes": 13378,
+          "uncompressed_bytes": 27999,
+          "entry_crc32_hex": "c473644b",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_BasicSoulGem.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2044528,
+          "data_offset": 2044722,
+          "compressed_bytes": 8587,
+          "uncompressed_bytes": 15367,
+          "entry_crc32_hex": "79ef44da",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_GoldenLion.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2053325,
+          "data_offset": 2053517,
+          "compressed_bytes": 18670,
+          "uncompressed_bytes": 46704,
+          "entry_crc32_hex": "37b5aaf3",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_IceSpirit.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2072203,
+          "data_offset": 2072394,
+          "compressed_bytes": 24331,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "08d3135c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_IceSpirit.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2096741,
+          "data_offset": 2096932,
+          "compressed_bytes": 19974,
+          "uncompressed_bytes": 43569,
+          "entry_crc32_hex": "d59e4a94",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_StdSoul.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2116922,
+          "data_offset": 2117111,
+          "compressed_bytes": 5761,
+          "uncompressed_bytes": 8320,
+          "entry_crc32_hex": "29a43cda",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_Surya.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2122888,
+          "data_offset": 2123075,
+          "compressed_bytes": 24058,
+          "uncompressed_bytes": 64046,
+          "entry_crc32_hex": "a2f5fcfc",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_WhiteEvil.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2147149,
+          "data_offset": 2147340,
+          "compressed_bytes": 42794,
+          "uncompressed_bytes": 91894,
+          "entry_crc32_hex": "62e764ae",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_YakiCanon.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2190150,
+          "data_offset": 2190341,
+          "compressed_bytes": 19808,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "1bab0450",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_YakiCanon.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2210165,
+          "data_offset": 2210356,
+          "compressed_bytes": 34527,
+          "uncompressed_bytes": 70725,
+          "entry_crc32_hex": "5ea1b4d9",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_ZeroDisk.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2244899,
+          "data_offset": 2245089,
+          "compressed_bytes": 25839,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "d45c434b",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "PT_GV_ZeroDisk.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2270944,
+          "data_offset": 2271134,
+          "compressed_bytes": 19188,
+          "uncompressed_bytes": 44758,
+          "entry_crc32_hex": "f14cbc81",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Rock_BT.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2290338,
+          "data_offset": 2290521,
+          "compressed_bytes": 21918,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "4de214b1",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Rock_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2312455,
+          "data_offset": 2312638,
+          "compressed_bytes": 22759,
+          "uncompressed_bytes": 32896,
+          "entry_crc32_hex": "468b69b8",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Sun_BT.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2335413,
+          "data_offset": 2335595,
+          "compressed_bytes": 81011,
+          "uncompressed_bytes": 131200,
+          "entry_crc32_hex": "09aad9cb",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Sun_GV.DDS",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2416622,
+          "data_offset": 2416804,
+          "compressed_bytes": 80785,
+          "uncompressed_bytes": 131200,
+          "entry_crc32_hex": "f401e977",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "\u2561\u03c3\u2556\u00ed\u2591\u2229\u2591\u255f\u255e\u2593\u2502\u258c\u2561\u00d1\u2563\u2560\u2534\u00f7\u2524\u2321\u2563\u2560\u253c\u256b\u255c\u2551\u255e\u00ab.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 2497605,
+          "data_offset": 2497864,
+          "compressed_bytes": 10661,
+          "uncompressed_bytes": 20575,
+          "entry_crc32_hex": "05b46ace",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 121
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            },
+            {
+              "tag_hex": "7075",
+              "bytes": 51
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            },
+            {
+              "tag_hex": "7075",
+              "bytes": 51
+            }
+          ],
+          "descriptor_matches_directory": true
+        }
+      ],
+      "file_name": "010600_skill_item.nsz",
+      "patch_manifest_size_matches": true,
+      "patch_manifest_crc32_matches": true,
+      "entry_extensions": {
+        ".dds": 61,
+        ".nsx": 77
+      }
+    },
+    {
+      "schema": "rf-resource-directory-v1",
+      "bytes": 845753,
+      "sha256": "13ad4e3ae41bf90fe628fd6a852811f5ed35eafa824e53f3e7609cb3748e021a",
+      "crc32_hex": "e6382627",
+      "payload_extracted_or_decrypted": false,
+      "status": "metadata_validated_payload_unverified",
+      "entry_count": 19,
+      "directory_offset": 844278,
+      "entries": [
+        {
+          "name": "btnBuy.bmp",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 0,
+          "data_offset": 180,
+          "compressed_bytes": 26176,
+          "uncompressed_bytes": 138096,
+          "entry_crc32_hex": "0fba8d1e",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "BTN_Purchase_Cash.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 26372,
+          "data_offset": 26563,
+          "compressed_bytes": 8536,
+          "uncompressed_bytes": 8524,
+          "entry_crc32_hex": "1dfe4e8c",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 0,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "BTN_Refresh_Cash.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 35115,
+          "data_offset": 35305,
+          "compressed_bytes": 4611,
+          "uncompressed_bytes": 4599,
+          "entry_crc32_hex": "173a08f7",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 0,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "BuyJob.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 39932,
+          "data_offset": 40112,
+          "compressed_bytes": 37104,
+          "uncompressed_bytes": 38428,
+          "entry_crc32_hex": "51897d4b",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "BuyJob2.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 77232,
+          "data_offset": 77413,
+          "compressed_bytes": 64690,
+          "uncompressed_bytes": 65376,
+          "entry_crc32_hex": "4559c8b2",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ItemBuy.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 142119,
+          "data_offset": 142300,
+          "compressed_bytes": 60650,
+          "uncompressed_bytes": 65052,
+          "entry_crc32_hex": "d6a5e7e7",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ItemBuy2.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 202966,
+          "data_offset": 203148,
+          "compressed_bytes": 54147,
+          "uncompressed_bytes": 56144,
+          "entry_crc32_hex": "08840ce9",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ItemBuy3.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 257311,
+          "data_offset": 257493,
+          "compressed_bytes": 73289,
+          "uncompressed_bytes": 76044,
+          "entry_crc32_hex": "69f0cf30",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ItemBuy_2012.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 330798,
+          "data_offset": 330984,
+          "compressed_bytes": 82777,
+          "uncompressed_bytes": 86000,
+          "entry_crc32_hex": "aa5d5d59",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "sale_sticker.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 413777,
+          "data_offset": 413961,
+          "compressed_bytes": 38356,
+          "uncompressed_bytes": 38554,
+          "entry_crc32_hex": "5dbe6251",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 117
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "SellItem.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 452333,
+          "data_offset": 452515,
+          "compressed_bytes": 79584,
+          "uncompressed_bytes": 82317,
+          "entry_crc32_hex": "7750e3b3",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ShopComboBox.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 532115,
+          "data_offset": 532301,
+          "compressed_bytes": 3517,
+          "uncompressed_bytes": 3535,
+          "entry_crc32_hex": "1e779d9f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Store.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 535834,
+          "data_offset": 536013,
+          "compressed_bytes": 59910,
+          "uncompressed_bytes": 63934,
+          "entry_crc32_hex": "cf0be347",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "StoreIcon.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 595939,
+          "data_offset": 596122,
+          "compressed_bytes": 36934,
+          "uncompressed_bytes": 38827,
+          "entry_crc32_hex": "923a69dd",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "StoreIcon_.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 633072,
+          "data_offset": 633256,
+          "compressed_bytes": 35985,
+          "uncompressed_bytes": 37905,
+          "entry_crc32_hex": "ac21e7c6",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "StoreIcon_1.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 669257,
+          "data_offset": 669442,
+          "compressed_bytes": 35990,
+          "uncompressed_bytes": 37913,
+          "entry_crc32_hex": "09cb5eeb",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "StoreIcon_2.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 705448,
+          "data_offset": 705633,
+          "compressed_bytes": 35326,
+          "uncompressed_bytes": 36583,
+          "entry_crc32_hex": "b39f263f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "StoreNew.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 740975,
+          "data_offset": 741157,
+          "compressed_bytes": 99704,
+          "uncompressed_bytes": 104793,
+          "entry_crc32_hex": "c9b65ad6",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Tooltip.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 840877,
+          "data_offset": 841058,
+          "compressed_bytes": 3204,
+          "uncompressed_bytes": 3223,
+          "entry_crc32_hex": "7c0c84fe",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        }
+      ],
+      "file_name": "060705_shop.nsz",
+      "patch_manifest_size_matches": true,
+      "patch_manifest_crc32_matches": true,
+      "entry_extensions": {
+        ".bmp": 1,
+        ".png": 18
+      }
+    },
+    {
+      "schema": "rf-resource-directory-v1",
+      "bytes": 962802,
+      "sha256": "549551a935cdd0cad86230e1183d2baf05452a9472dc79a1a062c99135792e78",
+      "crc32_hex": "ac3b8a0f",
+      "payload_extracted_or_decrypted": false,
+      "status": "metadata_validated_payload_unverified",
+      "entry_count": 19,
+      "directory_offset": 961333,
+      "entries": [
+        {
+          "name": "ChangeCloth.bmp",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 0,
+          "data_offset": 185,
+          "compressed_bytes": 3442,
+          "uncompressed_bytes": 24112,
+          "entry_crc32_hex": "d4f257e8",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ItemState.bmp",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 3643,
+          "data_offset": 3826,
+          "compressed_bytes": 11604,
+          "uncompressed_bytes": 112888,
+          "entry_crc32_hex": "9afb0f7d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "ItemState.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 15446,
+          "data_offset": 15629,
+          "compressed_bytes": 11979,
+          "uncompressed_bytes": 11993,
+          "entry_crc32_hex": "187ec254",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "Lock.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 27624,
+          "data_offset": 27802,
+          "compressed_bytes": 12329,
+          "uncompressed_bytes": 12375,
+          "entry_crc32_hex": "9726370b",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MyChar.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 40147,
+          "data_offset": 40327,
+          "compressed_bytes": 108529,
+          "uncompressed_bytes": 111474,
+          "entry_crc32_hex": "bd61f665",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MyChar1.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 148872,
+          "data_offset": 149053,
+          "compressed_bytes": 108529,
+          "uncompressed_bytes": 111474,
+          "entry_crc32_hex": "bd61f665",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MyCharBG.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 257598,
+          "data_offset": 257780,
+          "compressed_bytes": 108529,
+          "uncompressed_bytes": 111474,
+          "entry_crc32_hex": "bd61f665",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MyCharBG2.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 366325,
+          "data_offset": 366508,
+          "compressed_bytes": 64526,
+          "uncompressed_bytes": 70549,
+          "entry_crc32_hex": "6b71205f",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MyCharCloth.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 431050,
+          "data_offset": 431235,
+          "compressed_bytes": 50104,
+          "uncompressed_bytes": 50846,
+          "entry_crc32_hex": "37094e47",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MycharInfo.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 481355,
+          "data_offset": 481539,
+          "compressed_bytes": 63680,
+          "uncompressed_bytes": 65626,
+          "entry_crc32_hex": "c79bbacc",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MycharInfo__.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 545235,
+          "data_offset": 545421,
+          "compressed_bytes": 65414,
+          "uncompressed_bytes": 68606,
+          "entry_crc32_hex": "49d33b62",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MycharTab.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 610851,
+          "data_offset": 611032,
+          "compressed_bytes": 61136,
+          "uncompressed_bytes": 63360,
+          "entry_crc32_hex": "c872efed",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 117
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MycharTab3.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 672184,
+          "data_offset": 672368,
+          "compressed_bytes": 58864,
+          "uncompressed_bytes": 59506,
+          "entry_crc32_hex": "aced5d22",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "MyChar_BigTab.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 731248,
+          "data_offset": 731435,
+          "compressed_bytes": 33271,
+          "uncompressed_bytes": 36736,
+          "entry_crc32_hex": "6d6c76c0",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "New.bmp",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 764722,
+          "data_offset": 764899,
+          "compressed_bytes": 6288,
+          "uncompressed_bytes": 36944,
+          "entry_crc32_hex": "dbbb3c22",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "New.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 771203,
+          "data_offset": 771380,
+          "compressed_bytes": 4514,
+          "uncompressed_bytes": 4502,
+          "entry_crc32_hex": "d81f9b4d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 0,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "NewMyCharBG.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 775910,
+          "data_offset": 776095,
+          "compressed_bytes": 56699,
+          "uncompressed_bytes": 63038,
+          "entry_crc32_hex": "eb33fb19",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "NewMyCharBG_.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 832810,
+          "data_offset": 832996,
+          "compressed_bytes": 68980,
+          "uncompressed_bytes": 72750,
+          "entry_crc32_hex": "28746336",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "_delete_MyCharTab.png",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 901992,
+          "data_offset": 902183,
+          "compressed_bytes": 59134,
+          "uncompressed_bytes": 61379,
+          "entry_crc32_hex": "386a4c9e",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 119
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        }
+      ],
+      "file_name": "060707_mychar.nsz",
+      "patch_manifest_size_matches": true,
+      "patch_manifest_crc32_matches": true,
+      "entry_extensions": {
+        ".bmp": 3,
+        ".png": 16
+      }
+    },
+    {
+      "schema": "rf-resource-directory-v1",
+      "bytes": 7745045,
+      "sha256": "eea1272251fe1231ea096b8fcebb03ee6e897447c9f0a2648a5e4f28aa253056",
+      "crc32_hex": "194d3dcb",
+      "payload_extracted_or_decrypted": false,
+      "status": "metadata_validated_payload_unverified",
+      "entry_count": 2,
+      "directory_offset": 7744863,
+      "entries": [
+        {
+          "name": "ChrDefaultSphere.NSX",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 0,
+          "data_offset": 172,
+          "compressed_bytes": 685,
+          "uncompressed_bytes": 2293,
+          "entry_crc32_hex": "8fc0f36d",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 101
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        },
+        {
+          "name": "GEMFIGHTER.NST",
+          "unsafe_path_for_extraction": false,
+          "local_header_offset": 873,
+          "data_offset": 1039,
+          "compressed_bytes": 7743808,
+          "uncompressed_bytes": 14473100,
+          "entry_crc32_hex": "f32e3951",
+          "flags_hex": "000d",
+          "standard_zip_encryption_bit": true,
+          "compression_method": 8,
+          "local_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 101
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 13
+            }
+          ],
+          "central_extra_fields": [
+            {
+              "tag_hex": "4453",
+              "bytes": 4
+            },
+            {
+              "tag_hex": "5455",
+              "bytes": 5
+            }
+          ],
+          "descriptor_matches_directory": true
+        }
+      ],
+      "file_name": "011600_default_item.nsz",
+      "patch_manifest_size_matches": true,
+      "patch_manifest_crc32_matches": true,
+      "entry_extensions": {
+        ".nsx": 1,
+        ".nst": 1
+      }
+    },
+    {
+      "schema": "rf-resource-directory-v1",
+      "bytes": 31888,
+      "sha256": "8707ac4949e8fae5b5404638522fe90bb3fcd902a5e6f0e4700f6dd83104b9f5",
+      "crc32_hex": "65d369c2",
+      "payload_extracted_or_decrypted": false,
+      "status": "unsupported_metadata_layout",
+      "entries": [],
+      "file_name": "060501_gamekey.nsz",
+      "patch_manifest_size_matches": true,
+      "patch_manifest_crc32_matches": true,
+      "entry_extensions": {}
+    },
+    {
+      "schema": "rf-resource-directory-v1",
+      "bytes": 2212,
+      "sha256": "155cb5f6754b273624abb14504243baa01a104c9fdb34eac4f9c55141a4b8960",
+      "crc32_hex": "3b567d9b",
+      "payload_extracted_or_decrypted": false,
+      "status": "unsupported_metadata_layout",
+      "entries": [],
+      "file_name": "100000_table.nsz",
+      "patch_manifest_size_matches": true,
+      "patch_manifest_crc32_matches": true,
+      "entry_extensions": {}
+    }
+  ],
+  "inspector_sha256": "476303d19f67faf99bb142996b381dc6da2f659734f413ae7de649a591ceb394"
+}

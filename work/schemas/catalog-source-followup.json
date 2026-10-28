@@ -1,0 +1,343 @@
+{
+  "schema": "rf-catalog-source-followup-v1",
+  "date_utc": "2026-10-16",
+  "scope": "Read-only offline file metadata and public documentation. No active emulator changes, game/DLL execution, credential decryption, account changes or live-service operations.",
+  "result": {
+    "new_grounded_item_id_to_name_matches": 0,
+    "observed_catalog_candidate_count_unchanged": 104,
+    "previous_known_public_starter_names": 3,
+    "complete_current_catalog_identified": false,
+    "observed_item_catalog_modified": false
+  },
+  "new_concrete_findings": [
+    "Four DAT files were actually read by the client but do not appear in the downloaded patch manifest; runtime inventory therefore extends beyond that manifest.",
+    "LocRes.dll contains12 bitmap resources and1 assembly manifest, with no standard string/RCDATA resource tables.",
+    "Official class/scroll documentation confirms game concepts but provides no numeric catalog-ID mapping in inspected text."
+  ],
+  "manifest_and_listing": {
+    "manifest_file": "analysis/patch-manifest-parsed.json",
+    "manifest_sha256": "30bb3b8a753efbaa71eeee3772016f7f8e20dc512d69e29fdfd5ef3ed2df07f0",
+    "manifest_entries": 3156,
+    "manifest_extension_counts": {
+      ".ini": 1,
+      ".des": 1,
+      ".dll": 8,
+      ".exe": 3,
+      ".nsz": 2189,
+      ".wav": 844,
+      ".ogg": 108,
+      ".amo": 2
+    },
+    "drive_listing_file": "analysis/res-listing-bounded.json",
+    "drive_listing_sha256": "78bfec2e54bc8818a97dedaf23aa0866ea27bf53f41c932a8359cc39cba91346",
+    "cached_children": 1000,
+    "scope_warning": "Only the first1000 Drive resource children are cached. A false in_cached1000_child_listing value does not establish a missing upload.",
+    "filename_limit": "Numeric resource-file prefixes are not established product IDs; multiple bundles can share a numeric prefix. No filename-to-catalog mapping was invented."
+  },
+  "candidate_bundles_for_metadata_inspection": [
+    {
+      "asset_path": "res/100000_table.nsz",
+      "manifest_bytes": 2212,
+      "in_cached1000_child_listing": true,
+      "local_bytes_available": true,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/060501_gamekey.nsz",
+      "manifest_bytes": 31888,
+      "in_cached1000_child_listing": true,
+      "local_bytes_available": true,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/011600_default_item.nsz",
+      "manifest_bytes": 7745045,
+      "in_cached1000_child_listing": true,
+      "local_bytes_available": true,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/010600_skill_item.nsz",
+      "manifest_bytes": 2520738,
+      "in_cached1000_child_listing": true,
+      "local_bytes_available": true,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/011000_game_item.nsz",
+      "manifest_bytes": 2264525,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/011100_state_item.nsz",
+      "manifest_bytes": 968603,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/011700_setitem.nsz",
+      "manifest_bytes": 320745,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/012100_skill_item.nsz",
+      "manifest_bytes": 6193791,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/020000_itemimages.nsz",
+      "manifest_bytes": 17020402,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/060705_shop.nsz",
+      "manifest_bytes": 845753,
+      "in_cached1000_child_listing": true,
+      "local_bytes_available": true,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/120000_shopimages.nsz",
+      "manifest_bytes": 26719105,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    },
+    {
+      "asset_path": "res/121000_shopimages.nsz",
+      "manifest_bytes": 14698333,
+      "in_cached1000_child_listing": false,
+      "local_bytes_available": false,
+      "selection_basis": "Filename contains table, item, shop or gamekey; this is an inspection lead, not evidence of a catalog-ID mapping.",
+      "catalog_contents_verified": false
+    }
+  ],
+  "already_inspected_bundle_limits": [
+    {
+      "asset": "res/100000_table.nsz",
+      "observation": "2212-byte opaque format; filename suggests a table but no directory records or catalog structure recovered. Size and CRC32 match downloaded manifest."
+    },
+    {
+      "asset": "res/060501_gamekey.nsz",
+      "observation": "31888-byte opaque format; filename alone does not establish whether keys are UI text, input controls, IDs or another concept. Size and CRC32 match downloaded manifest."
+    },
+    {
+      "asset": "res/011600_default_item.nsz",
+      "observation": "ZIP-like directory names are only ChrDefaultSphere.NSX and GEMFIGHTER.NST. No entry named an item/catalog table is exposed. Payloads remain undecoded; size and CRC32 match downloaded manifest."
+    }
+  ],
+  "runtime_dat_leads": {
+    "source": "upload/rf-startup-paths (2).json",
+    "sha256": "b4c920dc2cbce682bcea61866e231ca569cde27accb4388aae657e79265bc101",
+    "entries": [
+      {
+        "relative_path": "res/070000_snd/070000_snd.dat",
+        "successful_readfile_events": 5445,
+        "listed_in_patch_manifest": false
+      },
+      {
+        "relative_path": "res/070000_snd/2xx.dat",
+        "successful_readfile_events": 84,
+        "listed_in_patch_manifest": false
+      },
+      {
+        "relative_path": "res/070000_snd/3xxx.dat",
+        "successful_readfile_events": 82,
+        "listed_in_patch_manifest": false
+      },
+      {
+        "relative_path": "res/070000_snd/1x.dat",
+        "successful_readfile_events": 575,
+        "listed_in_patch_manifest": false
+      }
+    ],
+    "total_successful_readfile_events": 6186,
+    "contents_received_or_inspected_in_this_followup": false,
+    "interpretation": "Successful reads support actual runtime use. Contents and role remain unknown; these are concrete files to inspect if already available, not confirmed catalog stores.",
+    "trace_limit": "The existing report excluded NSZ resources by file-candidate filtering, so it cannot rank which NSZ bundle supplies item definitions."
+  },
+  "locres_metadata": {
+    "file": "LocRes.dll",
+    "local_path": "analysis/drive/gameguard/LocRes.dll",
+    "sha256": "8e2be76f9ad05b9722f4dbe4147b9add4ddeee6ed206069519b12745e4adbe14",
+    "bytes": 1480192,
+    "method": "Read-only parsing of PE section headers and the bounded resource-directory tree; DLL was not loaded or executed.",
+    "sections": [
+      {
+        "name": ".rdata",
+        "rva": 4096,
+        "virtual_bytes": 103,
+        "raw_bytes": 512,
+        "raw_offset": 1024
+      },
+      {
+        "name": ".rsrc",
+        "rva": 8192,
+        "virtual_bytes": 1478280,
+        "raw_bytes": 1478656,
+        "raw_offset": 1536
+      }
+    ],
+    "resource_entries": [
+      {
+        "type_id": 2,
+        "name_id": 131,
+        "language_id": 1024,
+        "size_bytes": 1080042,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 132,
+        "language_id": 1042,
+        "size_bytes": 73698,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 133,
+        "language_id": 1042,
+        "size_bytes": 1834,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 134,
+        "language_id": 1042,
+        "size_bytes": 7098,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 135,
+        "language_id": 1042,
+        "size_bytes": 28842,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 136,
+        "language_id": 1042,
+        "size_bytes": 28842,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 137,
+        "language_id": 1042,
+        "size_bytes": 7098,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 138,
+        "language_id": 1042,
+        "size_bytes": 7098,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 140,
+        "language_id": 1042,
+        "size_bytes": 4442,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 142,
+        "language_id": 1042,
+        "size_bytes": 214410,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 143,
+        "language_id": 1042,
+        "size_bytes": 11910,
+        "code_page": 1252
+      },
+      {
+        "type_id": 2,
+        "name_id": 144,
+        "language_id": 1042,
+        "size_bytes": 11908,
+        "code_page": 1252
+      },
+      {
+        "type_id": 24,
+        "name_id": 2,
+        "language_id": 1033,
+        "size_bytes": 346,
+        "code_page": 1252
+      }
+    ],
+    "resource_counts_by_type": {
+      "2": 12,
+      "24": 1
+    },
+    "resource_types_present": {
+      "2": "RT_BITMAP",
+      "24": "RT_MANIFEST"
+    },
+    "no_standard_string_or_rcdata_resource": true,
+    "catalog_inference": "No standard string table or application-defined RCDATA resource was found;12 bitmaps and1 manifest make this a low-priority item catalog candidate. This does not rule out concealed application data inside arbitrary image bytes.",
+    "type_definitions_primary_source": "https://learn.microsoft.com/en-us/windows/win32/menurc/resource-types"
+  },
+  "public_research": {
+    "exact_id_queries_sampled": [
+      2030004,
+      2030013,
+      2030175
+    ],
+    "outcome": "Both search engines provided no usable primary-source ID/name matches for these sampled IDs. This is not an exhaustive proof that no public mapping exists.",
+    "sources": [
+      {
+        "url": "https://rumblefighter-help.playredfox.com/en/support/solutions/articles/8000029855-scrolls-and-exocores",
+        "source_kind": "official publisher guide",
+        "modified": "2016-04-05",
+        "supports": "Scrolls define fighting style; classes receive a default ExoCore.",
+        "does_not_support": "Any specific numeric item ID or current complete catalog."
+      },
+      {
+        "url": "https://rumblefighter-help.playredfox.com/en/support/solutions/articles/8000029853-classes",
+        "source_kind": "official publisher guide",
+        "modified": "2019-08-15",
+        "supports": "Named class descriptions.",
+        "does_not_support": "Numeric class item IDs or current catalog completeness."
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/windows/win32/menurc/resource-types",
+        "source_kind": "Microsoft resource-format documentation",
+        "supports": "PE resource type2 means bitmap and24 means assembly manifest;6 and10 are string and raw-data resource types."
+      }
+    ],
+    "source_access_limit": "The public Gemnet repository root README was accessible, but nested Gemnet and Tools directory reads were rejected as restricted URLs. No alternate route was used to circumvent that restriction.",
+    "build_provenance": "Existing starter names derive from the pinned public Gemnet source already saved locally; compatibility is supported separately by the current user capture. An external repo or historical guide is not a complete current-build catalog."
+  },
+  "safe_next_progress": [
+    "Run the bounded directory metadata inspector on supplied NSZ files to search for internal table/XML/text entry names without extracting payloads.",
+    "Check the existing Drive sound subdirectory for the four observed DAT files and inspect only bounded header/directory metadata if present.",
+    "Enrich observed product IDs only when a primary-source record explicitly pairs an exact ID with a name; retain original build provenance."
+  ],
+  "original_observed_catalog_sha256": "93f23cb25bb628ad03be0521aeca71c3ced2a57312d2b03ed9c6b47da9ac0372"
+}

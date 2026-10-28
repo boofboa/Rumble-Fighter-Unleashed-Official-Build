@@ -1,0 +1,21 @@
+{
+  "client": {
+    "filename": "rumblefighter.exe",
+    "size": 4217600,
+    "sha256": "94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59",
+    "crc32_unsigned": 2529350096,
+    "matches_official_manifest_size_and_crc": true
+  },
+  "launcher": {
+    "filename": "RumbleLauncher.exe",
+    "size": 1739064,
+    "sha256": "21dd6e1efb35d140876db353cbf57130f215e7173b80bb6df7d0f29c66e1b77b"
+  },
+  "manifest": {
+    "url": "http://rumble-fighter.cdn.playredfox.net/cdn/update/wufilelist.ini",
+    "sha256": "3c3da0ed8d78a478d0a4138a481d23952c6f63bf75297fb5571a681570fe01a6",
+    "entry_count": 3156
+  },
+  "temp_ini_value": "V0935",
+  "temp_ini_interpretation": "Observed publisher marker; not independently established as the client protocol version."
+}

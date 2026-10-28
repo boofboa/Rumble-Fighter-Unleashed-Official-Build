@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "scope": "Assessment of the uploaded Windows client, sanitized capture structure, launcher static findings, pinned public reference source and local Windows experiments.",
+  "upstream_commit": "c56f4dccdad72f2d4337ffe6fe650d8c436114d0",
+  "client_sha256": "94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59",
+  "endpoint_configuration": {
+    "supported_private_endpoint_established": false,
+    "launcher_evidence": [
+      "RumbleLauncher.ini GENERAL/LAUNCHPARAM strings are referenced in launch setup.",
+      "Launcher contains /DIRECT: and process command formatting.",
+      "Launcher VersionURL/VersionFileURL and embedded CDN addresses concern updater metadata.",
+      "Static tracing establishes DIRECT suffix comes from Author literal plus updater TEMP/NUM, with no host/port lookup in this examined flow; see direct-launch-analysis.json."
+    ],
+    "limits": [
+      "No actual text launcher INI demonstrating host/port configuration was available.",
+      "/DIRECT: is not evidence of an offline mode or server override.",
+      "Opaque rumfus.ini cannot presently be treated as editable text configuration.",
+      "Exposed strings in the protected client do not establish a supported endpoint option.",
+      "A server bind/listen address is not equivalent to configuring this client destination."
+    ],
+    "complete_trace_findings": "startup-complete-review.json",
+    "offline_reconstruction": "first-stage-decompression.json"
+  },
+  "blockers": [
+    {
+      "id": "client_endpoint",
+      "severity": "resolved_for_fixed_destination_local_probe",
+      "missing_evidence": "A general configurable endpoint remains unknown; reversible loopback routing of the observed fixed destination is validated against the real client through a displayed login rejection. Additional services and full offline isolation remain unresolved."
+    },
+    {
+      "id": "windows_runtime",
+      "severity": "untested_environment",
+      "facts": [
+        "Uploaded client is x86.",
+        "Client imports d3dx9_42.dll and audiere.dll.",
+        "Launcher imports MSVCR100.dll.",
+        "Uploaded client manifest requests administrator execution.",
+        "Completed diagnostic found the checked adjacent x86 DirectX/audiere/MSVCR100 DLLs; both installed EXE hashes match uploaded bytes."
+      ],
+      "missing_evidence": "Current client end-to-end execution against the original local backend; backend wire compatibility remains unvalidated."
+    },
+    {
+      "id": "gameguard",
+      "severity": "blocks_claim_of_playable_session",
+      "facts": [
+        "Observed client 0x0048/0x0080 totals 6 bytes.",
+        "Observed server 0x0048/0x0081 totals 68 bytes.",
+        "Pinned source SendGameGuard sends a fixed 84-byte response.",
+        "Observed later client 0x0048/0x0042 totals 116 bytes; pinned dispatcher has no matching action.",
+        "Local client log separately records a GameGuardResponse buffer of 108 bytes inside 110 body bytes.",
+        "Version1.4 real client requested clock after the synthetic local profile, then emitted the initial0x0048/0x0080 header; the probe intentionally stopped there.",
+        "Current initial response framing is header6 + LE16 opaque length60 + opaque60; reference framing uses length76. No original initializer generator is known.",
+        "Version1.5 wrote one captured68-byte initializer and then observed10/D0/total6, matching the original post-initialization sequence; no UI observation was supplied."
+      ],
+      "missing_evidence": "A compatible fresh initializer generator and ongoing query/answer contract. One-frame replay produced the next startup header on the user Windows machine, but does not establish independent or ongoing authentication."
+    },
+    {
+      "id": "session_backend",
+      "severity": "partially_implemented_current_client_unverified",
+      "facts": [
+        "Pinned source version handler acknowledges without inspecting request body, so acknowledgement is not version compatibility proof.",
+        "Credential parser and 326-byte success response layout are available as reference; the capture shares those total message sizes.",
+        "Pinned credential handler uses a local account database and bcrypt, generates token/GUID fields, and registers per-stream player state.",
+        "Pinned source contains raw request and token logging and a separate hardcoded-account login branch; do not use that branch as compatibility evidence.",
+        "A separate original C# probe has now received the real client login frame and sent a fixed rejection that the client displayed; later profile replies elicited clock and startup headers, while complete profile compatibility remains unverified.",
+        "Version1.4 synthetic profile reply produced subsequent clock and GameGuard headers; this is partial bootstrap progress, not complete profile/lobby validation.",
+        "Version1.5 reached the startup/status request10/D0. Version1.6 adds a fixed8-byte10/D1 acknowledgement and a synthetic18-byte31/89 reply with account1 and zero balances; Version1.6 subsequently wrote both replies and reached the property request.",
+        "Version1.6 wrote startup/status and local-balance replies then received30/84/total17. Screenshot shows FUNC_Q_GET_PROPERTY ... NULL; v1.6 intentionally omitted that response.",
+        "Version1.7 matched owner1, wrote one3928-byte empty property response, then received30/92/total6; screenshot displays FUNC_Q_GET_GIFT_FROM ... NULL. This is bounded empty-inventory progress.",
+        "Version1.8 wrote both3507-byte gift candidates; next buddy10/A8 header and FUNC_Q_GET_BUDDY_LIST NULL identify the current unsupported stage."
+      ],
+      "missing_evidence": "Empty gift-list and remaining character/bootstrap contracts; populated inventory, avatar enumeration and gameplay remain unsupported. One empty property response elicited the next stage, not full inventory validation.",
+      "local_implementation": "Original persistent local accounts, per-connection authentication, local tokens, avatar IDs and empty inventory/equipment replies now exist and pass synthetic loopback tests."
+    },
+    {
+      "id": "upstream_stream_handling",
+      "severity": "reference_not_drop_in",
+      "facts": [
+        "Pinned PacketProcessor advances by 6 + length although observed header length includes the six-byte header.",
+        "It attempts to copy length bytes from offset + 6 and decrypts the full input inside a message loop."
+      ],
+      "interpretation": "Static defects or assumptions require repair before treating this source as an executable current-client server; it was not run."
+    },
+    {
+      "id": "gameplay_networks",
+      "severity": "not_covered",
+      "facts": [
+        "Provided analyzed capture contains only one port-7000 session.",
+        "Prior logs include P2P/ProudManager indications."
+      ],
+      "missing_evidence": "Training/lobby state flow and peer/service networking, including other previously observed ports outside this capture. No multiplayer compatibility is established."
+    }
+  ],
+  "safe_next_sequence": [
+    "Finish pending v1.8 cleanup from the same folder: close rumblefighter and launcher, run CleanupLocalHandshake.cmd as administrator and wait for Cleanup verified.",
+    "Preserve the v1.8 result; repeating its login will stop at the same unsupported buddy request.",
+    "Review the completed read-only catalog/structure findings. Expanded v1.9 emulation is blocked and is not a runnable deliverable.",
+    "Playable solo/multiplayer and complete item inventory remain unresolved."
+  ],
+  "diagnostic_artifacts": {
+    "powershell": "protocol-lab/Collect-RF-Diagnostics.ps1",
+    "launcher": "protocol-lab/CollectDiagnostics.cmd",
+    "output_filename": "rf-windows-diagnostics.json",
+    "launch": "Double-click CollectDiagnostics.cmd and choose the installation folder. Windows PowerShell and its existing execution policy are used; Python is not required.",
+    "manual_launch": "powershell.exe -NoProfile -File .\\Collect-RF-Diagnostics.ps1 -GameDirectory \"C:\\Path\\To\\RumbleFighter\"",
+    "policy_block": "If Windows policy blocks execution, preserve the error for review. The launcher does not alter or bypass execution policy.",
+    "output_behavior": "Writes a new JSON beside the script by default, refuses overwrite, and refuses a report destination inside the selected game directory.",
+    "collected": [
+      "Exact known filename presence, size, SHA-256 and numeric version metadata.",
+      "Fixed-allowlist recognized INI key names and a count of unrecognized keys; all values and unknown key names excluded.",
+      "Fixed-allowlist candidate option names from already-running named game processes, with all values and raw command lines excluded.",
+      "Socket address classes, ports and TCP state for those processes, without literal addresses or process IDs."
+    ],
+    "excluded": [
+      "Usernames",
+      "computer names",
+      "absolute paths",
+      "process IDs",
+      "raw command lines",
+      "config values",
+      "raw file contents",
+      "credentials",
+      "tokens",
+      "literal IP addresses"
+    ],
+    "validation": "Completed on user Windows PowerShell 5.1 after explicit output path was supplied. Exact installed client/launcher hashes match; adjacent checked runtime DLLs are present.",
+    "limitations": "Reports do not establish supported server-override semantics, binary config contents, GameGuard compatibility, or offline play."
+  },
+  "sources": [
+    {
+      "url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/Login.cs",
+      "local_sha256": "2abec297b7efe36bfd95fc4a05cac5745551a954e90845956cb36406f2e88a61"
+    },
+    {
+      "url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/GameGuard.cs",
+      "local_sha256": "49cb5935e1427646bf27439cf7044584a790bb5eacee4b4314081d6886e42348"
+    },
+    {
+      "url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/Login.cs",
+      "local_sha256": "a15f4fbd2b3de425ef4efc8151bbf0fa8fb341fd385c9dc542ff40a63841e55b"
+    },
+    {
+      "url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/PacketProcessor.cs",
+      "local_sha256": "957cb338d75609bca551d68f8032876dea93830f9eaf10bc2bdcdd833d50a477"
+    },
+    {
+      "url": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Packets.cs",
+      "local_sha256": "4924a2a8c065dd595a08f6ca45d8a0fbcbbe3559dcbfb5bbb8157b6e335404c5"
+    }
+  ],
+  "source_retrieval_limit": "Reviewed already-downloaded pinned primary source files. A web attempt to fetch the pinned README/tree returned DisabledError; full repository setup documentation was not independently re-fetched.",
+  "data_handling": "Metadata only. No capture payload, raw stream, credential, token, replay data, or decrypted body appears in this report.",
+  "startup_trace_status": {
+    "processed_rows": 693863,
+    "matching_rows": 16090,
+    "retained_unique_entries": 4842,
+    "omitted_matching_rows": 0,
+    "truncated": false,
+    "complete_for_current_filter": true,
+    "findings": "startup-complete-review.json",
+    "supported_private_endpoint_established": false
+  },
+  "offline_reconstruction_status": {
+    "stage": "first protection-layer destination",
+    "decoded_bytes": 4915200,
+    "independent_decoders_agree": true,
+    "game_logic_recovered": false,
+    "executable_executed": false,
+    "endpoint_recovered": false,
+    "findings": "first-stage-decompression.json"
+  },
+  "verified_local_probe_checkpoint": "handshake-ninth-windows-run.json",
+  "current_cleanup_status": "Version1.8 pending_game_still_running; only rumblefighter remains. Address/route removal not verified.",
+  "gift_list_boundary": {
+    "request": "0x10/0xA8/total10 after both gift replies",
+    "gift_candidates_written_on_windows": true,
+    "later_buddy_request_observed": true,
+    "empty_list_full_semantics_verified": false,
+    "next_test": "No new runnable test supplied. Proposed v1.9 expanded emulation was blocked by automated safety review."
+  },
+  "implementation_review_block": {
+    "status": "blocked",
+    "action": "Expanded server-emulation implementation for buddy/guild, populated starter inventory and avatar/equipment replies",
+    "stated_reason": "Possible cybersecurity risk",
+    "disposition": "No equivalent retry. Restored v1.8 active files and preserved read-only findings."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "rf.gameguard-replay-fixture-validation.v1",
+  "scope": "Independent local verification of fixed-offset extraction from one hash-pinned user-supplied capture, plus wholly invented cipher vectors. No captured challenge bytes or plaintext hash are included. This verifies extraction and framing, not replay acceptance, GameGuard authentication or gameplay.",
+  "source_capture": {
+    "filename": "rf-startup.pcapng",
+    "expected_bytes": 64868,
+    "sha256": "c3702693136b5fb7699dcc3c8d4582912f30cc543fe57cbf12a2a8f1f3dfdfe7"
+  },
+  "selected_encrypted_frame": {
+    "capture_offset": 3082,
+    "length": 68,
+    "server_stream_offset": 872,
+    "server_stream_end_exclusive": 940,
+    "encrypted_sha256": "737b5af4141bad9efd5577ef845cdaf31b4edcb95c0e705284523822609386c7",
+    "matches_reassembled_server_stream": true
+  },
+  "decoded_structure_only": {
+    "header_type": 72,
+    "total_bytes": 68,
+    "header_action": 129,
+    "blob_length_field_offset": 6,
+    "blob_length_field_width": 2,
+    "blob_length_field_endianness": "little",
+    "blob_length": 60,
+    "blob_offset": 8
+  },
+  "method": {
+    "cipher": "continuous RC4",
+    "public_legacy_key_ascii": "abcde",
+    "skip_bytes": 872,
+    "skip_input": "872 invented zero bytes; no preceding capture frames decrypted",
+    "extract": "slice68 bytes at file offset3082 after validating exact original file length and SHA256",
+    "scope_limit": "No general pcap parser; intentionally rejects every non-identical capture.",
+    "implementation_requirement": "Hash and extract the same immutable bounded buffer, or retain a handle excluding writes throughout hash and extraction; never hash one open and then slice an independently reopened file."
+  },
+  "synthetic_vectors": {
+    "fixture_definition": "68-byte frame: BE16type0x0048, BE16total68, LE16action0x0081, LE16bloblength60, invented blob bytes0..59 inclusive. This is not a valid GameGuard challenge.",
+    "fixture_sha256": "404fb4a8c5888bfdb0334942bf2ad02b28cde6e803d98b3d99252b016d7d2753",
+    "source_stream_definition": "872 zero bytes followed by the invented68-byte frame; continuous RC4fromoffset0",
+    "source_stream_total_bytes": 940,
+    "source_stream_ciphertext_sha256": "4c486dae121eadc9dc43c1ac709ab3e471919968297e5fa375c511c9593bcbe2",
+    "selected_ciphertext_sha256": "d20e29e1decf3d3eb92b162fed5c31a9e4b27f72a85c51c9702c27ae9d4fde91",
+    "combined_reply_definition": "Versionack6 + fixedsyntheticloginsuccess326 from login-success-vectors.json + fixedclock14 from thatfile + inventedGG68, one continuous outgoing cipher",
+    "combined_reply_total_bytes": 414,
+    "combined_reply_plaintext_sha256": "2754bb02d70ef338b3e67055219c1ee31fdf9b70ab12875b8a2061ac6b450d49",
+    "combined_reply_ciphertext_sha256": "10f064f3833e33e5a49572b399f9645f301a474ff42e6933893dd4e7c9cd06d0",
+    "combined_reply_gg_offset": 346,
+    "combined_reply_gg_ciphertext_sha256": "82f55df3e43fbb73fab5e0e6093482f779164a51c6330586e6e12c825500e899"
+  },
+  "checks": {
+    "original_length_and_sha_match": true,
+    "selected_file_bytes_equal_stream_bytes": true,
+    "selected_encrypted_segment_sha_match": true,
+    "selected_decoded_header_and_wrapper_match": true,
+    "mutated_file_outside_selected_segment_fails_full_hash": true,
+    "mutated_selected_segment_fails_full_hash": true,
+    "truncated_file_fails_size_guard": true,
+    "appended_file_fails_size_guard": true,
+    "synthetic_offset_decryption_roundtrip": true,
+    "synthetic_continuous_outgoing_roundtrip": true
+  },
+  "runtime_limits": {
+    "windows_csharp_compile_or_execution_performed_here": false,
+    "actual_client_replay_test_performed": false,
+    "valid_challenge_generation_established": false,
+    "offline_network_isolation_established": false
+  },
+  "independent_pcapng_container_check": {
+    "pcapng_enhanced_packet_number": 18,
+    "block_offset": 3000,
+    "captured_packet_offset": 3028,
+    "captured_packet_bytes": 122,
+    "ip_header_bytes": 20,
+    "tcp_header_bytes": 20,
+    "tcp_payload_offset": 3082,
+    "tcp_payload_bytes": 68,
+    "selected_frame_equals_entire_tcp_payload": true,
+    "tcp_source_port_matches_expected_server": true
+  },
+  "csharp_static_review": {
+    "source_path": "rf-protocol-lab/RFHandshakeProbe.cs",
+    "source_sha256": "17f0e69048f93fc38b7badaf26c5b6f0270fb4585606f6572629d90760662254",
+    "reviewed_components": [
+      "LoadCapturedInitialization exact size/full-hash guard and same-buffer extraction",
+      "Only selected frame decrypted after zero-buffer cipher advance",
+      "Owned-copy setter, replacement clearing, single-use consumption and Stop/finally clearing",
+      "Continuous outgoing cipher and one post-replay header observation within eight-header cap",
+      "Synthetic golden, header mutation, clone/clearing, and no-second-dispatch self-tests"
+    ],
+    "concrete_defects_found": [],
+    "independent_python_goldens_match_source_literals": true,
+    "compiler_or_windows_runtime_validation_performed": false,
+    "maximum_input_bytes": 165,
+    "maximum_synthetic_success_branch_output_bytes": 498,
+    "maximum_fixed_rejection_branch_output_bytes": 526,
+    "usual_one_clock_replay_output_bytes": 414,
+    "final_cleanup_order_check": "Confirmed owned captured initialization clears before listener.Stop in Start failure and Run finally."
+  }
+}

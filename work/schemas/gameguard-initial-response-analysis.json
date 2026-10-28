@@ -1,0 +1,156 @@
+{
+  "schema": "rf.gameguard.initial-response-structural-analysis.v1",
+  "scope": "Metadata-only structural review of the uploaded trace and pinned public reference. No captured challenge bytes, credential fields, account fields or session values are output or written. No replay or synthetic GameGuard reply was produced.",
+  "capture_handling": {
+    "method": "Locate only type0x0048 frames using existing framing metadata, advance continuous RC4 state by stream offset using zero bytes, then decrypt only the selected GameGuard frame. Other frame bodies are not decrypted in this analysis.",
+    "source_stream": "analysis/capture/flow-01/server_to_client.bin",
+    "source_stream_sha256": "dcf72fbbec61b2b8e7668be5ecd55d31397a904c2c560d0bf8c431148143861d",
+    "server_initial_reply_count": 1
+  },
+  "observed_initial_reply": {
+    "type": 72,
+    "action": 129,
+    "total_bytes": 68,
+    "declared_total_bytes": 68,
+    "body_bytes": 62,
+    "candidate_length_field": {
+      "offset_in_frame": 6,
+      "width": 2,
+      "byte_order": "little",
+      "value": 60,
+      "equals_remaining_body_bytes": true
+    },
+    "candidate_blob": {
+      "offset_in_frame": 8,
+      "bytes": 60,
+      "zero_bytes": 0,
+      "nonzero_bytes": 60,
+      "unique_byte_values": 56,
+      "empirical_entropy_bits_per_byte": 5.761,
+      "printable_ascii_bytes": 28,
+      "printable_ascii_run_lengths_at_least_4": [],
+      "length_mod_16": 12,
+      "recognized_magic_matches": []
+    }
+  },
+  "other_observed_gameguard_frames": [
+    {
+      "type": 72,
+      "action": 128,
+      "total_bytes": 6,
+      "declared_total_bytes": 6,
+      "body_bytes": 0
+    },
+    {
+      "type": 72,
+      "action": 66,
+      "total_bytes": 116,
+      "declared_total_bytes": 116,
+      "body_bytes": 110,
+      "candidate_length_field": {
+        "offset_in_frame": 6,
+        "width": 2,
+        "byte_order": "little",
+        "value": 108,
+        "equals_remaining_body_bytes": true
+      },
+      "candidate_blob": {
+        "offset_in_frame": 8,
+        "bytes": 108,
+        "zero_bytes": 0,
+        "nonzero_bytes": 108,
+        "unique_byte_values": 86,
+        "empirical_entropy_bits_per_byte": 6.3265,
+        "printable_ascii_bytes": 52,
+        "printable_ascii_run_lengths_at_least_4": [
+          8,
+          4,
+          5
+        ],
+        "length_mod_16": 12,
+        "recognized_magic_matches": []
+      }
+    }
+  ],
+  "pinned_reference": {
+    "path": "analysis/reference-source/upstream-c56f4dc/Gemnet/PacketProcessors/GameGuard.cs",
+    "source_sha256": "49cb5935e1427646bf27439cf7044584a790bb5eacee4b4314081d6886e42348",
+    "implementation": "A fixed 84-byte literal is passed to SendPacket. This file contains no challenge generation, vendor SDK call, blob parser or per-client challenge state.",
+    "reply_structure": {
+      "type": 72,
+      "action": 129,
+      "total_bytes": 84,
+      "declared_total_bytes": 84,
+      "body_bytes": 78,
+      "candidate_length_field": {
+        "offset_in_frame": 6,
+        "width": 2,
+        "byte_order": "little",
+        "value": 76,
+        "equals_remaining_body_bytes": true
+      },
+      "candidate_blob": {
+        "offset_in_frame": 8,
+        "bytes": 76,
+        "zero_bytes": 0,
+        "nonzero_bytes": 76,
+        "unique_byte_values": 67,
+        "empirical_entropy_bits_per_byte": 6.0111,
+        "printable_ascii_bytes": 39,
+        "printable_ascii_run_lengths_at_least_4": [
+          6,
+          5
+        ],
+        "length_mod_16": 12,
+        "recognized_magic_matches": []
+      }
+    },
+    "current_capture_length_match": false
+  },
+  "findings": [
+    {
+      "strength": "strong structural inference",
+      "claim": "Both the actual 68-byte reply and public 84-byte template have a two-byte little-endian value at frame offset6 exactly equal to the bytes after frame offset8. This supports a length-prefixed opaque blob wrapper."
+    },
+    {
+      "strength": "observation",
+      "claim": "The observed60-byte blob has no zero bytes and no four-byte printable ASCII runs; the public76-byte blob is also all nonzero. No recognized format magic was found."
+    },
+    {
+      "strength": "observation",
+      "claim": "Blob sizes60 and76 both equal12 modulo16, but this arithmetic does not identify a cipher, record type, or schema."
+    },
+    {
+      "strength": "limit",
+      "claim": "Only one actual server initialization reply was captured. Payload stability, dependence on account/session/build, freshness, and validation rules cannot be inferred."
+    },
+    {
+      "strength": "limit",
+      "claim": "The pinned reference has no GG_AUTH_DATA definition. These blob sizes cannot establish whether any vendor data structure is wrapped or transformed internally."
+    },
+    {
+      "strength": "limit",
+      "claim": "Byte distribution and short-sample entropy do not prove encryption or identify a cryptographic algorithm."
+    }
+  ],
+  "implementation_decision": {
+    "length_prefixed_wrapper_implementable": true,
+    "valid_original_synthetic_initialization_blob_known": false,
+    "captured_blob_replay_implemented": false,
+    "vendor_sdk_required_for_this_exact_build_proven": false,
+    "unknowns": [
+      "Meaning and generation of the opaque initialization blob",
+      "Client-side parser or vendor API consuming that blob",
+      "Exact version-compatible server authentication integration",
+      "Later type0x0048/action0x0042 request handling"
+    ],
+    "recommended_next_evidence": "Inspect locally supplied GameGuard module names, hashes, versions and integration imports or authorized SDK documentation; do not treat a fixed public blob or an empty blob as a verified valid initialization."
+  },
+  "vendor_context": {
+    "url": "https://nprotect.com/en/products/nprotect/gameguard",
+    "retrieved_date": "2026-10-16",
+    "source_ref": "turn58view0",
+    "primary_source_summary": "The vendor describes encrypted server-client authentication and server authentication modules. This product-level description does not specify the exact Rumble Fighter wire schema or prove a particular SDK version dependency.",
+    "vendor_domain_search_for_GG_AUTH_DATA_found_definition": false
+  }
+}

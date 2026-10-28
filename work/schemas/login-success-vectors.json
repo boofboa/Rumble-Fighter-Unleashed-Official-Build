@@ -1,0 +1,152 @@
+{
+  "schema": "rf.synthetic-login-success-vectors.v1",
+  "scope": "Original synthetic local fixtures only; no captured private payloads, account values, credentials or session tokens. Not evidence of Windows execution, client acceptance, authentication or gameplay.",
+  "algorithm": {
+    "cipher": "continuous RC4, independent state in each direction",
+    "public_legacy_key_ascii": "abcde",
+    "header": "BE16 type, BE16 total including six-byte header, LE16 action"
+  },
+  "synthetic_success": {
+    "total_bytes": 326,
+    "header_hex": "001001468500",
+    "sha256": "787c8001445d3b14ab6fd7d137b20433bd5c1fa600c6c975346d846f12665cf8",
+    "account": {
+      "account_id": 1,
+      "display_name": "AsterLocal",
+      "experience": 0,
+      "carats": 0,
+      "cash": 0,
+      "medals": 0,
+      "guid": "00000000-0000-4000-8000-000000000001",
+      "country": "US",
+      "region": "NA"
+    },
+    "synthetic_token": "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234",
+    "unresolved_zero_ranges_end_exclusive": [
+      [
+        42,
+        97
+      ],
+      [
+        134,
+        150
+      ],
+      [
+        154,
+        158
+      ]
+    ],
+    "cash_serialized": false,
+    "fields": [
+      {
+        "name": "account_id",
+        "offset": 6,
+        "width": 4,
+        "encoding": "LE32"
+      },
+      {
+        "name": "display_name",
+        "offset": 10,
+        "width": 24,
+        "encoding": "ASCII NUL"
+      },
+      {
+        "name": "experience",
+        "offset": 34,
+        "width": 4,
+        "encoding": "LE32"
+      },
+      {
+        "name": "carats",
+        "offset": 38,
+        "width": 4,
+        "encoding": "LE32"
+      },
+      {
+        "name": "guid",
+        "offset": 97,
+        "width": 37,
+        "encoding": "ASCII NUL"
+      },
+      {
+        "name": "medals",
+        "offset": 150,
+        "width": 4,
+        "encoding": "LE32"
+      },
+      {
+        "name": "country",
+        "offset": 158,
+        "width": 8,
+        "encoding": "ASCII NUL"
+      },
+      {
+        "name": "region",
+        "offset": 166,
+        "width": 32,
+        "encoding": "ASCII NUL"
+      },
+      {
+        "name": "synthetic_token",
+        "offset": 198,
+        "width": 64,
+        "encoding": "ASCII NUL"
+      },
+      {
+        "name": "forum_name",
+        "offset": 262,
+        "width": 64,
+        "encoding": "ASCII NUL"
+      }
+    ]
+  },
+  "synthetic_clock": {
+    "utc_input": "2026-10-16T00:00:00Z",
+    "offset_hours": -7,
+    "shifted_time": "2026-10-15T17:00:00Z",
+    "unix_ns": 1792108800000000000,
+    "filetime_ticks": 134365572000000000,
+    "plaintext_hex": "0010000e930000281a9dc65cdd01",
+    "plaintext_sha256": "d7be572c67d192219957f03c2c4088a4fb4e9fd0846343a37fea42a0c193f29e"
+  },
+  "outgoing": {
+    "frames": [
+      "version_ack_6",
+      "login_success_326",
+      "clock_reply_14"
+    ],
+    "total_bytes": 346,
+    "plaintext_sha256": "50fb76f9d305df28b21a80a2f7f750ef78798593e42f51c98cfd8fd3b029887d",
+    "continuous_ciphertext_sha256": "ee62645dd411897a56d4f9a16be1ce80dea966ae2d2b6f288ada146bed924fe9",
+    "ack_ciphertext_hex": "4aea412820c9",
+    "success_header_ciphertext_hex": "7205c8698249",
+    "clock_ciphertext_hex": "6ea4459f1b8dc27bb7e307df4f41"
+  },
+  "incoming": {
+    "frames": [
+      "version_request_26_zero_body",
+      "dummy_login_91",
+      "clock_request_6",
+      "gameguard_header_6"
+    ],
+    "total_bytes": 129,
+    "dummy_login_email": "probe@test.invalid",
+    "dummy_login_password": "ProbeOnly123!",
+    "plaintext_sha256": "eb35bbd15b9ca378ea4620aa7378d3564987d60dcfa65bbe29f82f38fbda87ab",
+    "continuous_ciphertext_sha256": "318b690ee2c93ce4a8f7ced1df5ab4b66685aa16ed02bef7d35dd0b285863f2a",
+    "clock_header_offset": 117,
+    "clock_header_ciphertext_hex": "48d5553a13ea",
+    "clock_header_decoded_hex": "001000069200",
+    "gameguard_header_offset": 123,
+    "gameguard_header_ciphertext_hex": "d3c61f3ea743",
+    "gameguard_header_decoded_hex": "004800068000",
+    "gameguard_response_generated": false
+  },
+  "validation": {
+    "reference_python_code_executed": true,
+    "continuous_direction_roundtrip_passed": true,
+    "unresolved_ranges_zero_verified": true,
+    "windows_csharp_compilation_or_execution": false,
+    "real_client_success_response_acceptance": false
+  }
+}

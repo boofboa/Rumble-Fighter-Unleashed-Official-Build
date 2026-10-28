@@ -1,0 +1,383 @@
+{
+  "schema": "rf.lobby-bootstrap-evidence.v1",
+  "scope": "Structural metadata only. Selected original capture bytes were decrypted in RAM for equality, count and zero tests. No captured account IDs, names, query keys, item IDs, tokens, strings or body bytes are saved or printed. Candidates are experiments, not claims of complete lobby compatibility.",
+  "evidence": {
+    "reference_commit": "c56f4dccdad72f2d4337ffe6fe650d8c436114d0",
+    "local_sources": [
+      "analysis/reference-source/upstream-c56f4dc/Gemnet/Packets.cs",
+      "analysis/reference-source/upstream-c56f4dc/Gemnet/Network/PacketProcessor.cs",
+      "analysis/reference-source/upstream-c56f4dc/Gemnet/PacketProcessors/Login.cs",
+      "analysis/reference-source/upstream-c56f4dc/Gemnet/Network/Packets/Login.cs"
+    ],
+    "prior_public_schema": "analysis/character-inventory-layout.json",
+    "capture_client_headers": "analysis/capture/client_to_server-legacy_rc4_abcde-framing.json",
+    "capture_server_headers": "analysis/capture/server_to_client-legacy_rc4_abcde-framing.json",
+    "capture_cryptographic_scope": "RC4 state advanced with invented zeros to selected stream offsets; only necessary selected slices decoded. No capture raw payload exported.",
+    "source_availability": "BuddyList.cs, Guild.cs, Avatars.cs and General.cs were absent locally during this review. Their earlier source-derived mappings are attributed to character-inventory-layout.json. No fresh source retrieval is claimed.",
+    "current_client_report": "upload/rf-local-handshake-20261016-130117-2b2d639d.json",
+    "item_catalog_evidence": "analysis/item-catalog-findings.json"
+  },
+  "observed_exchange": [
+    {
+      "name": "buddy",
+      "request": {
+        "offset": 327,
+        "type": "0x0010",
+        "action": "0x00a8",
+        "total_bytes": 10,
+        "body_bytes": 4
+      },
+      "response": {
+        "offset": 19778,
+        "type": "0x0010",
+        "action": "0x00a9",
+        "total_bytes": 3008,
+        "body_bytes": 3002
+      }
+    },
+    {
+      "name": "guild_member",
+      "request": {
+        "offset": 337,
+        "type": "0x0033",
+        "action": "0x0084",
+        "total_bytes": 14,
+        "body_bytes": 8
+      },
+      "response": {
+        "offset": 22786,
+        "type": "0x0033",
+        "action": "0x0085",
+        "total_bytes": 580,
+        "body_bytes": 574
+      }
+    },
+    {
+      "name": "guild_greeting",
+      "request": {
+        "offset": 351,
+        "type": "0x0033",
+        "action": "0x008a",
+        "total_bytes": 10,
+        "body_bytes": 4
+      },
+      "response": {
+        "offset": 23366,
+        "type": "0x0033",
+        "action": "0x008b",
+        "total_bytes": 139,
+        "body_bytes": 133
+      }
+    },
+    {
+      "name": "guild_rank",
+      "request": {
+        "offset": 361,
+        "type": "0x0033",
+        "action": "0x0090",
+        "total_bytes": 10,
+        "body_bytes": 4
+      },
+      "response": {
+        "offset": 23505,
+        "type": "0x0033",
+        "action": "0x0091",
+        "total_bytes": 18,
+        "body_bytes": 12
+      }
+    },
+    {
+      "name": "guild_rank_list",
+      "request": {
+        "offset": 371,
+        "type": "0x0033",
+        "action": "0x008e",
+        "total_bytes": 10,
+        "body_bytes": 4
+      },
+      "response": {
+        "offset": 23523,
+        "type": "0x0033",
+        "action": "0x008f",
+        "total_bytes": 880,
+        "body_bytes": 874
+      }
+    },
+    {
+      "name": "avatar_enumeration",
+      "request": {
+        "offset": 381,
+        "type": "0x0030",
+        "action": "0x0086",
+        "total_bytes": 10,
+        "body_bytes": 4
+      },
+      "response": {
+        "offset": 24403,
+        "type": "0x0030",
+        "action": "0x0087",
+        "total_bytes": 87,
+        "body_bytes": 81
+      }
+    },
+    {
+      "name": "equipped_avatar",
+      "request": {
+        "offset": 391,
+        "type": "0x0040",
+        "action": "0x00a0",
+        "total_bytes": 6,
+        "body_bytes": 0
+      },
+      "response": {
+        "offset": 24490,
+        "type": "0x0040",
+        "action": "0x00a1",
+        "total_bytes": 10,
+        "body_bytes": 4
+      }
+    }
+  ],
+  "buddy": {
+    "request_body_bytes": 4,
+    "request_all_zero": true,
+    "request_equals_property_owner": false,
+    "request_semantics": "Unknown zero-valued parameter; not the observed account owner. Local handler chooses buddies using the authenticated stream player.UserID, not a parsed request field.",
+    "response_body_bytes": 3002,
+    "le16_prefix_nonzero": true,
+    "le16_prefix_fits_100_records": true,
+    "prior_source_record_bytes": 30,
+    "prior_source_count_bytes": 2,
+    "prior_source_empty_total_bytes": 8,
+    "candidate_total_bytes": 3008,
+    "candidate": "LE16 zero count plus3000zero capacity bytes; request requires four observed-mode zero bytes.",
+    "uncertainty": "A dynamic8-byte empty reply is public-source-derived; fixed3008 compatibility candidate matches capture length. Current-client empty acceptance and capacity behavior are unverified."
+  },
+  "guild": {
+    "structural_observations": [
+      {
+        "request_stream_offset": 337,
+        "response_stream_offset": 22786,
+        "request_first_word_zero": false,
+        "request_first_word_equals_property_owner": false,
+        "request_first_word_equals_member_query_key": true,
+        "request_remaining_bytes_zero": true,
+        "response_first_word_equals_member_query_key": true,
+        "response_body_zero_bytes": 254,
+        "response_body_nonzero_bytes": 320
+      },
+      {
+        "request_stream_offset": 351,
+        "response_stream_offset": 23366,
+        "request_first_word_zero": false,
+        "request_first_word_equals_property_owner": false,
+        "request_first_word_equals_member_query_key": true,
+        "request_remaining_bytes_zero": true,
+        "response_first_word_equals_member_query_key": true,
+        "response_body_zero_bytes": 89,
+        "response_body_nonzero_bytes": 44
+      },
+      {
+        "request_stream_offset": 361,
+        "response_stream_offset": 23505,
+        "request_first_word_zero": false,
+        "request_first_word_equals_property_owner": false,
+        "request_first_word_equals_member_query_key": true,
+        "request_remaining_bytes_zero": true,
+        "response_first_word_equals_member_query_key": false,
+        "response_body_zero_bytes": 10,
+        "response_body_nonzero_bytes": 2
+      },
+      {
+        "request_stream_offset": 371,
+        "response_stream_offset": 23523,
+        "request_first_word_zero": true,
+        "request_first_word_equals_property_owner": false,
+        "request_first_word_equals_member_query_key": false,
+        "request_remaining_bytes_zero": true,
+        "response_first_word_equals_member_query_key": false,
+        "response_body_zero_bytes": 595,
+        "response_body_nonzero_bytes": 279
+      }
+    ],
+    "query_key_semantics": "The shared first word is not the captured property owner. Packet names alone do not prove guild ID. Treat as opaque query key.",
+    "member_second_word_zero": true,
+    "member_second_word_semantics": "Unknown; exactzero is the observed mode, not a documented option value.",
+    "login_named_guild_field_present": false,
+    "login_explanation": "Local LoginRes writes only named account/display/experience/carats/GUID/medals/country/region/token/forum fields into a zero-initialized326-byte frame. No established guild field offset exists.",
+    "public_dispatch_limitation": "Pinned ProcessGuildPacket dispatches rank and rank-list but not member/greeting; full payload serializers are absent locally.",
+    "candidate": "Accept opaque4-byte member query key and zero secondword; require samekey for greeting/rank; ranklist fourzero bytes. Echo key only at body0 of member/greeting as observed, zero all remaining candidate bytes. Do not report key.",
+    "candidate_response_totals": [
+      580,
+      139,
+      18,
+      880
+    ],
+    "uncertainty": "Record layout, status fields, count widths, no-guild semantics, and zero-filled response acceptance remain unverified. Echoing a structural prefix does not establish its meaning."
+  },
+  "avatars": {
+    "enumeration_request_equals_property_owner": true,
+    "response_body_bytes": 81,
+    "count_byte": 10,
+    "candidate_id_capacity": 20,
+    "count_equals_equipment_request_count": true,
+    "active_ids_unique": true,
+    "active_ids_nonzero": true,
+    "equipment_request_ids_equal_active_ids_in_order": true,
+    "unused_slots_all_zero": false,
+    "unused_nonzero_slots": 10,
+    "equipped_avatar_nonzero": true,
+    "equipped_avatar_in_active_ids": true,
+    "equipped_avatar_is_first_active_id": false,
+    "confidence": "Countbyte plus20LE32slot layout is strongly supported by capture correlations; supersedes earlier length-only low-confidence hypothesis. Unused capacity can contain nonzero data, so logical count governs validity.",
+    "synthetic_candidate": "Count10, invented localIDs1..10, remaining10capacity slotszero. Equip localavatar1. Require requestowner1 and equipment IDs from the local enumeration.",
+    "candidate_response_totals": {
+      "enumeration": 87,
+      "equipped_avatar": 10,
+      "per_avatar_equipment": 366
+    },
+    "equipment_candidate": "45LE32slot refs plus180zero tail; Jobinstance1 and ExoAinstance2 refer to matching invented inventoryinstances. Remaining slotszero. Public source provides slot order; candidate uses no captured instance IDs."
+  },
+  "inventory_dependency": {
+    "analysis_by": "/root/item_catalog",
+    "captured_property_record_stride": 49,
+    "logical_page_counts": [
+      80,
+      80,
+      44
+    ],
+    "active_inventory_instances_unique": true,
+    "equipment_positive_refs_within_active_inventory": true,
+    "equipment_tail180_all_zero": true,
+    "padding_caveat": "Last property page has nonzero records beyond logical count; count, not zero padding, controls valid inventory.",
+    "unknowns": "Unknown record word at+8 is not proven flags. END1000 is the public reference value, but expiry/duration semantics are not established. All17 opaque bytes at+12..28 are synthesizedzero even though the selected captured records had nonzero bytes at+23..28. Other undocumented regions remain unresolved. Real-client verification is required.",
+    "repeated_property_reply": "Each of at most3 requests receives the same3-record candidate; this is explicitly experimental, not recovered pagination.",
+    "proposed_synthetic_fixture": "Three publicly sourced starter catalog IDs with invented instance IDs1/2/3. The unknown record+8 words85593/85582/85582 are observed nonidentifying scalar candidates from the user capture, not public defaults. END1000 and ten-avatar class/Exo linkage are public-source-derived. Unknown opaque regions are zero-filled. No captured instance ID or whole record is copied."
+  },
+  "nearby_unsupported_requests": [
+    {
+      "offset": 497,
+      "type": "0x0030",
+      "action": "0x00a0",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 503,
+      "type": "0x0030",
+      "action": "0x00b4",
+      "total_bytes": 10,
+      "body_bytes": 4,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 513,
+      "type": "0x0030",
+      "action": "0x00b4",
+      "total_bytes": 10,
+      "body_bytes": 4,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 523,
+      "type": "0x0030",
+      "action": "0x00b4",
+      "total_bytes": 10,
+      "body_bytes": 4,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 533,
+      "type": "0x0030",
+      "action": "0x00b4",
+      "total_bytes": 10,
+      "body_bytes": 4,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 543,
+      "type": "0x0030",
+      "action": "0x00b4",
+      "total_bytes": 10,
+      "body_bytes": 4,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 553,
+      "type": "0x0048",
+      "action": "0x0042",
+      "total_bytes": 116,
+      "body_bytes": 110,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 669,
+      "type": "0x0030",
+      "action": "0x00b2",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 675,
+      "type": "0x0030",
+      "action": "0x00be",
+      "total_bytes": 14,
+      "body_bytes": 8,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 689,
+      "type": "0x0031",
+      "action": "0x00c8",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 695,
+      "type": "0x0030",
+      "action": "0x00ba",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "offset": 701,
+      "type": "0x0030",
+      "action": "0x00bc",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    }
+  ],
+  "limitations": [
+    "No grade30/A0 reply, unknown30/B4 reply, laterGameGuard48/42 response or complete lobby/login-complete behavior is established by this batch.",
+    "One captured sequence establishes correlations, not all legal alternatives or required timing.",
+    "Synthetic starter fields, empty social/guild lists and avatar defaults remain experimental until current-client execution.",
+    "This evidence is not a claim of playable solo mode, usable lobby or multiplayer."
+  ],
+  "synthetic_vector_artifact": "analysis/lobby-bootstrap-validation.json",
+  "delivery_status": {
+    "artifact_kind": "Read-only analysis and proposed fixture specification",
+    "active_v1_9_implementation": "blocked_by_automatic_approval_review; not completed or delivered",
+    "automatic_review_reason_reported_by_parent": "Possible cybersecurity risk from the active emulation changes.",
+    "further_active_code_work": "Stopped; no equivalent retry or C# review performed by this analyst.",
+    "last_delivered_active_version": "1.8",
+    "v1_9_csharp_review_completed": false,
+    "v1_9_compilation_or_runtime_validation": false,
+    "scope_limit": "These findings and synthetic vectors are not an executable build, a validated protocol implementation, or evidence of lobby/gameplay acceptance."
+  },
+  "proposed_bounded_candidate_sequence": [
+    "Existing version/login/clock/singleGGinit/status/cash",
+    "Up to3property replies using candidate starter fixture",
+    "Received and sent zero-filledgift candidates onceeach",
+    "Buddy once",
+    "Guildmember,greeting,rank,ranklist onceeach in order",
+    "Avatar enumeration once",
+    "Equipped-avatar once",
+    "At most10unique local equipment requests",
+    "Stop before body at first unsupported header"
+  ]
+}

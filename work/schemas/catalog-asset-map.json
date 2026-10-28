@@ -1,0 +1,312 @@
+{
+  "schema": "rf-catalog-asset-map-v1",
+  "date_utc": "2026-10-16",
+  "scope": "Read-only comparison of retained patch manifest, bounded Drive listing, local resource metadata and already-collected runtime path metadata. No executable execution, payload decoding or server changes.",
+  "sources": {
+    "manifest": {
+      "path": "analysis/patch-manifest-parsed.json",
+      "sha256": "30bb3b8a753efbaa71eeee3772016f7f8e20dc512d69e29fdfd5ef3ed2df07f0",
+      "size_bytes": 1037815
+    },
+    "bounded_drive_listing": {
+      "path": "deliverables/rf-analysis/res-listing-bounded.json",
+      "sha256": "78bfec2e54bc8818a97dedaf23aa0866ea27bf53f41c932a8359cc39cba91346",
+      "size_bytes": 173939
+    },
+    "asset_container_findings": {
+      "path": "analysis/item-catalog-findings.json",
+      "sha256": "22d26838bc3ca02b0c905c1d44cfadafe24f504c08eecb92153e9e4e85f6fae7",
+      "size_bytes": 11216
+    },
+    "complete_filtered_trace_summary": {
+      "path": "analysis/startup-complete-review.json",
+      "sha256": "c115491bd445661a2523b5ffd5dcb0cdc416c26a461a9148e4ea375d94a0b755",
+      "size_bytes": 13235
+    },
+    "complete_filtered_trace": {
+      "path": "upload/rf-startup-paths (2).json",
+      "sha256": "b4c920dc2cbce682bcea61866e231ca569cde27accb4388aae657e79265bc101",
+      "size_bytes": 1527908
+    }
+  },
+  "manifest": {
+    "entry_count": 3156,
+    "unique_case_insensitive_paths": 3156,
+    "declared_total_bytes": 2374631294,
+    "extensions": {
+      ".amo": 2,
+      ".des": 1,
+      ".dll": 8,
+      ".exe": 3,
+      ".ini": 1,
+      ".nsz": 2189,
+      ".ogg": 108,
+      ".wav": 844
+    },
+    "direct_res_files": 2189,
+    "nested_res_files": 954,
+    "root_files": 13,
+    "plain_text_catalog_exports_found": 0,
+    "plain_text_catalog_extensions_checked": [
+      ".csv",
+      ".tsv",
+      ".json",
+      ".xml",
+      ".txt",
+      ".dat"
+    ],
+    "only_ini_path": "rumfus.ini",
+    "ini_caveat": "rumfus.ini was already classified binary/opaque; its .ini suffix is not proof of readable configuration.",
+    "coverage_caveat": "This is a patch manifest, not a complete installed/runtime file inventory."
+  },
+  "drive_coverage": {
+    "source_scope": "First 1000 direct children returned by Drive list_folder; not a complete resource inventory.",
+    "listed_entries": 1000,
+    "listed_files": 998,
+    "listed_folders": 2,
+    "matched_manifest_paths": 998,
+    "matched_manifest_sizes": 998,
+    "listed_paths_not_in_manifest": 0,
+    "direct_res_manifest_paths_not_represented_in_listing": 1191,
+    "missing_uploaded_files_proven": 0,
+    "listing_complete": false,
+    "provider_limit_verification": {
+      "reported_by": "root agent in this session",
+      "max_accepted_top_k": 1000,
+      "attempted_top_k": 5000,
+      "result": "rejected as above provider limit",
+      "pagination_parameter_exposed": false
+    },
+    "interpretation": "1,191 direct-res manifest files are unrepresented in this 1,000-child snapshot, not proven absent from the uploaded folder. Two nested audio/resource folders were not enumerated here. Do not ask for a multi-gigabyte re-upload from this evidence."
+  },
+  "priority_resource_paths": [
+    {
+      "path": "res/011600_default_item.nsz",
+      "priority": 1,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 7745045,
+      "manifest_crc32_hex": "194d3dcb",
+      "drive_listing_status": "confirmed_present",
+      "local_file_available": true,
+      "rationale": "Observed directory contains ChrDefaultSphere.NSX and GEMFIGHTER.NST. The NST payload is a concrete data-format lead, but its content/type and any catalog role remain unverified.",
+      "drive_file_id": "1q8nGntOb9wEiI19Jf0OLsXElShGwRdT9",
+      "drive_name": "011600_default_item.nsz",
+      "listed_size_matches_manifest": true,
+      "local_sha256": "eea1272251fe1231ea096b8fcebb03ee6e897447c9f0a2648a5e4f28aa253056",
+      "local_size_matches_manifest": true,
+      "local_crc32_matches_manifest": true
+    },
+    {
+      "path": "res/100000_table.nsz",
+      "priority": 1,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 2212,
+      "manifest_crc32_hex": "3b567d9b",
+      "drive_listing_status": "confirmed_present",
+      "local_file_available": true,
+      "rationale": "Filename says table; bytes are already local. Opaque header and payload: no confirmed item-list content.",
+      "drive_file_id": "1_b1mkdAc-gtrUwiDiax5uWBLCTxtI3fb",
+      "drive_name": "100000_table.nsz",
+      "listed_size_matches_manifest": true,
+      "local_sha256": "155cb5f6754b273624abb14504243baa01a104c9fdb34eac4f9c55141a4b8960",
+      "local_size_matches_manifest": true,
+      "local_crc32_matches_manifest": true
+    },
+    {
+      "path": "res/010600_skill_item.nsz",
+      "priority": 2,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 2520738,
+      "manifest_crc32_hex": "164237ce",
+      "drive_listing_status": "confirmed_present",
+      "local_file_available": false,
+      "rationale": "Filename-based skill/item resource lead; directory metadata not yet inspected.",
+      "drive_file_id": "19p2gaMk7yFpTkEDAqIBZOQSh2aCmrBbd",
+      "drive_name": "010600_Skill_Item.nsz",
+      "listed_size_matches_manifest": true
+    },
+    {
+      "path": "res/060705_shop.nsz",
+      "priority": 2,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 845753,
+      "manifest_crc32_hex": "e6382627",
+      "drive_listing_status": "confirmed_present",
+      "local_file_available": false,
+      "rationale": "Filename-based shop resource/UI lead; may contain presentation assets rather than product definitions.",
+      "drive_file_id": "1p0kZaCK1aYlkaiHcjekTlrWKPRIb9oQ_",
+      "drive_name": "060705_Shop.nsz",
+      "listed_size_matches_manifest": true
+    },
+    {
+      "path": "res/060707_mychar.nsz",
+      "priority": 2,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 962802,
+      "manifest_crc32_hex": "ac3b8a0f",
+      "drive_listing_status": "confirmed_present",
+      "local_file_available": false,
+      "rationale": "Filename-based character UI/resource lead; not established as a catalog.",
+      "drive_file_id": "1UnfWNMJSByZVBfqjludcXhMO8yEdiUo8",
+      "drive_name": "060707_MyChar.nsz",
+      "listed_size_matches_manifest": true
+    },
+    {
+      "path": "res/011000_game_item.nsz",
+      "priority": 3,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 2264525,
+      "manifest_crc32_hex": "08ac4622",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Filename-based item-resource lead; contents unverified."
+    },
+    {
+      "path": "res/011100_state_item.nsz",
+      "priority": 3,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 968603,
+      "manifest_crc32_hex": "c387d11e",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Filename-based item/resource lead; contents unverified."
+    },
+    {
+      "path": "res/011700_setitem.nsz",
+      "priority": 3,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 320745,
+      "manifest_crc32_hex": "75bfe0d3",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Filename-based set-item resource lead; contents unverified."
+    },
+    {
+      "path": "res/012100_skill_item.nsz",
+      "priority": 3,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 6193791,
+      "manifest_crc32_hex": "3061448c",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Second distinct skill-item resource path; contents unverified."
+    },
+    {
+      "path": "res/012193_weaponitem.nsz",
+      "priority": 3,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 448082,
+      "manifest_crc32_hex": "e5eb617e",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Filename-based weapon resource lead; contents unverified."
+    },
+    {
+      "path": "res/020000_itemimages.nsz",
+      "priority": 4,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 17020402,
+      "manifest_crc32_hex": "cef7f766",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Filename explicitly suggests images. Useful for future visual matching only after a catalog mapping exists."
+    },
+    {
+      "path": "res/120000_shopimages.nsz",
+      "priority": 4,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 26719105,
+      "manifest_crc32_hex": "1c4127e3",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Filename explicitly suggests shop images; not item IDs or entitlement data."
+    },
+    {
+      "path": "res/121000_shopimages.nsz",
+      "priority": 4,
+      "priority_meaning": "Read-only metadata investigation order; not evidence of catalog content",
+      "manifest_size_bytes": 14698333,
+      "manifest_crc32_hex": "b7c69ddc",
+      "drive_listing_status": "not_in_bounded_listing_presence_unknown",
+      "local_file_available": false,
+      "rationale": "Second shop-images resource path; not item IDs or entitlement data."
+    }
+  ],
+  "other_runtime_files_not_in_manifest": [
+    {
+      "path": "res/070000_snd/070000_snd.dat",
+      "successful_read_events": 5445,
+      "in_manifest": false,
+      "catalog_role": "unknown"
+    },
+    {
+      "path": "res/070000_snd/1x.dat",
+      "successful_read_events": 575,
+      "in_manifest": false,
+      "catalog_role": "unknown"
+    },
+    {
+      "path": "res/070000_snd/2xx.dat",
+      "successful_read_events": 84,
+      "in_manifest": false,
+      "catalog_role": "unknown"
+    },
+    {
+      "path": "res/070000_snd/3xxx.dat",
+      "successful_read_events": 82,
+      "in_manifest": false,
+      "catalog_role": "unknown"
+    }
+  ],
+  "runtime_file_interpretation": "Four DAT paths have 6,186 successful read events in the retained startup trace. Their content was not collected. They establish that the patch manifest is not exhaustive for runtime files; their names do not establish a catalog role.",
+  "filename_id_mapping": {
+    "nsz_files_with_numeric_underscore_prefix": 2046,
+    "distinct_numeric_prefixes": 1843,
+    "prefixes_shared_by_multiple_files": 192,
+    "files_in_colliding_prefix_groups": 395,
+    "examples": {
+      "010332": [
+        "res/010332_blrock.nsz",
+        "res/010332_freest.nsz"
+      ],
+      "010812": [
+        "res/010812_hero.nsz",
+        "res/010812_hero_stats.nsz",
+        "res/010812_raven.nsz"
+      ],
+      "012155": [
+        "res/012155_alice.nsz",
+        "res/012155_devilgiant.nsz",
+        "res/012155_foxcostume.nsz",
+        "res/012155_jpmang.nsz"
+      ],
+      "030424": [
+        "res/030424_ch00_blaster.nsz",
+        "res/030424_ch00_epsilon.nsz",
+        "res/030424_ghostclaw.nsz"
+      ]
+    },
+    "conclusion": "A numeric NSZ filename prefix is not a unique identifier. No verified mapping from these prefixes or filenames to the 104 observed product-ID candidates has been established."
+  },
+  "catalog_vs_assets": {
+    "complete_item_id_name_catalog_available": false,
+    "verified_catalog_files": [],
+    "observed_inventory_product_id_candidates": 104,
+    "public_starter_names_cross_checked": 3,
+    "subshop_named_archive_count": 83,
+    "subshop_interpretation": "83 subshop-named paths exist; names alone neither prove product records nor give a complete item count.",
+    "needed_for_full_catalog": "A decoded data source or supplied ID/name table, followed by build-specific validation. Asset presence and product ownership are distinct facts."
+  },
+  "next_readonly_actions": [
+    "Use existing local default-item and table bytes with the metadata-only inspector; no re-upload needed.",
+    "If additional examples are needed, fetch the three already-confirmed Drive assets at priority 2; combined declared size 4,329,293 bytes.",
+    "Treat priority-3 paths as actual manifest leads whose Drive presence is unknown, not missing-upload requests.",
+    "An existing full item-ID/name list would be useful; a manually compiled list is not necessary for this evidence pass."
+  ],
+  "validation": {
+    "matched_file_sizes_all_equal": true,
+    "existing_selected_assets_crc_and_size_match": true,
+    "manifest_unique": true,
+    "no_raw_packet_or_account_data_in_report": true
+  }
+}

@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Rumble Fighter | Startup trace review</title>
+<style>
+:root { color-scheme:light; font-family:Segoe UI,system-ui,sans-serif; color:#17252c; background:#eef3f4; }
+* { box-sizing:border-box; } body { margin:0; } main { max-width:950px; margin:42px auto; padding:0 24px 40px; }
+.tag { font-size:12px; font-weight:700; letter-spacing:.16em; color:#35666b; }
+h1 { margin:12px 0; font-size:clamp(28px,5vw,40px); line-height:1.12; letter-spacing:-.035em; }
+p { line-height:1.6; max-width:75ch; } .card { background:white; border:1px solid #cfdddd; border-radius:16px; padding:26px; margin-top:24px; }
+h2 { font-size:19px; margin:0 0 14px; } label { display:block; font-weight:650; margin-bottom:10px; }
+input { display:block; width:100%; padding:14px; border:1px dashed #718f92; border-radius:9px; background:#f6faf9; }
+input::file-selector-button,button { border:0; border-radius:8px; padding:11px 16px; background:#075e63; color:white; font:600 14px Segoe UI,system-ui,sans-serif; cursor:pointer; }
+input::file-selector-button { margin-right:14px; } button:disabled { background:#c1cbcc; color:#46595c; cursor:default; }
+input:focus-visible,button:focus-visible { outline:3px solid #e6a335; outline-offset:3px; }
+.muted { color:#53676c; font-size:14px; } #status { min-height:24px; font-weight:650; margin:16px 0 0; }
+.error { color:#a72828; } pre { font:12px/1.5 Consolas,monospace; white-space:pre-wrap; overflow-wrap:anywhere; overflow:auto; max-height:460px; background:#f4f7f8; border:1px solid #d6e1e1; border-radius:9px; padding:16px; }
+.actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:18px; }
+progress { width:100%; height:16px; accent-color:#075e63; } #cancel { background:#53676c; }
+code { font-family:Consolas,monospace; } footer { margin-top:24px; font-size:13px; color:#53676c; }
+</style></head><body><main>
+<div class="tag">RUMBLE FIGHTER / LOCAL RESEARCH TOOL</div>
+<h1>Review your startup trace</h1>
+<p>Choose the CSV exported by Process Monitor. This page produces a small report of selected game file and registry paths. Processing stays in this browser; nothing is uploaded.</p>
+<section class="card"><h2>1. Choose the filtered CSV</h2>
+<label for="csv">Process Monitor export</label><input id="csv" type="file" accept=".csv,text/csv">
+<p class="muted">Complete-capture edition · CSV files up to 2 GiB · Up to 20,000 unique entries. You can reuse your existing export. For new captures, record only startup through the login screen. The export needs the Process Name, Operation, Path and Result columns.</p>
+<progress id="progress" max="100" value="0" aria-label="CSV processing progress" hidden></progress>
+<div id="status" role="status" aria-live="polite">Waiting for a CSV file.</div>
+<div class="actions"><button id="cancel" type="button" disabled>Cancel processing</button></div></section>
+<section class="card"><h2>2. Review and save the report</h2>
+<p class="muted">The filter omits event details, registry values, process IDs, timestamps and other processes. It replaces common Windows profile names and SIDs. Names embedded elsewhere in paths may remain, so review the preview before sharing.</p>
+<pre id="preview" tabindex="0" aria-label="Filtered report preview">Your filtered report will appear here.</pre>
+<div class="actions"><button id="download" type="button" disabled>Download report</button><span class="muted">Saves <code>rf-startup-paths.json</code></span></div>
+</section>
+<footer>Send the downloaded JSON in the chat. Keep the original CSV/PML on your PC. This tool does not run or modify the game.</footer>
+</main>
+<script>/* Offline Procmon CSV metadata filter. No network, dynamic code, or auto-download. */
+(function (root) {
+  "use strict";
+  const MAX_INPUT_BYTES = 64 * 1024 * 1024;
+  const MAX_STREAM_INPUT_BYTES = 2 * 1024 * 1024 * 1024;
+  const MAX_RECORD_BYTES = 1024 * 1024;
+  const MAX_RETAINED_FIELD_BYTES = 32 * 1024;
+  const MAX_UNIQUE_ENTRIES = 1500;
+  const MAX_CONFIGURABLE_UNIQUE_ENTRIES = 20000;
+  const MAX_RETAINED_METADATA_BYTES = 16 * 1024 * 1024;
+  const MAX_COLUMNS = 256;
+  const REQUIRED_HEADERS = ["Process Name", "Operation", "Path", "Result"];
+  const PROCESSES = new Map([
+    ["rumblefighter.exe", "rumblefighter.exe"],
+    ["rumblelauncher.exe", "RumbleLauncher.exe"]
+  ]);
+  const OPERATIONS = new Map([
+    ["createfile", "CreateFile"], ["readfile", "ReadFile"], ["queryopen", "QueryOpen"],
+    ["regopenkey", "RegOpenKey"], ["regqueryvalue", "RegQueryValue"]
+  ]);
+  const RESULTS = new Set(["SUCCESS", "NAME NOT FOUND", "PATH NOT FOUND"]);
+  const CONFIG_EXTENSIONS = new Set([".ini", ".cfg", ".conf", ".config", ".xml", ".json", ".dat", ".bin"]);
+  const EXCLUDED_EXTENSIONS = new Set([
+    ".nsz", ".nsx", ".nst", ".log", ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+    ".tga", ".dds", ".webp", ".ico", ".svg", ".wav", ".mp3", ".ogg", ".flac",
+    ".aac", ".wma", ".mp4", ".avi", ".wmv", ".mov", ".mkv", ".webm", ".ttf",
+    ".otf", ".ttc", ".woff", ".woff2", ".fnt", ".fon"
+  ]);
+
+  class TraceFormatError extends Error {
+    constructor(message) { super(message); this.name = "TraceFormatError"; }
+  }
+
+  function inputByteLength(text) {
+    if (typeof text !== "string") throw new TraceFormatError("The CSV input must be text.");
+    if (text.length > MAX_INPUT_BYTES) throw new TraceFormatError("The CSV exceeds the 64 MiB input limit.");
+    let bytes = 0;
+    for (let i = 0; i < text.length; i++) {
+      const code = text.charCodeAt(i);
+      if (code < 0x80) bytes += 1;
+      else if (code < 0x800) bytes += 2;
+      else if (code >= 0xD800 && code <= 0xDBFF && i + 1 < text.length &&
+               text.charCodeAt(i + 1) >= 0xDC00 && text.charCodeAt(i + 1) <= 0xDFFF) {
+        bytes += 4; i++;
+      } else bytes += 3; // Includes isolated surrogates, like UTF-8 replacement encoding.
+      if (bytes > MAX_INPUT_BYTES) throw new TraceFormatError("The CSV exceeds the 64 MiB input limit.");
+    }
+    return bytes;
+  }
+
+  /* Counts decoded UTF-8 across arbitrary UTF-16 string chunk boundaries. */
+  function byteCounter(limit, message) {
+    let bytes = 0;
+    let pendingHigh = false;
+    function add(amount) {
+      bytes += amount;
+      if (bytes > limit) throw new TraceFormatError(message);
+    }
+    return {
+      accept: function (code) {
+        if (pendingHigh) {
+          pendingHigh = false;
+          if (code >= 0xDC00 && code <= 0xDFFF) { add(4); return; }
+          add(3);
+        }
+        if (code < 0x80) add(1);
+        else if (code < 0x800) add(2);
+        else if (code >= 0xD800 && code <= 0xDBFF) pendingHigh = true;
+        else add(3);
+      },
+      finish: function () { if (pendingHigh) { pendingHigh = false; add(3); } return bytes; },
+      reset: function () { bytes = 0; pendingHigh = false; }
+    };
+  }
+
+  function normalizePath(path) {
+    let normalized = path.trim().replace(/\//g, "\\");
+    // Includes long-path prefixes because the drive-letter segment still matches.
+    normalized = normalized.replace(/([A-Za-z]:\\Users\\)[^\\]+/gi, "$1<user>");
+    // Preserve surrounding separators and suffixes such as _Classes.
+    normalized = normalized.replace(/(^|[^A-Za-z0-9])S-\d-\d+(?:-\d+)+/gi, "$1<sid>");
+    return normalized;
+  }
+
+  function fileCandidate(path) {
+    const basename = path.slice(path.lastIndexOf("\\") + 1);
+    if (!basename || /^[A-Za-z]:$/.test(basename) || basename === "." || basename === "..") return null;
+    const dot = basename.lastIndexOf(".");
+    const extension = dot < 0 ? "" : basename.slice(dot).toLowerCase();
+    if (EXCLUDED_EXTENSIONS.has(extension)) return null;
+    if (extension && !CONFIG_EXTENSIONS.has(extension)) return null;
+    return extension ? "file_candidate" : "extensionless_file_or_directory_candidate";
+  }
+
+  function makeParser(maximumInputBytes, maximumUniqueEntries) {
+    const inputCount = byteCounter(maximumInputBytes,
+      maximumInputBytes === MAX_INPUT_BYTES ? "The CSV exceeds the 64 MiB input limit." : "The CSV exceeds the 2 GiB streaming input limit.");
+    const recordCount = byteCounter(MAX_RECORD_BYTES, "A CSV record exceeds the 1 MiB structural limit.");
+    const fieldCount = byteCounter(MAX_RETAINED_FIELD_BYTES, "A retained CSV field exceeds the 32 KiB limit.");
+    let firstCharacter = true;
+    let skipNextLF = false;
+    let state = "start";
+    let headerLength = null;
+    let indices = null;
+    let retainedColumns = null;
+    let row = [];
+    let column = 0;
+    let retainField = true;
+    let field = "";
+    let recordHasInput = false;
+    let recordNonWhitespace = false;
+    let finishedReport = null;
+    let failed = false;
+    const entries = [];
+    const retainedKeys = new Map();
+    const skipped = { other_process: 0, other_operation: 0, other_result: 0, empty_path: 0, non_candidate_file: 0 };
+    let rowsSeen = 0;
+    let matchingRows = 0;
+    let omittedMatchingRows = 0;
+    let truncated = false;
+    let retainedMetadataBytes = 0;
+    const truncationReasons = new Set();
+
+    function consumeRow() {
+      if (row.length === 1 && !recordNonWhitespace) return;
+      if (headerLength === null) {
+        indices = {};
+        for (const name of REQUIRED_HEADERS) {
+          const matches = [];
+          row.forEach(function (value, index) { if (value.trim() === name) matches.push(index); });
+          if (matches.length !== 1) {
+            throw new TraceFormatError("The CSV must contain each required English header exactly once: Process Name, Operation, Path, Result.");
+          }
+          indices[name] = matches[0];
+        }
+        headerLength = row.length;
+        retainedColumns = new Set(Object.values(indices));
+        return;
+      }
+      if (row.length !== headerLength) throw new TraceFormatError("A CSV record has a different column count from its header.");
+      rowsSeen++;
+      const process = PROCESSES.get(row[indices["Process Name"]].trim().toLowerCase());
+      if (!process) { skipped.other_process++; return; }
+      const operation = OPERATIONS.get(row[indices.Operation].trim().toLowerCase());
+      if (!operation) { skipped.other_operation++; return; }
+      const result = row[indices.Result].trim().toUpperCase();
+      if (!RESULTS.has(result)) { skipped.other_result++; return; }
+      const path = normalizePath(row[indices.Path]);
+      if (!path) { skipped.empty_path++; return; }
+      const category = operation.slice(0, 3) === "Reg" ? "registry_key_or_value_name" : fileCandidate(path);
+      if (!category) { skipped.non_candidate_file++; return; }
+      matchingRows++;
+      // Redaction may combine paths from originally different user directories.
+      const key = JSON.stringify([process, operation, path.toLowerCase(), result]);
+      const prior = retainedKeys.get(key);
+      if (prior !== undefined) { entries[prior].count++; return; }
+      if (entries.length >= maximumUniqueEntries) {
+        truncated = true;
+        truncationReasons.add("unique_entry_limit");
+        omittedMatchingRows++;
+        return;
+      }
+      const entry = { process: process, operation: operation, path: path, result: result,
+        successful: result === "SUCCESS", category: category, count: 1 };
+      // Count both escaped entry JSON and the retained dedupe key, plus room
+      // for count growth. This bounds metadata strings, not total engine RAM.
+      const estimatedBytes = inputByteLength(JSON.stringify(entry)) + inputByteLength(key) + 32;
+      if (retainedMetadataBytes + estimatedBytes > MAX_RETAINED_METADATA_BYTES) {
+        truncated = true;
+        truncationReasons.add("retained_metadata_budget");
+        omittedMatchingRows++;
+        return;
+      }
+      retainedMetadataBytes += estimatedBytes;
+      retainedKeys.set(key, entries.length);
+      entries.push(entry);
+    }
+
+    function resetField() {
+      if (column >= MAX_COLUMNS) throw new TraceFormatError("The CSV exceeds the supported column limit.");
+      retainField = headerLength === null || retainedColumns.has(column);
+      field = "";
+      fieldCount.reset();
+      state = "start";
+    }
+
+    function append(character) {
+      if (retainField) {
+        fieldCount.accept(character.charCodeAt(0));
+        field += character;
+      }
+    }
+
+    function endField() {
+      if (retainField) fieldCount.finish();
+      row.push(retainField ? field : undefined);
+      column++;
+    }
+
+    function endRecord() {
+      endField();
+      recordCount.finish();
+      consumeRow();
+      row = [];
+      column = 0;
+      recordHasInput = false;
+      recordNonWhitespace = false;
+      recordCount.reset();
+      resetField();
+    }
+
+    function delimiter(character) {
+      if (character === ",") { endField(); resetField(); return; }
+      endRecord();
+      if (character === "\r") skipNextLF = true;
+    }
+
+    function accept(character) {
+      const code = character.charCodeAt(0);
+      inputCount.accept(code);
+      if (firstCharacter) {
+        firstCharacter = false;
+        if (code === 0xFEFF) return;
+      }
+      if (skipNextLF) {
+        skipNextLF = false;
+        if (character === "\n") return;
+      }
+      recordHasInput = true;
+      recordCount.accept(code);
+      if (character !== " " && character !== "\t" && character !== "\r" && character !== "\n") recordNonWhitespace = true;
+      if (state === "quoted") {
+        if (character === '"') state = "afterQuote";
+        else append(character);
+        return;
+      }
+      if (state === "afterQuote" || state === "afterQuoteSpace") {
+        if (state === "afterQuote" && character === '"') {
+          append('"'); state = "quoted"; return;
+        }
+        if (character === " " || character === "\t") { state = "afterQuoteSpace"; return; }
+        if (character === "," || character === "\r" || character === "\n") { delimiter(character); return; }
+        throw new TraceFormatError("The CSV contains unexpected text after a quoted field.");
+      }
+      if (character === "," || character === "\r" || character === "\n") { delimiter(character); return; }
+      if (character === '"') {
+        if (state !== "start") throw new TraceFormatError("The CSV contains a misplaced quote.");
+        state = "quoted"; return;
+      }
+      append(character);
+      state = "unquoted";
+    }
+
+    function write(textChunk) {
+      if (failed) throw new TraceFormatError("The CSV parser cannot continue after an earlier error.");
+      if (finishedReport !== null) throw new TraceFormatError("The CSV parser has already finished.");
+      try {
+        if (typeof textChunk !== "string") throw new TraceFormatError("Each CSV chunk must be text.");
+        for (let i = 0; i < textChunk.length; i++) accept(textChunk[i]);
+      } catch (error) { failed = true; throw error; }
+    }
+
+    function finish() {
+      if (failed) throw new TraceFormatError("The CSV parser cannot continue after an earlier error.");
+      if (finishedReport !== null) return finishedReport;
+      try {
+        const inputBytes = inputCount.finish();
+        if (state === "quoted") throw new TraceFormatError("The CSV contains an unterminated quoted field.");
+        if (recordHasInput || row.length) endRecord();
+        if (headerLength === null) throw new TraceFormatError("The CSV is empty or has no supported header.");
+        finishedReport = {
+          schema_version: 1,
+          source_format: "Process Monitor CSV with English headers",
+          input_bytes: inputBytes,
+          rows_seen: rowsSeen,
+          matching_rows: matchingRows,
+          unique_entries_emitted: entries.length,
+          truncated: truncated,
+          truncation_reasons: Array.from(truncationReasons),
+          retained_metadata_estimated_bytes: retainedMetadataBytes,
+          omitted_matching_rows: omittedMatchingRows,
+          skipped_rows: skipped,
+          entries: entries,
+          limits: { max_input_bytes: maximumInputBytes, max_unique_entries: maximumUniqueEntries,
+            max_retained_metadata_bytes: MAX_RETAINED_METADATA_BYTES,
+            max_columns: MAX_COLUMNS, max_record_bytes: MAX_RECORD_BYTES,
+            max_retained_field_bytes: MAX_RETAINED_FIELD_BYTES },
+          notes: [
+            "Only the two named game processes and the selected file/registry operations are retained.",
+            "PID, time, Detail, unknown column names and all other column contents are omitted.",
+            "SUCCESS is distinguished from NAME NOT FOUND and PATH NOT FOUND; missing probes did not successfully access the path.",
+            "File candidates and registry paths do not establish configuration purpose or private-server support.",
+            "RegQueryValue paths may include registry value names; stored registry values from Detail are not included.",
+            "Common drive-letter Users paths and Windows SIDs are redacted. Names or other private data elsewhere in paths may remain; review before sharing.",
+            "Entries are grouped by process, operation, case-insensitive redacted path and result. Redaction can merge originally different paths.",
+            "When truncated, omitted_matching_rows counts matching rows for new unretained entries, not unique omitted paths.",
+            "Retention is also bounded by a 16 MiB estimate of serialized entry strings plus deduplication keys and count-growth allowance; this is not a bound on total browser memory."
+          ]
+        };
+        return finishedReport;
+      } catch (error) { failed = true; throw error; }
+    }
+    return Object.freeze({ write: write, finish: finish });
+  }
+
+  function createProcmonCsvParser(options) {
+    let maximumUniqueEntries = MAX_UNIQUE_ENTRIES;
+    if (options !== undefined) {
+      if (options === null || typeof options !== "object" || Array.isArray(options)) {
+        throw new TraceFormatError("Parser options must be an object.");
+      }
+      if (Object.prototype.hasOwnProperty.call(options, "maxUniqueEntries")) {
+        maximumUniqueEntries = options.maxUniqueEntries;
+        if (!Number.isInteger(maximumUniqueEntries) || maximumUniqueEntries < 1 || maximumUniqueEntries > MAX_CONFIGURABLE_UNIQUE_ENTRIES) {
+          throw new TraceFormatError("maxUniqueEntries must be an integer from 1 through 20000.");
+        }
+      }
+    }
+    return makeParser(MAX_STREAM_INPUT_BYTES, maximumUniqueEntries);
+  }
+
+  function parseProcmonCsv(text) {
+    inputByteLength(text); // Preserve the original whole-input 64 MiB check.
+    const parser = makeParser(MAX_INPUT_BYTES, MAX_UNIQUE_ENTRIES);
+    parser.write(text);
+    return parser.finish();
+  }
+
+  const api = Object.freeze({ parseProcmonCsv: parseProcmonCsv, createProcmonCsvParser: createProcmonCsvParser,
+    limits: Object.freeze({ maxInputBytes: MAX_INPUT_BYTES, maxStreamInputBytes: MAX_STREAM_INPUT_BYTES,
+      maxUniqueEntries: MAX_UNIQUE_ENTRIES, maxConfigurableUniqueEntries: MAX_CONFIGURABLE_UNIQUE_ENTRIES,
+      maxRetainedMetadataBytes: MAX_RETAINED_METADATA_BYTES, maxColumns: MAX_COLUMNS,
+      maxRecordBytes: MAX_RECORD_BYTES, maxRetainedFieldBytes: MAX_RETAINED_FIELD_BYTES }) });
+  root.RFTrace = api;
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+})(typeof globalThis !== "undefined" ? globalThis : window);
+</script>
+<script>
+"use strict";
+const input=document.getElementById("csv"), statusBox=document.getElementById("status"),
+      preview=document.getElementById("preview"), download=document.getElementById("download"),
+      progress=document.getElementById("progress"), cancel=document.getElementById("cancel");
+const MAX_FILE_BYTES=2*1024*1024*1024, CHUNK_BYTES=256*1024;
+let reportText=null, generation=0;
+input.addEventListener("change",async()=>{
+  const current=++generation;
+  reportText=null;download.disabled=true;statusBox.className="";
+  cancel.disabled=true;progress.hidden=true;progress.value=0;
+  preview.textContent="Your filtered report will appear here.";
+  const file=input.files[0];
+  if(!file){statusBox.textContent="Waiting for a CSV file.";return;}
+  statusBox.textContent="Reading the CSV locally...";
+  try{
+    if(file.size>MAX_FILE_BYTES)throw new Error("This file exceeds 2 GiB. In Process Monitor, save only events displayed with the two game-process filters, or capture a shorter startup.");
+    const prefix=new Uint8Array(await file.slice(0,3).arrayBuffer());
+    if(current!==generation)return;
+    let encoding="utf-8";
+    if(prefix[0]===255&&prefix[1]===254)encoding="utf-16le";
+    if(prefix[0]===254&&prefix[1]===255)encoding="utf-16be";
+    const decoder=new TextDecoder(encoding,{fatal:true}), parser=RFTrace.createProcmonCsvParser({maxUniqueEntries:20000});
+    progress.hidden=false;cancel.disabled=false;
+    for(let offset=0;offset<file.size;offset+=CHUNK_BYTES){
+      if(current!==generation)return;
+      const end=Math.min(offset+CHUNK_BYTES,file.size);
+      const buffer=await file.slice(offset,end).arrayBuffer();
+      if(current!==generation)return;
+      parser.write(decoder.decode(buffer,{stream:true}));
+      progress.value=Math.floor(end/file.size*100);
+      statusBox.textContent="Processing locally: "+progress.value+"% ("+(end/1024/1024).toFixed(1)+" of "+(file.size/1024/1024).toFixed(1)+" MiB).";
+      await new Promise(resolve=>setTimeout(resolve,0));
+    }
+    if(current!==generation)return;
+    parser.write(decoder.decode());
+    const report=parser.finish();
+    cancel.disabled=true;progress.value=100;
+    reportText=JSON.stringify(report,null,2)+"\n";
+    preview.textContent=reportText;
+    if(report.rows_seen===0){
+      reportText=null;statusBox.className="error";
+      statusBox.textContent="The CSV contains only column headings, with no event rows. Check the Process Monitor filters and confirm events are visible before exporting again.";
+      return;
+    }
+    statusBox.textContent=report.truncated ? "Report ready, but a report limit was reached. Review the limits and omitted counts before sharing." :
+      report.unique_entries_emitted===0 ? "No candidate paths matched. Check the trace filters and review the counts below." :
+      "Report ready: "+report.rows_seen.toLocaleString()+" event rows processed; "+report.unique_entries_emitted.toLocaleString()+" unique entries retained. Review below, then download.";
+    download.disabled=false;
+  }catch(error){
+    if(current!==generation)return;
+    cancel.disabled=true;progress.hidden=true;reportText=null;download.disabled=true;
+    statusBox.className="error";
+    statusBox.textContent=error instanceof TypeError ? "The file encoding could not be read. Export a fresh CSV from Process Monitor." : error.message;
+  }
+});
+cancel.addEventListener("click",()=>{
+  generation++;reportText=null;download.disabled=true;cancel.disabled=true;progress.hidden=true;
+  statusBox.className="";statusBox.textContent="Processing canceled. Choose a CSV to start again.";
+  preview.textContent="Your filtered report will appear here.";
+  input.value="";
+});
+download.addEventListener("click",()=>{
+  if(reportText===null)return;
+  const url=URL.createObjectURL(new Blob([reportText],{type:"application/json"}));
+  const link=document.createElement("a");
+  link.href=url;link.download="rf-startup-paths.json";document.body.appendChild(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+</script></body></html>

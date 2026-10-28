@@ -1,0 +1,586 @@
+{
+  "schema": "rf-observed-item-catalog-v1",
+  "scope": "Incomplete deduplicated product-ID candidates observed in the user-supplied capture; not the complete game catalog and not a usable item grant",
+  "input_stream_sha256": "dcf72fbbec61b2b8e7668be5ecd55d31397a904c2c560d0bf8c431148143861d",
+  "input_bytes": 46191,
+  "frame_count": 70,
+  "record_layout": {
+    "count_body_offset": 0,
+    "count_bytes": 2,
+    "count_endian": "little",
+    "records_body_offset": 2,
+    "record_stride": 49,
+    "capacity": 80,
+    "catalog_id_record_offset": 4
+  },
+  "catalog_candidate_count": 104,
+  "catalog_candidate_ids": [
+    1000175,
+    1020189,
+    1020195,
+    1020915,
+    1050570,
+    1055273,
+    1056761,
+    1056765,
+    1056769,
+    1056987,
+    1060093,
+    1066762,
+    1066766,
+    1066770,
+    1066771,
+    1068488,
+    1075274,
+    1076763,
+    1076767,
+    1076772,
+    1078494,
+    1080812,
+    1085275,
+    1087853,
+    1095276,
+    1096764,
+    1096768,
+    1101830,
+    2030004,
+    2030013,
+    2030030,
+    2030044,
+    2030051,
+    2030080,
+    2030173,
+    2030175,
+    2030223,
+    2030266,
+    2030660,
+    2030661,
+    2030662,
+    2030905,
+    2031216,
+    2040008,
+    2040034,
+    2040066,
+    2040076,
+    2040080,
+    2040122,
+    2040128,
+    2040135,
+    2040162,
+    2040192,
+    2040236,
+    2040263,
+    2040286,
+    2040287,
+    2041108,
+    2041121,
+    2060017,
+    2060018,
+    2070842,
+    3010211,
+    3010212,
+    3010494,
+    3014937,
+    3015008,
+    3020679,
+    3020681,
+    3030025,
+    3030765,
+    3040769,
+    3040771,
+    3043012,
+    3045277,
+    3085938,
+    5015380,
+    5018133,
+    5018614,
+    5025133,
+    5031794,
+    5031796,
+    5031919,
+    5031933,
+    5031934,
+    5080003,
+    5080004,
+    5080005,
+    5080006,
+    5080008,
+    5080010,
+    5080021,
+    5080024,
+    5090007,
+    5090015,
+    5090016,
+    5115481,
+    5117520,
+    5127522,
+    5127530,
+    5132966,
+    5135224,
+    5135226,
+    5140122
+  ],
+  "names_and_categories_for_remaining_ids": "Unknown; numeric prefixes and asset filenames are not treated as verified category/name mappings",
+  "active_record_count": 204,
+  "distinct_instance_count": 204,
+  "duplicate_instance_occurrences": 0,
+  "pages": [
+    {
+      "stream_frame_offset": 980,
+      "logical_record_count": 80,
+      "distinct_catalog_ids_in_page": 45,
+      "instance_ids_unique_in_page": true,
+      "padding_after_logical_count_all_zero": true,
+      "nonzero_capacity_records": 80
+    },
+    {
+      "stream_frame_offset": 4908,
+      "logical_record_count": 80,
+      "distinct_catalog_ids_in_page": 37,
+      "instance_ids_unique_in_page": true,
+      "padding_after_logical_count_all_zero": true,
+      "nonzero_capacity_records": 80
+    },
+    {
+      "stream_frame_offset": 8836,
+      "logical_record_count": 44,
+      "distinct_catalog_ids_in_page": 31,
+      "instance_ids_unique_in_page": true,
+      "padding_after_logical_count_all_zero": false,
+      "nonzero_capacity_records": 55
+    }
+  ],
+  "equipment": [
+    {
+      "stream_frame_offset": 24500,
+      "nonzero_slot_count": 11,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 24866,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 25232,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 25598,
+      "nonzero_slot_count": 12,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 25964,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 26330,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 26696,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 27062,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 27428,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    },
+    {
+      "stream_frame_offset": 27794,
+      "nonzero_slot_count": 1,
+      "all_nonzero_slots_reference_preceding_inventory_instances": true,
+      "unknown_180byte_tail_all_zero": true
+    }
+  ],
+  "aggregates": {
+    "record_u32_at_8": [
+      {
+        "value": 85582,
+        "records": 147
+      },
+      {
+        "value": 85593,
+        "records": 1
+      },
+      {
+        "value": 87118,
+        "records": 41
+      },
+      {
+        "value": 349518,
+        "records": 1
+      },
+      {
+        "value": 677198,
+        "records": 1
+      },
+      {
+        "value": 1332558,
+        "records": 2
+      },
+      {
+        "value": 2643278,
+        "records": 1
+      },
+      {
+        "value": 3495246,
+        "records": 1
+      },
+      {
+        "value": 3822926,
+        "records": 1
+      },
+      {
+        "value": 4937038,
+        "records": 1
+      },
+      {
+        "value": 7230798,
+        "records": 1
+      },
+      {
+        "value": 13784398,
+        "records": 1
+      },
+      {
+        "value": 19420494,
+        "records": 1
+      },
+      {
+        "value": 22631758,
+        "records": 1
+      },
+      {
+        "value": 24859982,
+        "records": 1
+      },
+      {
+        "value": 30692686,
+        "records": 1
+      },
+      {
+        "value": 35083598,
+        "records": 1
+      }
+    ],
+    "record_u32_at_29": [
+      {
+        "value": 500,
+        "records": 1
+      },
+      {
+        "value": 1000,
+        "records": 59
+      },
+      {
+        "value": 1011,
+        "records": 13
+      },
+      {
+        "value": 1050,
+        "records": 14
+      },
+      {
+        "value": 1051,
+        "records": 12
+      },
+      {
+        "value": 1052,
+        "records": 12
+      },
+      {
+        "value": 1053,
+        "records": 12
+      },
+      {
+        "value": 1054,
+        "records": 12
+      },
+      {
+        "value": 1067,
+        "records": 7
+      },
+      {
+        "value": 1088,
+        "records": 1
+      },
+      {
+        "value": 1097,
+        "records": 2
+      },
+      {
+        "value": 1098,
+        "records": 1
+      },
+      {
+        "value": 1100,
+        "records": 1
+      },
+      {
+        "value": 1101,
+        "records": 6
+      },
+      {
+        "value": 1130,
+        "records": 6
+      },
+      {
+        "value": 1191,
+        "records": 1
+      },
+      {
+        "value": 1200,
+        "records": 2
+      },
+      {
+        "value": 1260,
+        "records": 1
+      },
+      {
+        "value": 1267,
+        "records": 1
+      },
+      {
+        "value": 1273,
+        "records": 3
+      },
+      {
+        "value": 1275,
+        "records": 2
+      },
+      {
+        "value": 3063,
+        "records": 1
+      },
+      {
+        "value": 3114,
+        "records": 1
+      },
+      {
+        "value": 3150,
+        "records": 1
+      },
+      {
+        "value": 3163,
+        "records": 1
+      },
+      {
+        "value": 3191,
+        "records": 2
+      },
+      {
+        "value": 3196,
+        "records": 21
+      },
+      {
+        "value": 3267,
+        "records": 2
+      },
+      {
+        "value": 3275,
+        "records": 1
+      },
+      {
+        "value": 3294,
+        "records": 1
+      },
+      {
+        "value": 3296,
+        "records": 2
+      },
+      {
+        "value": 3300,
+        "records": 1
+      },
+      {
+        "value": 3301,
+        "records": 1
+      }
+    ],
+    "record_u32_at_33": [
+      {
+        "value": 0,
+        "records": 204
+      }
+    ],
+    "unknown_region_12_to_28_nonzero_record_count_by_byte_offset": [
+      {
+        "offset": 12,
+        "records": 0
+      },
+      {
+        "offset": 13,
+        "records": 0
+      },
+      {
+        "offset": 14,
+        "records": 0
+      },
+      {
+        "offset": 15,
+        "records": 1
+      },
+      {
+        "offset": 16,
+        "records": 1
+      },
+      {
+        "offset": 17,
+        "records": 1
+      },
+      {
+        "offset": 18,
+        "records": 1
+      },
+      {
+        "offset": 19,
+        "records": 1
+      },
+      {
+        "offset": 20,
+        "records": 1
+      },
+      {
+        "offset": 21,
+        "records": 1
+      },
+      {
+        "offset": 22,
+        "records": 0
+      },
+      {
+        "offset": 23,
+        "records": 66
+      },
+      {
+        "offset": 24,
+        "records": 72
+      },
+      {
+        "offset": 25,
+        "records": 63
+      },
+      {
+        "offset": 26,
+        "records": 61
+      },
+      {
+        "offset": 27,
+        "records": 64
+      },
+      {
+        "offset": 28,
+        "records": 68
+      }
+    ],
+    "unknown_region_37_to_48_all_zero": true
+  },
+  "public_starter_matches": [
+    {
+      "catalog_id": 1000175,
+      "name_from_public_source": "Striker (M)",
+      "observed_records": 1,
+      "record_u32_at_8": [
+        {
+          "value": 85593,
+          "records": 1
+        }
+      ],
+      "record_u32_at_29": [
+        {
+          "value": 1000,
+          "records": 1
+        }
+      ],
+      "record_u32_at_33": [
+        {
+          "value": 0,
+          "records": 1
+        }
+      ],
+      "unknown_region_12_to_22_all_zero": true,
+      "unknown_region_23_to_28_all_zero": false,
+      "unknown_region_37_to_48_all_zero": true
+    },
+    {
+      "catalog_id": 2040034,
+      "name_from_public_source": "Default Striker Exo",
+      "observed_records": 1,
+      "record_u32_at_8": [
+        {
+          "value": 85582,
+          "records": 1
+        }
+      ],
+      "record_u32_at_29": [
+        {
+          "value": 1000,
+          "records": 1
+        }
+      ],
+      "record_u32_at_33": [
+        {
+          "value": 0,
+          "records": 1
+        }
+      ],
+      "unknown_region_12_to_22_all_zero": true,
+      "unknown_region_23_to_28_all_zero": false,
+      "unknown_region_37_to_48_all_zero": true
+    },
+    {
+      "catalog_id": 5135224,
+      "name_from_public_source": "Fishing Rod",
+      "observed_records": 1,
+      "record_u32_at_8": [
+        {
+          "value": 85582,
+          "records": 1
+        }
+      ],
+      "record_u32_at_29": [
+        {
+          "value": 1000,
+          "records": 1
+        }
+      ],
+      "record_u32_at_33": [
+        {
+          "value": 0,
+          "records": 1
+        }
+      ],
+      "unknown_region_12_to_22_all_zero": true,
+      "unknown_region_23_to_28_all_zero": false,
+      "unknown_region_37_to_48_all_zero": true
+    }
+  ],
+  "public_starter_source": "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/Login.cs",
+  "limits": [
+    "Only count, record stride and catalog/instance field placement have strong cross-checks; unnamed integer field semantics remain unknown.",
+    "Count controls validity: unused capacity may contain nonzero bytes.",
+    "Observed inventory contains only this account's subset, including duplicates of some catalog IDs.",
+    "No private instance/account/avatar identifiers or opaque record bytes are included.",
+    "Presence in the capture supports product ID compatibility but does not validate an original populated response serializer."
+  ]
+}

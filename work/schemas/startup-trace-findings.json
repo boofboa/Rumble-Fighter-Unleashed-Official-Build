@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "source_report_sha256": "3721f38782f889c1c7bcba46d8e15648beacc0b80f373d0bb661804e11919ced",
+  "source_report_bytes": 484865,
+  "input_csv_decoded_utf8_bytes": 114286003,
+  "rows_seen": 693863,
+  "matching_rows": 16090,
+  "retained_unique_entries": 1500,
+  "retained_matching_row_count": 4626,
+  "omitted_matching_rows": 11464,
+  "source_report_truncated": true,
+  "upper_bound_total_unique_candidates": 12964,
+  "retained_registry_entries": 1468,
+  "retained_file_or_directory_entries": 32,
+  "other_process_rows": 0,
+  "game_directory_file_observations": [
+    {
+      "retained_entry_index": 114,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "RumbleLauncher.ini",
+      "result": "NAME NOT FOUND",
+      "count": 5
+    },
+    {
+      "retained_entry_index": 171,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "__TEMP__\\temp.ini",
+      "result": "SUCCESS",
+      "count": 3
+    },
+    {
+      "retained_entry_index": 750,
+      "process": "RumbleLauncher.exe",
+      "operation": "ReadFile",
+      "path_relative_to_game_directory": "__TEMP__\\temp.ini",
+      "result": "SUCCESS",
+      "count": 1
+    },
+    {
+      "retained_entry_index": 751,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "__TEMP__\\wufilelist.ini",
+      "result": "SUCCESS",
+      "count": 7
+    },
+    {
+      "retained_entry_index": 752,
+      "process": "RumbleLauncher.exe",
+      "operation": "ReadFile",
+      "path_relative_to_game_directory": "__TEMP__\\wufilelist.ini",
+      "result": "SUCCESS",
+      "count": 5
+    },
+    {
+      "retained_entry_index": 753,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "rumfus.ini",
+      "result": "SUCCESS",
+      "count": 4
+    },
+    {
+      "retained_entry_index": 754,
+      "process": "RumbleLauncher.exe",
+      "operation": "ReadFile",
+      "path_relative_to_game_directory": "rumfus.ini",
+      "result": "SUCCESS",
+      "count": 1
+    },
+    {
+      "retained_entry_index": 756,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "__TEMP__\\rumfus.ini",
+      "result": "SUCCESS",
+      "count": 2
+    },
+    {
+      "retained_entry_index": 783,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "RumbleFighter.exe.Config",
+      "result": "NAME NOT FOUND",
+      "count": 1
+    },
+    {
+      "retained_entry_index": 939,
+      "process": "RumbleLauncher.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "__TEMP__\\temp.ini",
+      "result": "NAME NOT FOUND",
+      "count": 1
+    },
+    {
+      "retained_entry_index": 1202,
+      "process": "rumblefighter.exe",
+      "operation": "CreateFile",
+      "path_relative_to_game_directory": "GameGuard\\RumFUS.ini",
+      "result": "SUCCESS",
+      "count": 5
+    },
+    {
+      "retained_entry_index": 1203,
+      "process": "rumblefighter.exe",
+      "operation": "ReadFile",
+      "path_relative_to_game_directory": "GameGuard\\RumFUS.ini",
+      "result": "SUCCESS",
+      "count": 4
+    }
+  ],
+  "findings": [
+    "The CSV was successfully processed and its event counts are internally consistent.",
+    "No rows were rejected as belonging to other processes; both configured game process names are represented.",
+    "Most retained entries are registry queries. Review found no custom game-vendor endpoint setting among retained entries.",
+    "Launcher ReadFile SUCCESS is present for root rumfus.ini and the updater temp.ini and wufilelist.ini.",
+    "Client ReadFile SUCCESS is present for GameGuard/RumFUS.ini, a distinct path from root rumfus.ini. This does not establish the contents or purpose of either file.",
+    "Launcher RumbleLauncher.ini and RumbleFighter.exe.Config observations are NAME NOT FOUND probes; they are not successful configuration reads.",
+    "The entry cap materially limits client-side conclusions. Absence in this truncated report does not establish that a setting is absent or a server address is hardcoded.",
+    "The public patch manifest identifies root rumfus.ini as a replaceable package payload. Static launcher code verifies generic file size and CRC32, making checksum verification a supported explanation for the launcher read. The sanitized trace lacks call stacks, so the exact runtime caller is unproven."
+  ],
+  "next_action": {
+    "capture_required": false,
+    "action": "Reprocess the same existing CSV with the complete-capture review page.",
+    "requested_unique_entry_capacity": 20000,
+    "reason": "The source report establishes an upper bound of 12964 unique candidates. A capacity of 20000 removes the observed entry-count bottleneck; a separate memory guard remains.",
+    "expected_upload": "rf-startup-paths.json",
+    "review_requirement": "Review the filtered paths before sharing; keep the raw CSV/PML local."
+  },
+  "related_static_evidence": "rumfus-launcher-followup.json"
+}

@@ -1,0 +1,83 @@
+{
+  "size": 64868,
+  "sha256": "c3702693136b5fb7699dcc3c8d4582912f30cc543fe57cbf12a2a8f1f3dfdfe7",
+  "capture_start_utc": "2026-10-16T02:32:21.895896+00:00",
+  "capture_end_utc": "2026-10-16T02:33:58.795612+00:00",
+  "duration_seconds": 96.899716,
+  "packets": 196,
+  "truncated_packets": 0,
+  "interfaces": [
+    {
+      "section": 0,
+      "interface_id": 0,
+      "link": 1,
+      "snaplen": 262144,
+      "units_per_second": 1000000000,
+      "offset_seconds": 0
+    }
+  ],
+  "block_counts": {
+    "0xa0d0d0a": 1,
+    "0x1": 1,
+    "0x6": 196,
+    "0x5": 1
+  },
+  "skipped_packets": {},
+  "raw_stream_export": false,
+  "flows": [
+    {
+      "id": 1,
+      "client": "<client>",
+      "server": "<server>:7000",
+      "packet_count": 196,
+      "start_offset_seconds": 0.0,
+      "duration_seconds": 96.899716,
+      "initial_syn_present": true,
+      "syn_ack_present": true,
+      "fin_packet_count": 0,
+      "rst_packet_count": 0,
+      "directions": {
+        "client_to_server": {
+          "packets": 107,
+          "payload_packets": 72,
+          "captured_payload_bytes": 1119,
+          "unique_payload_bytes": 1119,
+          "overlap_bytes": 0,
+          "conflicting_overlap_bytes": 0,
+          "payload_packets_with_overlap": 0,
+          "sequence_ranges_relative": [
+            [
+              0,
+              1119
+            ]
+          ],
+          "missing_ranges_relative": [],
+          "start_observed_via_syn": true,
+          "possible_tls_record_header": false,
+          "stream_files": []
+        },
+        "server_to_client": {
+          "packets": 89,
+          "payload_packets": 86,
+          "captured_payload_bytes": 46191,
+          "unique_payload_bytes": 46191,
+          "overlap_bytes": 0,
+          "conflicting_overlap_bytes": 0,
+          "payload_packets_with_overlap": 0,
+          "sequence_ranges_relative": [
+            [
+              0,
+              46191
+            ]
+          ],
+          "missing_ranges_relative": [],
+          "start_observed_via_syn": true,
+          "possible_tls_record_header": false,
+          "stream_files": []
+        }
+      }
+    }
+  ],
+  "session_complete": false,
+  "completion_note": "No FIN/RST captured; complete framing is not a completed session."
+}

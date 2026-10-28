@@ -1,0 +1,22 @@
+{
+  "schema": "rf-resource-directory-validation-v1",
+  "checks_passed": [
+    "stdlib_two_entry_metadata_crosscheck",
+    "path_traversal_marked_without_extraction",
+    "truncation_rejected",
+    "unsupported_zip64_offset_rejected",
+    "known_nsz_offsets_reproduced",
+    "unsigned_descriptor_crc_equals_optional_signature",
+    "signed_descriptor_crc_equals_optional_signature"
+  ],
+  "source_sha256": "476303d19f67faf99bb142996b381dc6da2f659734f413ae7de649a591ceb394",
+  "scope": "Read-only metadata and bounds. No payload extraction, decryption or game execution.",
+  "review_fix": "Resolve signed/unsigned descriptor ambiguity using bounded comparison with directory CRC/sizes.",
+  "descriptor_collision_regression": {
+    "payload_hex": "ac0a7ad5",
+    "actual_crc32_hex": "08074b50",
+    "signed_and_unsigned_forms_accepted": true,
+    "stdlib_zipfile_payload_crc_validation_passed": true
+  },
+  "independent_source_review": "One concrete descriptor ambiguity found and fixed; no other blocking metadata-reader issue reported."
+}

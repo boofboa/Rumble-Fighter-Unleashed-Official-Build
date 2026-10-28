@@ -1,0 +1,25 @@
+# Local preservation data: credentials, captures, account records and client binaries.
+/private/
+/artifacts/
+/.venv/
+/.dotnet/
+/.dotnet-home/
+**/bin/
+**/obj/
+**/__pycache__/
+*.py[cod]
+*.pcap
+*.pcapng
+*.sqlite3*
+*.db
+*.log
+*.jsonl
+*.zip
+*.exe
+*.dll
+/work/protocol-lab/state/
+/work/protocol-lab/rf-local-handshake-*.json
+/work/reports/
+.env
+.env.*
+!.env.example

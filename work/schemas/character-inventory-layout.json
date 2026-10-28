@@ -1,0 +1,866 @@
+{
+  "schema_version": 1,
+  "purpose": "Sanitized wire-layout characterization and original local prototype contract",
+  "reference_commit": "c56f4dccdad72f2d4337ffe6fe650d8c436114d0",
+  "evidence_scope": {
+    "capture_read": "Only existing header/body-length metadata JSON was read. No captured body, account, session, token, or credential values were inspected for this task.",
+    "public_reference": "Public source inspected in memory. No source implementation or raw sample payload arrays are reproduced in this report.",
+    "offset_convention": "All offsets are relative to the body after the six-byte frame header unless explicitly marked record-relative.",
+    "numeric_endianness": "Public source BitConverter operations assume little-endian hosts; wire helpers explicitly choose little-endian.",
+    "confidence_rule": "Matching lengths support frame shapes, not field meanings or real-client acceptance."
+  },
+  "operations": [
+    {
+      "name": "property_inventory",
+      "type": "0x0030",
+      "request_action": "0x0084",
+      "response_action": "0x0085",
+      "observed_request_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0084",
+          "body_bytes": 11,
+          "occurrences": 3
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0085",
+          "body_bytes": 3922,
+          "occurrences": 3
+        }
+      ],
+      "request_fields": [
+        {
+          "name": "account_id",
+          "body_offset": 0,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        },
+        {
+          "name": "opaque_tail",
+          "body_offset": 4,
+          "width_bytes": 7,
+          "encoding": "opaque",
+          "confidence": "unknown"
+        }
+      ],
+      "response_body_bytes": 3922,
+      "response_fields": [
+        {
+          "name": "item_count",
+          "body_offset": 0,
+          "width_bytes": 2,
+          "encoding": "uint16_le",
+          "confidence": "inferred_from_overlapping_reference_writes"
+        }
+      ],
+      "records": {
+        "body_offset": 2,
+        "capacity": 80,
+        "stride_bytes": 49,
+        "fields": [
+          {
+            "name": "instance_id",
+            "record_offset": 0,
+            "width_bytes": 4,
+            "encoding": "int32_le"
+          },
+          {
+            "name": "catalog_item_id",
+            "record_offset": 4,
+            "width_bytes": 4,
+            "encoding": "int32_le"
+          },
+          {
+            "name": "unknown_word",
+            "record_offset": 8,
+            "width_bytes": 4,
+            "encoding": "int32_le",
+            "semantics": "Unexplained hardcoded reference value; not adopted as a local default."
+          },
+          {
+            "name": "unknown_region_a",
+            "record_offset": 12,
+            "width_bytes": 17,
+            "encoding": "opaque"
+          },
+          {
+            "name": "item_end",
+            "record_offset": 29,
+            "width_bytes": 4,
+            "encoding": "int32_le",
+            "semantics": "Expiry/duration meaning not established."
+          },
+          {
+            "name": "stat_modifier",
+            "record_offset": 33,
+            "width_bytes": 4,
+            "encoding": "int32_le",
+            "semantics": "Not verified against current client."
+          },
+          {
+            "name": "unknown_region_b",
+            "record_offset": 37,
+            "width_bytes": 12,
+            "encoding": "opaque"
+          }
+        ]
+      },
+      "empty_format": {
+        "body_bytes": 3922,
+        "count": 0,
+        "remaining_bytes": "synthetic zero fill",
+        "status": "implemented as empty_property_response; current-client acceptance untested"
+      },
+      "caveats": [
+        "Source writes a 32-bit count at body0 then overwrites its upper half with first instance_id at body2. Intended 16-bit count is inferred.",
+        "Source declared ItemType offset overlaps item_end and is never written.",
+        "The seven request-tail bytes are unidentified; pagination/filter interpretation remains unknown.",
+        "Populated inventory serialization is deliberately not implemented; unknown flags and catalog assets cannot be validated by lengths."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/GetProperty.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs"
+      ]
+    },
+    {
+      "name": "avatar_identifiers",
+      "type": "0x0030",
+      "request_action": "0x0086",
+      "response_action": "0x0087",
+      "observed_request_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0086",
+          "body_bytes": 4,
+          "occurrences": 1
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0087",
+          "body_bytes": 81,
+          "occurrences": 1
+        }
+      ],
+      "request_fields": [
+        {
+          "name": "account_id_candidate",
+          "body_offset": 0,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "inferred_request_width"
+        }
+      ],
+      "response_body_bytes_observed": 81,
+      "response_fields_hypotheses": [
+        {
+          "name": "count_candidate",
+          "body_offset": 0,
+          "width_bytes": 1,
+          "encoding": "uint8",
+          "confidence": "low"
+        },
+        {
+          "name": "first_avatar_identifier_candidate",
+          "body_offset": 1,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        }
+      ],
+      "implemented": false,
+      "caveats": [
+        "Reference request parser reads one byte while observed request body is four bytes.",
+        "Reference allocates body size 2+4*N, writes 32-bit count at body0, then writes first identifier at body1, overlapping count.",
+        "The source empty serializer allocates only two body bytes but attempts a four-byte count write.",
+        "Observed body81 cannot equal 2+4*N for any integer N.",
+        "A fixed body with count plus 20 identifiers would fit81 bytes arithmetically but is not established. No such serializer is supplied."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/Avatars.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs"
+      ]
+    },
+    {
+      "name": "avatar_equipment",
+      "type": "0x0030",
+      "request_action": "0x0088",
+      "response_action": "0x0089",
+      "observed_request_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0088",
+          "body_bytes": 4,
+          "occurrences": 10
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0089",
+          "body_bytes": 360,
+          "occurrences": 10
+        }
+      ],
+      "request_fields": [
+        {
+          "name": "avatar_id",
+          "body_offset": 0,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        }
+      ],
+      "response_body_bytes": 360,
+      "response_fields": [
+        {
+          "name": "Job",
+          "body_offset": 0,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Hair",
+          "body_offset": 4,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Forehead",
+          "body_offset": 8,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Top",
+          "body_offset": 12,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Bottom",
+          "body_offset": 16,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Gloves",
+          "body_offset": 20,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Shoes",
+          "body_offset": 24,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Eyes",
+          "body_offset": 28,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Nose",
+          "body_offset": 32,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Mouth",
+          "body_offset": 36,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Scroll",
+          "body_offset": 40,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "ExoA",
+          "body_offset": 44,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "ExoB",
+          "body_offset": 48,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Null",
+          "body_offset": 52,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Back",
+          "body_offset": 56,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Neck",
+          "body_offset": 60,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Ears",
+          "body_offset": 64,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Glasses",
+          "body_offset": 68,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Mask",
+          "body_offset": 72,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Waist",
+          "body_offset": 76,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Scroll_BU",
+          "body_offset": 80,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_1",
+          "body_offset": 84,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_2",
+          "body_offset": 88,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Inventory_1",
+          "body_offset": 92,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Inventory_2",
+          "body_offset": 96,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Inventory_3",
+          "body_offset": 100,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_3",
+          "body_offset": 104,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_4",
+          "body_offset": 108,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_5",
+          "body_offset": 112,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_6",
+          "body_offset": 116,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Unknown_7",
+          "body_offset": 120,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Title",
+          "body_offset": 124,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Merit",
+          "body_offset": 128,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Avalon",
+          "body_offset": 132,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Hair_BP",
+          "body_offset": 136,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Top_BP",
+          "body_offset": 140,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Bottom_BP",
+          "body_offset": 144,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Gloves_BP",
+          "body_offset": 148,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Shoes_BP",
+          "body_offset": 152,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Back_BP",
+          "body_offset": 156,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Neck_BP",
+          "body_offset": 160,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Ears_BP",
+          "body_offset": 164,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Glasses_BP",
+          "body_offset": 168,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Mask_BP",
+          "body_offset": 172,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "Waist_BP",
+          "body_offset": 176,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_order_plus_length_match"
+        },
+        {
+          "name": "unknown_tail",
+          "body_offset": 180,
+          "width_bytes": 180,
+          "encoding": "opaque",
+          "confidence": "unknown"
+        }
+      ],
+      "semantics": "Slot values reference owned item instances in the public model; they are not product/catalog IDs. Avatar identifier is not included in this response body.",
+      "empty_format": {
+        "body_bytes": 360,
+        "slot_references": "45 zero int32 values",
+        "unknown_tail": "180 synthetic zero bytes",
+        "status": "implemented as AvatarEquipment defaults; real-client acceptance untested"
+      },
+      "caveats": [
+        "Reference allocates46 integer entries because a reflected non-slot property is counted, fills only45, then appends176 zero bytes. Its resulting180-byte zero tail is an implementation artifact, not a documented current field map.",
+        "Unknown fields and secondary regions are not claimed to be understood.",
+        "No default class, catalog item, character mesh, or starter asset identifier is invented.",
+        "Caller must enforce avatar ownership before serializing."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/Avatars.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Persistence/Models/ModelAvatar.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/AvatarDef.cs"
+      ]
+    },
+    {
+      "name": "equipped_avatar",
+      "type": "0x0040",
+      "request_action": "0x00a0",
+      "response_action": "0x00a1",
+      "observed_request_lengths": [
+        {
+          "type": "0x0040",
+          "action": "0x00a0",
+          "body_bytes": 0,
+          "occurrences": 1
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0040",
+          "action": "0x00a1",
+          "body_bytes": 4,
+          "occurrences": 1
+        }
+      ],
+      "request_fields": [],
+      "response_body_bytes": 4,
+      "response_fields": [
+        {
+          "name": "avatar_id",
+          "body_offset": 0,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        }
+      ],
+      "implemented": true,
+      "caveats": [
+        "Public handler selects an existing avatar and sends no response if none exists. A no-avatar sentinel is not established.",
+        "Local helper requires a positive local identifier; caller must verify ownership."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/Avatars.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/Query.cs"
+      ]
+    },
+    {
+      "name": "cash_balances",
+      "type": "0x0031",
+      "request_action": "0x0088",
+      "response_action": "0x0089",
+      "observed_request_lengths": [
+        {
+          "type": "0x0031",
+          "action": "0x0088",
+          "body_bytes": 0,
+          "occurrences": 1
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0031",
+          "action": "0x0089",
+          "body_bytes": 12,
+          "occurrences": 1
+        }
+      ],
+      "request_fields": [],
+      "response_body_bytes": 12,
+      "response_fields": [
+        {
+          "name": "account_id",
+          "body_offset": 0,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        },
+        {
+          "name": "cash",
+          "body_offset": 4,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        },
+        {
+          "name": "medals",
+          "body_offset": 8,
+          "width_bytes": 4,
+          "encoding": "int32_le",
+          "confidence": "public_source_only"
+        }
+      ],
+      "implemented": true,
+      "caveats": [
+        "Public handler hardcodes example currency amounts; local helper uses only caller-provided local account values.",
+        "Carats are not part of this response.",
+        "Field meanings are public-reference based, not derived from captured balances."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/GetCash.cs",
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/Inventory.cs"
+      ]
+    },
+    {
+      "name": "add_item",
+      "type": "0x0031",
+      "request_action": "0x008a",
+      "response_action": "0x008b",
+      "observed_request_lengths": [
+        {
+          "type": "0x0031",
+          "action": "0x008a",
+          "body_bytes": 10,
+          "occurrences": 2
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0031",
+          "action": "0x008b",
+          "body_bytes": 47,
+          "occurrences": 1
+        }
+      ],
+      "request_body_bytes_observed": 10,
+      "response_body_bytes_observed": 47,
+      "error_response": {
+        "type": "0x0031",
+        "action": "0x018b",
+        "body_bytes": 514
+      },
+      "implemented": false,
+      "caveats": [
+        "Public implementation only sends a hardcoded failure example, including unrelated raw bytes.",
+        "No valid item grant, purchase, inventory mutation, or successful47-byte response layout is established."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/Inventory.cs"
+      ]
+    },
+    {
+      "name": "received_gifts",
+      "type": "0x0030",
+      "request_action": "0x0092",
+      "response_action": "0x0093",
+      "observed_request_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0092",
+          "body_bytes": 0,
+          "occurrences": 1
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0093",
+          "body_bytes": 3501,
+          "occurrences": 1
+        }
+      ],
+      "response_body_bytes": 3501,
+      "implemented": false,
+      "empty_format": {
+        "status": "not established",
+        "candidate": "all-zero body may be a useful later experiment but is not justified as a verified empty-list serializer"
+      },
+      "caveats": [
+        "Public handler is a raw example array with nonzero body bytes; no named record/count serializer is provided."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs"
+      ]
+    },
+    {
+      "name": "sent_gifts",
+      "type": "0x0030",
+      "request_action": "0x0090",
+      "response_action": "0x0091",
+      "observed_request_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0090",
+          "body_bytes": 0,
+          "occurrences": 1
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0030",
+          "action": "0x0091",
+          "body_bytes": 3501,
+          "occurrences": 1
+        }
+      ],
+      "response_body_bytes": 3501,
+      "implemented": false,
+      "caveats": [
+        "Same unresolved empty-list issue as received gifts; no raw payload arrays copied."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs"
+      ]
+    },
+    {
+      "name": "buddies",
+      "type": "0x0010",
+      "request_action": "0x00a8",
+      "response_action": "0x00a9",
+      "observed_request_lengths": [
+        {
+          "type": "0x0010",
+          "action": "0x00a8",
+          "body_bytes": 4,
+          "occurrences": 1
+        }
+      ],
+      "observed_response_lengths": [
+        {
+          "type": "0x0010",
+          "action": "0x00a9",
+          "body_bytes": 3002,
+          "occurrences": 1
+        }
+      ],
+      "request_body_bytes_observed": 4,
+      "response_body_bytes_observed": 3002,
+      "implemented": false,
+      "caveats": [
+        "Source comment says big-endian count, but writes the original ushort with BinaryWriter, yielding little-endian; swapped temporary is unused.",
+        "Observed body3002 matches2+30*100, but length alone does not establish whether the current server uses fixed100-slot capacity or100 logical records.",
+        "No social-list payload values were read, and no buddy-list serializer was implemented."
+      ],
+      "sources": [
+        "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/BuddyList.cs"
+      ],
+      "response_fields": [
+        {
+          "name": "buddy_count",
+          "body_offset": 0,
+          "width_bytes": 2,
+          "encoding": "uint16_le",
+          "confidence": "public_source_only"
+        }
+      ],
+      "records": {
+        "body_offset": 2,
+        "stride_bytes": 30,
+        "fields": [
+          {
+            "name": "local_user_id",
+            "record_offset": 0,
+            "width_bytes": 4,
+            "encoding": "int32_le"
+          },
+          {
+            "name": "display_name",
+            "record_offset": 4,
+            "width_bytes": 24,
+            "encoding": "ascii_zero_padded"
+          },
+          {
+            "name": "relationship_status",
+            "record_offset": 28,
+            "width_bytes": 1,
+            "encoding": "uint8"
+          },
+          {
+            "name": "presence_status",
+            "record_offset": 29,
+            "width_bytes": 1,
+            "encoding": "uint8"
+          }
+        ]
+      },
+      "reference_body_length_formula": "2 + 30 * buddy_count",
+      "empty_format": {
+        "body_bytes": 2,
+        "count": 0,
+        "bytes": "two synthetic zero bytes",
+        "status": "public serializer empty-list shape; not implemented here and current-client acceptance untested"
+      }
+    }
+  ],
+  "original_implementation": {
+    "module": "rf-protocol-lab/character_wire.py",
+    "tests": "rf-protocol-lab/test_character_wire.py",
+    "functions": [
+      "parse_property_request",
+      "parse_avatar_equipment_request",
+      "require_empty_request",
+      "empty_property_response",
+      "avatar_equipment_response",
+      "equipped_avatar_response",
+      "cash_response"
+    ],
+    "not_implemented": [
+      "avatar ID enumeration",
+      "populated item records",
+      "equipping mutations",
+      "purchases or item grants",
+      "gift-list serialization",
+      "buddy-list serialization"
+    ],
+    "security_boundary": "Pure functions only. Authentication, account/avatar ownership, local persistence, and network binding are caller responsibilities."
+  }
+}

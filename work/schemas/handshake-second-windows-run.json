@@ -1,0 +1,92 @@
+{
+  "schema": "rf-second-windows-run-v1",
+  "source_file": "rf-local-handshake-20261016-045615-e238733e.json",
+  "source_sha256": "53dbeae480e68066175064f2d7eab5913b5945ff7b7cba54481af3c66817afe1",
+  "reported_result": {
+    "schema": "rf-local-handshake-v1",
+    "script_version": "1.1",
+    "test_id": "e238733ed84743c398ce30a4008f9eed",
+    "mode": "version_handshake",
+    "started_utc": "2026-10-16T04:56:15.3536225Z",
+    "status": "probe_finished",
+    "error_code": null,
+    "error_detail": null,
+    "checks": {
+      "probe_selftest": true,
+      "journal_create_replace_readback": true,
+      "unique_software_loopback": true,
+      "existing_configuration_clear": true,
+      "temporary_address_verified": true,
+      "persistent_address_absent": true,
+      "temporary_address_and_route_verified": true,
+      "ownership_journal_updated": true,
+      "probe_ready": true
+    },
+    "observed_address": {
+      "count": 1,
+      "samples": [
+        {
+          "state": "Preferred",
+          "prefix_length": 32,
+          "interface_matches_expected": true,
+          "skip_as_source": true,
+          "skip_as_source_present": true
+        }
+      ]
+    },
+    "game_peer_correlated": true,
+    "correlated_process_name": "rumblefighter",
+    "client_build_verified": true,
+    "client_build_check": "verified",
+    "probe": {
+      "status": "connection_ended",
+      "request_type": 0,
+      "request_action": 0,
+      "request_bytes": 0,
+      "reply_bytes": 0,
+      "reply_written": false,
+      "synthetic_socket_check": true,
+      "error_code": "io_or_read_deadline"
+    },
+    "cleanup": {
+      "status": "verified_removed",
+      "error_code": null,
+      "address_absent": true,
+      "route_absent": true,
+      "journal_removed": true,
+      "listener_stopped": true
+    },
+    "limits": [
+      "The temporary address makes this one destination IP local for all ports and protocols; only TCP 7000 is serviced.",
+      "No login, account, GameGuard, other-service or gameplay compatibility is tested.",
+      "ReplyWritten means the local probe handed the acknowledgement to its socket; it does not prove application-level acceptance.",
+      "Closing or killing this window abruptly may leave the volatile address until CleanupLocalHandshake.cmd or a reboot."
+    ],
+    "finished_utc": "2026-10-16T04:57:19.4947133Z"
+  },
+  "established": [
+    "State-file create/replace/readback passed.",
+    "Software-loopback address, route, synthetic local connection and listener readiness verified.",
+    "The actual rumblefighter process with the pinned executable hash established a TCP connection to the local probe.",
+    "Cleanup stopped the listener and verified that the temporary address and route were absent."
+  ],
+  "not_established": [
+    "A complete version header was not recorded.",
+    "No version acknowledgement was written.",
+    "The first-run root cause is still not conclusively identified, although revised setup succeeded.",
+    "Application protocol compatibility, login, gameplay and fully offline operation are not validated."
+  ],
+  "report_limit": "In version 1.1 request_bytes is set only after a complete six-byte header is read. Zero therefore cannot exclude 1-5 partial bytes. io_or_read_deadline conflates timeout, EOF/reset and other IO.",
+  "existing_capture_timing": {
+    "syn_to_first_client_payload_seconds": 32.259742,
+    "first_client_payload_bytes": 26,
+    "first_server_reply_bytes": 6,
+    "next_client_payload_bytes": 91,
+    "reply_to_login_frame_seconds": 0.000232
+  },
+  "inference": "Version frames immediately precede login attempts in the original capture. A Sign In trigger is plausible but not proven because no UI events were recorded.",
+  "next_test": "Keep the same verified local route and exact-build checks; allow a bounded 120-second overall window, wait for first bytes before starting the 5-second frame-completion deadline, and request one Sign In with invented values only after local peer verification.",
+  "data_limits": "The probe reads at most 26 bytes, handles only the opening version request, writes at most six acknowledgement bytes, then closes. No login body is read or stored.",
+  "revised_version": "1.2",
+  "revised_version_windows_run_performed": false
+}

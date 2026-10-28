@@ -1,0 +1,1174 @@
+{
+  "capture_sha256": "c3702693136b5fb7699dcc3c8d4582912f30cc543fe57cbf12a2a8f1f3dfdfe7",
+  "capture_bytes": 64868,
+  "cipher_hypothesis": "independent continuous RC4 per direction; reference key",
+  "payload_output": false,
+  "warning": "Framing compatibility does not establish a working game server.",
+  "flows": [
+    {
+      "flow_index": 1,
+      "server_port": 7000,
+      "client_address": "redacted",
+      "server_address": "redacted",
+      "directions": {
+        "client_to_server": {
+          "input_bytes": 1119,
+          "parsed_bytes": 1119,
+          "unparsed_bytes": 0,
+          "status": "complete",
+          "frame_count": 72,
+          "known_type_count": 72,
+          "frames": [
+            {
+              "offset": 0,
+              "type": "0x0010",
+              "action": "0x0090",
+              "total_bytes": 26,
+              "body_bytes": 20,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 26,
+              "type": "0x0010",
+              "action": "0x0084",
+              "total_bytes": 91,
+              "body_bytes": 85,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 117,
+              "type": "0x0010",
+              "action": "0x0090",
+              "total_bytes": 26,
+              "body_bytes": 20,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 143,
+              "type": "0x0010",
+              "action": "0x0084",
+              "total_bytes": 91,
+              "body_bytes": 85,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 234,
+              "type": "0x0010",
+              "action": "0x0092",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 240,
+              "type": "0x0048",
+              "action": "0x0080",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 246,
+              "type": "0x0010",
+              "action": "0x00d0",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 252,
+              "type": "0x0031",
+              "action": "0x0088",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 258,
+              "type": "0x0010",
+              "action": "0x0092",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 264,
+              "type": "0x0030",
+              "action": "0x0084",
+              "total_bytes": 17,
+              "body_bytes": 11,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 281,
+              "type": "0x0030",
+              "action": "0x0084",
+              "total_bytes": 17,
+              "body_bytes": 11,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 298,
+              "type": "0x0030",
+              "action": "0x0084",
+              "total_bytes": 17,
+              "body_bytes": 11,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 315,
+              "type": "0x0030",
+              "action": "0x0092",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 321,
+              "type": "0x0030",
+              "action": "0x0090",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 327,
+              "type": "0x0010",
+              "action": "0x00a8",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 337,
+              "type": "0x0033",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 351,
+              "type": "0x0033",
+              "action": "0x008a",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 361,
+              "type": "0x0033",
+              "action": "0x0090",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 371,
+              "type": "0x0033",
+              "action": "0x008e",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 381,
+              "type": "0x0030",
+              "action": "0x0086",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 391,
+              "type": "0x0040",
+              "action": "0x00a0",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 397,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 407,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 417,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 427,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 437,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 447,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 457,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 467,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 477,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 487,
+              "type": "0x0030",
+              "action": "0x0088",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 497,
+              "type": "0x0030",
+              "action": "0x00a0",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 503,
+              "type": "0x0030",
+              "action": "0x00b4",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 513,
+              "type": "0x0030",
+              "action": "0x00b4",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 523,
+              "type": "0x0030",
+              "action": "0x00b4",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 533,
+              "type": "0x0030",
+              "action": "0x00b4",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 543,
+              "type": "0x0030",
+              "action": "0x00b4",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 553,
+              "type": "0x0048",
+              "action": "0x0042",
+              "total_bytes": 116,
+              "body_bytes": 110,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 669,
+              "type": "0x0030",
+              "action": "0x00b2",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 675,
+              "type": "0x0030",
+              "action": "0x00be",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 689,
+              "type": "0x0031",
+              "action": "0x00c8",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 695,
+              "type": "0x0030",
+              "action": "0x00ba",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 701,
+              "type": "0x0030",
+              "action": "0x00bc",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 707,
+              "type": "0x0030",
+              "action": "0x00cc",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 721,
+              "type": "0x0030",
+              "action": "0x00cc",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 735,
+              "type": "0x0030",
+              "action": "0x00cc",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 749,
+              "type": "0x0030",
+              "action": "0x00cc",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 763,
+              "type": "0x0030",
+              "action": "0x00cc",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 777,
+              "type": "0x0010",
+              "action": "0x0092",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 783,
+              "type": "0x0031",
+              "action": "0x008e",
+              "total_bytes": 8,
+              "body_bytes": 2,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 791,
+              "type": "0x0030",
+              "action": "0x00a0",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 797,
+              "type": "0x0031",
+              "action": "0x008a",
+              "total_bytes": 16,
+              "body_bytes": 10,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 813,
+              "type": "0x0031",
+              "action": "0x008a",
+              "total_bytes": 16,
+              "body_bytes": 10,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 829,
+              "type": "0x0030",
+              "action": "0x008e",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 839,
+              "type": "0x0030",
+              "action": "0x00a0",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 845,
+              "type": "0x0030",
+              "action": "0x00bc",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 851,
+              "type": "0x0010",
+              "action": "0x00b6",
+              "total_bytes": 7,
+              "body_bytes": 1,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 858,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 872,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 886,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 900,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 914,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 928,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 942,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 956,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 970,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 984,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 998,
+              "type": "0x0040",
+              "action": "0x0080",
+              "total_bytes": 65,
+              "body_bytes": 59,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 1063,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 1077,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 1091,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 1105,
+              "type": "0x0040",
+              "action": "0x0084",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            }
+          ]
+        },
+        "server_to_client": {
+          "input_bytes": 46191,
+          "parsed_bytes": 46191,
+          "unparsed_bytes": 0,
+          "status": "complete",
+          "frame_count": 70,
+          "known_type_count": 67,
+          "frames": [
+            {
+              "offset": 0,
+              "type": "0x0010",
+              "action": "0x0091",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 6,
+              "type": "0x0210",
+              "action": "0x0285",
+              "total_bytes": 520,
+              "body_bytes": 514,
+              "type_known_to_reference": false
+            },
+            {
+              "offset": 526,
+              "type": "0x0010",
+              "action": "0x0091",
+              "total_bytes": 6,
+              "body_bytes": 0,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 532,
+              "type": "0x0010",
+              "action": "0x0085",
+              "total_bytes": 326,
+              "body_bytes": 320,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 858,
+              "type": "0x0010",
+              "action": "0x0093",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 872,
+              "type": "0x0048",
+              "action": "0x0081",
+              "total_bytes": 68,
+              "body_bytes": 62,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 940,
+              "type": "0x0010",
+              "action": "0x00d1",
+              "total_bytes": 8,
+              "body_bytes": 2,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 948,
+              "type": "0x0031",
+              "action": "0x0089",
+              "total_bytes": 18,
+              "body_bytes": 12,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 966,
+              "type": "0x0010",
+              "action": "0x0093",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 980,
+              "type": "0x0030",
+              "action": "0x0085",
+              "total_bytes": 3928,
+              "body_bytes": 3922,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 4908,
+              "type": "0x0030",
+              "action": "0x0085",
+              "total_bytes": 3928,
+              "body_bytes": 3922,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 8836,
+              "type": "0x0030",
+              "action": "0x0085",
+              "total_bytes": 3928,
+              "body_bytes": 3922,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 12764,
+              "type": "0x0030",
+              "action": "0x0093",
+              "total_bytes": 3507,
+              "body_bytes": 3501,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 16271,
+              "type": "0x0030",
+              "action": "0x0091",
+              "total_bytes": 3507,
+              "body_bytes": 3501,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 19778,
+              "type": "0x0010",
+              "action": "0x00a9",
+              "total_bytes": 3008,
+              "body_bytes": 3002,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 22786,
+              "type": "0x0033",
+              "action": "0x0085",
+              "total_bytes": 580,
+              "body_bytes": 574,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 23366,
+              "type": "0x0033",
+              "action": "0x008b",
+              "total_bytes": 139,
+              "body_bytes": 133,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 23505,
+              "type": "0x0033",
+              "action": "0x0091",
+              "total_bytes": 18,
+              "body_bytes": 12,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 23523,
+              "type": "0x0033",
+              "action": "0x008f",
+              "total_bytes": 880,
+              "body_bytes": 874,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 24403,
+              "type": "0x0030",
+              "action": "0x0087",
+              "total_bytes": 87,
+              "body_bytes": 81,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 24490,
+              "type": "0x0040",
+              "action": "0x00a1",
+              "total_bytes": 10,
+              "body_bytes": 4,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 24500,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 24866,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 25232,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 25598,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 25964,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 26330,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 26696,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 27062,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 27428,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 27794,
+              "type": "0x0030",
+              "action": "0x0089",
+              "total_bytes": 366,
+              "body_bytes": 360,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28160,
+              "type": "0x0030",
+              "action": "0x00a1",
+              "total_bytes": 423,
+              "body_bytes": 417,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28583,
+              "type": "0x0030",
+              "action": "0x00b5",
+              "total_bytes": 25,
+              "body_bytes": 19,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28608,
+              "type": "0x0030",
+              "action": "0x00b5",
+              "total_bytes": 25,
+              "body_bytes": 19,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28633,
+              "type": "0x0030",
+              "action": "0x00b5",
+              "total_bytes": 25,
+              "body_bytes": 19,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28658,
+              "type": "0x0030",
+              "action": "0x00b5",
+              "total_bytes": 25,
+              "body_bytes": 19,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28683,
+              "type": "0x0030",
+              "action": "0x00b5",
+              "total_bytes": 25,
+              "body_bytes": 19,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28708,
+              "type": "0x0030",
+              "action": "0x00b3",
+              "total_bytes": 46,
+              "body_bytes": 40,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28754,
+              "type": "0x0030",
+              "action": "0x00bf",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28768,
+              "type": "0x0031",
+              "action": "0x00c9",
+              "total_bytes": 43,
+              "body_bytes": 37,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28811,
+              "type": "0x0030",
+              "action": "0x00bb",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28825,
+              "type": "0x0030",
+              "action": "0x00bd",
+              "total_bytes": 47,
+              "body_bytes": 41,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 28872,
+              "type": "0x0030",
+              "action": "0x00cd",
+              "total_bytes": 1810,
+              "body_bytes": 1804,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 30682,
+              "type": "0x0030",
+              "action": "0x00cd",
+              "total_bytes": 1810,
+              "body_bytes": 1804,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 32492,
+              "type": "0x0030",
+              "action": "0x00cd",
+              "total_bytes": 1810,
+              "body_bytes": 1804,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 34302,
+              "type": "0x0030",
+              "action": "0x00cd",
+              "total_bytes": 1810,
+              "body_bytes": 1804,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 36112,
+              "type": "0x0030",
+              "action": "0x00cd",
+              "total_bytes": 1810,
+              "body_bytes": 1804,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 37922,
+              "type": "0x0010",
+              "action": "0x0093",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 37936,
+              "type": "0x0031",
+              "action": "0x008f",
+              "total_bytes": 19,
+              "body_bytes": 13,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 37955,
+              "type": "0x0030",
+              "action": "0x00a1",
+              "total_bytes": 423,
+              "body_bytes": 417,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 38378,
+              "type": "0x0031",
+              "action": "0x018b",
+              "total_bytes": 520,
+              "body_bytes": 514,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 38898,
+              "type": "0x0031",
+              "action": "0x008b",
+              "total_bytes": 53,
+              "body_bytes": 47,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 38951,
+              "type": "0x0030",
+              "action": "0x008f",
+              "total_bytes": 14,
+              "body_bytes": 8,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 38965,
+              "type": "0x0030",
+              "action": "0x00a1",
+              "total_bytes": 423,
+              "body_bytes": 417,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 39388,
+              "type": "0x0030",
+              "action": "0x00bd",
+              "total_bytes": 47,
+              "body_bytes": 41,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 39435,
+              "type": "0x0210",
+              "action": "0x00b7",
+              "total_bytes": 7,
+              "body_bytes": 1,
+              "type_known_to_reference": false
+            },
+            {
+              "offset": 39442,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 39904,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 40366,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 40828,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 41290,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 41752,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 42214,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 42676,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 43138,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 43600,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 44062,
+              "type": "0x0240",
+              "action": "0x0181",
+              "total_bytes": 520,
+              "body_bytes": 514,
+              "type_known_to_reference": false
+            },
+            {
+              "offset": 44582,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 45044,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 462,
+              "body_bytes": 456,
+              "type_known_to_reference": true
+            },
+            {
+              "offset": 45506,
+              "type": "0x0040",
+              "action": "0x0085",
+              "total_bytes": 685,
+              "body_bytes": 679,
+              "type_known_to_reference": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "skipped_packet_types": {}
+}

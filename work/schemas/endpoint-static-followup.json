@@ -1,0 +1,1647 @@
+{
+  "scope": "Read-only offline analysis of the supplied client and a bounded first-stage decompression; no Windows execution, imports, calls to game services, client patches or session payloads.",
+  "source": {
+    "sha256": "94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59",
+    "bytes": 4217600,
+    "architecture": "PE32 i386",
+    "image_base": "0x400000",
+    "entry_preferred_va": "0xcc9058"
+  },
+  "endpoint_hypothesis": {
+    "address": "5.188.32.117",
+    "confirmed_capture_port": 7000,
+    "ports_scanned": [
+      7000,
+      3416
+    ],
+    "origin": "Observed capture establishes 5.188.32.117:7000. Port 3416 was separately observed in Windows diagnostics; its association with this IP is not asserted here."
+  },
+  "on_disk_scan": {
+    "sha256": "94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59",
+    "file_size": 4217600,
+    "strong_patterns": {
+      "ipv4_ascii": [],
+      "ipv4_utf16le": [],
+      "ipv4_utf16be": [],
+      "ipv4_network_bytes": [],
+      "ipv4_reversed_bytes": [],
+      "ipv4_decimal_network_integer_ascii": [],
+      "ipv4_decimal_reversed_integer_ascii": [],
+      "port_7000_ascii": [
+        {
+          "file_offset": "0x404bcd",
+          "section": "headers_or_certificate_or_overlay"
+        }
+      ],
+      "port_7000_utf16le": [],
+      "port_7000_utf16be": [],
+      "port_7000_uint32_le": [],
+      "port_7000_uint32_be": [],
+      "sockaddr_ipv4_7000": [],
+      "sockaddr_reversed_port_7000": [],
+      "port_3416_ascii": [],
+      "port_3416_utf16le": [],
+      "port_3416_utf16be": [],
+      "port_3416_uint32_le": [],
+      "port_3416_uint32_be": [],
+      "sockaddr_ipv4_3416": [],
+      "sockaddr_reversed_port_3416": []
+    },
+    "short_pattern_hits": {
+      "port_7000_uint16_le": {
+        "count": 56,
+        "sections": {
+          "unnamed_0": 24,
+          "unnamed_1": 3,
+          ".boot": 29
+        },
+        "matches": [
+          {
+            "file_offset": "0x656e",
+            "section": "unnamed_0",
+            "rva": "0x6f6e",
+            "preferred_va": "0x406f6e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xebd9",
+            "section": "unnamed_0",
+            "rva": "0xf5d9",
+            "preferred_va": "0x40f5d9",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xf27e",
+            "section": "unnamed_0",
+            "rva": "0xfc7e",
+            "preferred_va": "0x40fc7e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1b4f9",
+            "section": "unnamed_0",
+            "rva": "0x1bef9",
+            "preferred_va": "0x41bef9",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x23856",
+            "section": "unnamed_0",
+            "rva": "0x24256",
+            "preferred_va": "0x424256",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x44d7a",
+            "section": "unnamed_0",
+            "rva": "0x4577a",
+            "preferred_va": "0x44577a",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x4af38",
+            "section": "unnamed_0",
+            "rva": "0x4b938",
+            "preferred_va": "0x44b938",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x5a956",
+            "section": "unnamed_0",
+            "rva": "0x5b356",
+            "preferred_va": "0x45b356",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x66390",
+            "section": "unnamed_0",
+            "rva": "0x66d90",
+            "preferred_va": "0x466d90",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x6d172",
+            "section": "unnamed_0",
+            "rva": "0x6db72",
+            "preferred_va": "0x46db72",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x857de",
+            "section": "unnamed_0",
+            "rva": "0x861de",
+            "preferred_va": "0x4861de",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x887e9",
+            "section": "unnamed_0",
+            "rva": "0x891e9",
+            "preferred_va": "0x4891e9",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x97833",
+            "section": "unnamed_0",
+            "rva": "0x98233",
+            "preferred_va": "0x498233",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x9b078",
+            "section": "unnamed_0",
+            "rva": "0x9ba78",
+            "preferred_va": "0x49ba78",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x9d209",
+            "section": "unnamed_0",
+            "rva": "0x9dc09",
+            "preferred_va": "0x49dc09",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xa0539",
+            "section": "unnamed_0",
+            "rva": "0xa0f39",
+            "preferred_va": "0x4a0f39",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xb0236",
+            "section": "unnamed_0",
+            "rva": "0xb0c36",
+            "preferred_va": "0x4b0c36",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xb3c1e",
+            "section": "unnamed_0",
+            "rva": "0xb461e",
+            "preferred_va": "0x4b461e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xbf572",
+            "section": "unnamed_0",
+            "rva": "0xbff72",
+            "preferred_va": "0x4bff72",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc882c",
+            "section": "unnamed_0",
+            "rva": "0xc922c",
+            "preferred_va": "0x4c922c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xd2fff",
+            "section": "unnamed_0",
+            "rva": "0xd39ff",
+            "preferred_va": "0x4d39ff",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xd776e",
+            "section": "unnamed_0",
+            "rva": "0xd816e",
+            "preferred_va": "0x4d816e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xf6df0",
+            "section": "unnamed_0",
+            "rva": "0xf77f0",
+            "preferred_va": "0x4f77f0",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x12242c",
+            "section": "unnamed_0",
+            "rva": "0x122e2c",
+            "preferred_va": "0x522e2c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x138bb7",
+            "section": "unnamed_1",
+            "rva": "0x3409b7",
+            "preferred_va": "0x7409b7",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x1424e5",
+            "section": "unnamed_1",
+            "rva": "0x34a2e5",
+            "preferred_va": "0x74a2e5",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x146dad",
+            "section": "unnamed_1",
+            "rva": "0x34ebad",
+            "preferred_va": "0x74ebad",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x171f2a",
+            "section": ".boot",
+            "rva": "0x8cb92a",
+            "preferred_va": "0xccb92a",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x19da72",
+            "section": ".boot",
+            "rva": "0x8f7472",
+            "preferred_va": "0xcf7472",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1cc4dc",
+            "section": ".boot",
+            "rva": "0x925edc",
+            "preferred_va": "0xd25edc",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1d4cc8",
+            "section": ".boot",
+            "rva": "0x92e6c8",
+            "preferred_va": "0xd2e6c8",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1d6bfb",
+            "section": ".boot",
+            "rva": "0x9305fb",
+            "preferred_va": "0xd305fb",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1dacb3",
+            "section": ".boot",
+            "rva": "0x9346b3",
+            "preferred_va": "0xd346b3",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x20c03d",
+            "section": ".boot",
+            "rva": "0x965a3d",
+            "preferred_va": "0xd65a3d",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x20ca98",
+            "section": ".boot",
+            "rva": "0x966498",
+            "preferred_va": "0xd66498",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x218286",
+            "section": ".boot",
+            "rva": "0x971c86",
+            "preferred_va": "0xd71c86",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x22169b",
+            "section": ".boot",
+            "rva": "0x97b09b",
+            "preferred_va": "0xd7b09b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2251d1",
+            "section": ".boot",
+            "rva": "0x97ebd1",
+            "preferred_va": "0xd7ebd1",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x24f89b",
+            "section": ".boot",
+            "rva": "0x9a929b",
+            "preferred_va": "0xda929b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x250aaf",
+            "section": ".boot",
+            "rva": "0x9aa4af",
+            "preferred_va": "0xdaa4af",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x25c5a7",
+            "section": ".boot",
+            "rva": "0x9b5fa7",
+            "preferred_va": "0xdb5fa7",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2c6f07",
+            "section": ".boot",
+            "rva": "0xa20907",
+            "preferred_va": "0xe20907",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2fc712",
+            "section": ".boot",
+            "rva": "0xa56112",
+            "preferred_va": "0xe56112",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x312f3b",
+            "section": ".boot",
+            "rva": "0xa6c93b",
+            "preferred_va": "0xe6c93b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x31372e",
+            "section": ".boot",
+            "rva": "0xa6d12e",
+            "preferred_va": "0xe6d12e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x321a4d",
+            "section": ".boot",
+            "rva": "0xa7b44d",
+            "preferred_va": "0xe7b44d",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x348e0b",
+            "section": ".boot",
+            "rva": "0xaa280b",
+            "preferred_va": "0xea280b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x34cc4e",
+            "section": ".boot",
+            "rva": "0xaa664e",
+            "preferred_va": "0xea664e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x36430c",
+            "section": ".boot",
+            "rva": "0xabdd0c",
+            "preferred_va": "0xebdd0c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3ab179",
+            "section": ".boot",
+            "rva": "0xb04b79",
+            "preferred_va": "0xf04b79",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3b4392",
+            "section": ".boot",
+            "rva": "0xb0dd92",
+            "preferred_va": "0xf0dd92",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3c3401",
+            "section": ".boot",
+            "rva": "0xb1ce01",
+            "preferred_va": "0xf1ce01",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3c9db4",
+            "section": ".boot",
+            "rva": "0xb237b4",
+            "preferred_va": "0xf237b4",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3de453",
+            "section": ".boot",
+            "rva": "0xb37e53",
+            "preferred_va": "0xf37e53",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3ec9df",
+            "section": ".boot",
+            "rva": "0xb463df",
+            "preferred_va": "0xf463df",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3f86e7",
+            "section": ".boot",
+            "rva": "0xb520e7",
+            "preferred_va": "0xf520e7",
+            "section_executable_flag": true
+          }
+        ]
+      },
+      "port_7000_uint16_be": {
+        "count": 45,
+        "sections": {
+          "unnamed_0": 27,
+          ".boot": 18
+        },
+        "matches": [
+          {
+            "file_offset": "0xdad2",
+            "section": "unnamed_0",
+            "rva": "0xe4d2",
+            "preferred_va": "0x40e4d2",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x20808",
+            "section": "unnamed_0",
+            "rva": "0x21208",
+            "preferred_va": "0x421208",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x26949",
+            "section": "unnamed_0",
+            "rva": "0x27349",
+            "preferred_va": "0x427349",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x325f4",
+            "section": "unnamed_0",
+            "rva": "0x32ff4",
+            "preferred_va": "0x432ff4",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x32963",
+            "section": "unnamed_0",
+            "rva": "0x33363",
+            "preferred_va": "0x433363",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3440a",
+            "section": "unnamed_0",
+            "rva": "0x34e0a",
+            "preferred_va": "0x434e0a",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x389ac",
+            "section": "unnamed_0",
+            "rva": "0x393ac",
+            "preferred_va": "0x4393ac",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x5482b",
+            "section": "unnamed_0",
+            "rva": "0x5522b",
+            "preferred_va": "0x45522b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x5d675",
+            "section": "unnamed_0",
+            "rva": "0x5e075",
+            "preferred_va": "0x45e075",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x5d9d2",
+            "section": "unnamed_0",
+            "rva": "0x5e3d2",
+            "preferred_va": "0x45e3d2",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x769dc",
+            "section": "unnamed_0",
+            "rva": "0x773dc",
+            "preferred_va": "0x4773dc",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x87516",
+            "section": "unnamed_0",
+            "rva": "0x87f16",
+            "preferred_va": "0x487f16",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x89ae9",
+            "section": "unnamed_0",
+            "rva": "0x8a4e9",
+            "preferred_va": "0x48a4e9",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xa3183",
+            "section": "unnamed_0",
+            "rva": "0xa3b83",
+            "preferred_va": "0x4a3b83",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xaac94",
+            "section": "unnamed_0",
+            "rva": "0xab694",
+            "preferred_va": "0x4ab694",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xac603",
+            "section": "unnamed_0",
+            "rva": "0xad003",
+            "preferred_va": "0x4ad003",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc1b25",
+            "section": "unnamed_0",
+            "rva": "0xc2525",
+            "preferred_va": "0x4c2525",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc5f9f",
+            "section": "unnamed_0",
+            "rva": "0xc699f",
+            "preferred_va": "0x4c699f",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc6c97",
+            "section": "unnamed_0",
+            "rva": "0xc7697",
+            "preferred_va": "0x4c7697",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc7ed2",
+            "section": "unnamed_0",
+            "rva": "0xc88d2",
+            "preferred_va": "0x4c88d2",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc8d6a",
+            "section": "unnamed_0",
+            "rva": "0xc976a",
+            "preferred_va": "0x4c976a",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xcc19a",
+            "section": "unnamed_0",
+            "rva": "0xccb9a",
+            "preferred_va": "0x4ccb9a",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xdab85",
+            "section": "unnamed_0",
+            "rva": "0xdb585",
+            "preferred_va": "0x4db585",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xfda13",
+            "section": "unnamed_0",
+            "rva": "0xfe413",
+            "preferred_va": "0x4fe413",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x103100",
+            "section": "unnamed_0",
+            "rva": "0x103b00",
+            "preferred_va": "0x503b00",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x121078",
+            "section": "unnamed_0",
+            "rva": "0x121a78",
+            "preferred_va": "0x521a78",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x126028",
+            "section": "unnamed_0",
+            "rva": "0x126a28",
+            "preferred_va": "0x526a28",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x180d51",
+            "section": ".boot",
+            "rva": "0x8da751",
+            "preferred_va": "0xcda751",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1a17f9",
+            "section": ".boot",
+            "rva": "0x8fb1f9",
+            "preferred_va": "0xcfb1f9",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1c58c7",
+            "section": ".boot",
+            "rva": "0x91f2c7",
+            "preferred_va": "0xd1f2c7",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1e7f0b",
+            "section": ".boot",
+            "rva": "0x94190b",
+            "preferred_va": "0xd4190b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x212bd8",
+            "section": ".boot",
+            "rva": "0x96c5d8",
+            "preferred_va": "0xd6c5d8",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x214950",
+            "section": ".boot",
+            "rva": "0x96e350",
+            "preferred_va": "0xd6e350",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x28e1d3",
+            "section": ".boot",
+            "rva": "0x9e7bd3",
+            "preferred_va": "0xde7bd3",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2ad004",
+            "section": ".boot",
+            "rva": "0xa06a04",
+            "preferred_va": "0xe06a04",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2c1d41",
+            "section": ".boot",
+            "rva": "0xa1b741",
+            "preferred_va": "0xe1b741",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x30b508",
+            "section": ".boot",
+            "rva": "0xa64f08",
+            "preferred_va": "0xe64f08",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3118cc",
+            "section": ".boot",
+            "rva": "0xa6b2cc",
+            "preferred_va": "0xe6b2cc",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x352e8e",
+            "section": ".boot",
+            "rva": "0xaac88e",
+            "preferred_va": "0xeac88e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x367c06",
+            "section": ".boot",
+            "rva": "0xac1606",
+            "preferred_va": "0xec1606",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x399e9e",
+            "section": ".boot",
+            "rva": "0xaf389e",
+            "preferred_va": "0xef389e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3a15fa",
+            "section": ".boot",
+            "rva": "0xafaffa",
+            "preferred_va": "0xefaffa",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3c9a68",
+            "section": ".boot",
+            "rva": "0xb23468",
+            "preferred_va": "0xf23468",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3ed370",
+            "section": ".boot",
+            "rva": "0xb46d70",
+            "preferred_va": "0xf46d70",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x402454",
+            "section": ".boot",
+            "rva": "0xb5be54",
+            "preferred_va": "0xf5be54",
+            "section_executable_flag": true
+          }
+        ]
+      },
+      "port_3416_uint16_le": {
+        "count": 50,
+        "sections": {
+          "unnamed_0": 19,
+          "unnamed_1": 3,
+          ".boot": 28
+        },
+        "matches": [
+          {
+            "file_offset": "0x1e105",
+            "section": "unnamed_0",
+            "rva": "0x1eb05",
+            "preferred_va": "0x41eb05",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x265d6",
+            "section": "unnamed_0",
+            "rva": "0x26fd6",
+            "preferred_va": "0x426fd6",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3acb6",
+            "section": "unnamed_0",
+            "rva": "0x3b6b6",
+            "preferred_va": "0x43b6b6",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x58cde",
+            "section": "unnamed_0",
+            "rva": "0x596de",
+            "preferred_va": "0x4596de",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x64025",
+            "section": "unnamed_0",
+            "rva": "0x64a25",
+            "preferred_va": "0x464a25",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x6b110",
+            "section": "unnamed_0",
+            "rva": "0x6bb10",
+            "preferred_va": "0x46bb10",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x7273a",
+            "section": "unnamed_0",
+            "rva": "0x7313a",
+            "preferred_va": "0x47313a",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x979d0",
+            "section": "unnamed_0",
+            "rva": "0x983d0",
+            "preferred_va": "0x4983d0",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x9b278",
+            "section": "unnamed_0",
+            "rva": "0x9bc78",
+            "preferred_va": "0x49bc78",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xaec4c",
+            "section": "unnamed_0",
+            "rva": "0xaf64c",
+            "preferred_va": "0x4af64c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xb6c94",
+            "section": "unnamed_0",
+            "rva": "0xb7694",
+            "preferred_va": "0x4b7694",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xbd8fe",
+            "section": "unnamed_0",
+            "rva": "0xbe2fe",
+            "preferred_va": "0x4be2fe",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xc3ae1",
+            "section": "unnamed_0",
+            "rva": "0xc44e1",
+            "preferred_va": "0x4c44e1",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xd1b69",
+            "section": "unnamed_0",
+            "rva": "0xd2569",
+            "preferred_va": "0x4d2569",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xe3124",
+            "section": "unnamed_0",
+            "rva": "0xe3b24",
+            "preferred_va": "0x4e3b24",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xe6472",
+            "section": "unnamed_0",
+            "rva": "0xe6e72",
+            "preferred_va": "0x4e6e72",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xf11c1",
+            "section": "unnamed_0",
+            "rva": "0xf1bc1",
+            "preferred_va": "0x4f1bc1",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xfd543",
+            "section": "unnamed_0",
+            "rva": "0xfdf43",
+            "preferred_va": "0x4fdf43",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x106625",
+            "section": "unnamed_0",
+            "rva": "0x107025",
+            "preferred_va": "0x507025",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x12e33f",
+            "section": "unnamed_1",
+            "rva": "0x33613f",
+            "preferred_va": "0x73613f",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x136968",
+            "section": "unnamed_1",
+            "rva": "0x33e768",
+            "preferred_va": "0x73e768",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x14af3b",
+            "section": "unnamed_1",
+            "rva": "0x352d3b",
+            "preferred_va": "0x752d3b",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x17a7c2",
+            "section": ".boot",
+            "rva": "0x8d41c2",
+            "preferred_va": "0xcd41c2",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x19507f",
+            "section": ".boot",
+            "rva": "0x8eea7f",
+            "preferred_va": "0xceea7f",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x19b6a7",
+            "section": ".boot",
+            "rva": "0x8f50a7",
+            "preferred_va": "0xcf50a7",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1a520d",
+            "section": ".boot",
+            "rva": "0x8fec0d",
+            "preferred_va": "0xcfec0d",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1b0811",
+            "section": ".boot",
+            "rva": "0x90a211",
+            "preferred_va": "0xd0a211",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1b4415",
+            "section": ".boot",
+            "rva": "0x90de15",
+            "preferred_va": "0xd0de15",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1e575c",
+            "section": ".boot",
+            "rva": "0x93f15c",
+            "preferred_va": "0xd3f15c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1edbb9",
+            "section": ".boot",
+            "rva": "0x9475b9",
+            "preferred_va": "0xd475b9",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x207dd3",
+            "section": ".boot",
+            "rva": "0x9617d3",
+            "preferred_va": "0xd617d3",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x20cf8e",
+            "section": ".boot",
+            "rva": "0x96698e",
+            "preferred_va": "0xd6698e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x21c0a3",
+            "section": ".boot",
+            "rva": "0x975aa3",
+            "preferred_va": "0xd75aa3",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2504b3",
+            "section": ".boot",
+            "rva": "0x9a9eb3",
+            "preferred_va": "0xda9eb3",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x26c905",
+            "section": ".boot",
+            "rva": "0x9c6305",
+            "preferred_va": "0xdc6305",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2afbc2",
+            "section": ".boot",
+            "rva": "0xa095c2",
+            "preferred_va": "0xe095c2",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2c24c1",
+            "section": ".boot",
+            "rva": "0xa1bec1",
+            "preferred_va": "0xe1bec1",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2dab20",
+            "section": ".boot",
+            "rva": "0xa34520",
+            "preferred_va": "0xe34520",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2db716",
+            "section": ".boot",
+            "rva": "0xa35116",
+            "preferred_va": "0xe35116",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2e4d50",
+            "section": ".boot",
+            "rva": "0xa3e750",
+            "preferred_va": "0xe3e750",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2ee616",
+            "section": ".boot",
+            "rva": "0xa48016",
+            "preferred_va": "0xe48016",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2f9b09",
+            "section": ".boot",
+            "rva": "0xa53509",
+            "preferred_va": "0xe53509",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x32c016",
+            "section": ".boot",
+            "rva": "0xa85a16",
+            "preferred_va": "0xe85a16",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3323b2",
+            "section": ".boot",
+            "rva": "0xa8bdb2",
+            "preferred_va": "0xe8bdb2",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x347803",
+            "section": ".boot",
+            "rva": "0xaa1203",
+            "preferred_va": "0xea1203",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x34bbb1",
+            "section": ".boot",
+            "rva": "0xaa55b1",
+            "preferred_va": "0xea55b1",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x34e293",
+            "section": ".boot",
+            "rva": "0xaa7c93",
+            "preferred_va": "0xea7c93",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3824a5",
+            "section": ".boot",
+            "rva": "0xadbea5",
+            "preferred_va": "0xedbea5",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3beb61",
+            "section": ".boot",
+            "rva": "0xb18561",
+            "preferred_va": "0xf18561",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3eecf6",
+            "section": ".boot",
+            "rva": "0xb486f6",
+            "preferred_va": "0xf486f6",
+            "section_executable_flag": true
+          }
+        ]
+      },
+      "port_3416_uint16_be": {
+        "count": 40,
+        "sections": {
+          "unnamed_0": 16,
+          "unnamed_1": 4,
+          ".vm_sec": 1,
+          ".boot": 19
+        },
+        "matches": [
+          {
+            "file_offset": "0x5cd5",
+            "section": "unnamed_0",
+            "rva": "0x66d5",
+            "preferred_va": "0x4066d5",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xa319",
+            "section": "unnamed_0",
+            "rva": "0xad19",
+            "preferred_va": "0x40ad19",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xd8a7",
+            "section": "unnamed_0",
+            "rva": "0xe2a7",
+            "preferred_va": "0x40e2a7",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x20814",
+            "section": "unnamed_0",
+            "rva": "0x21214",
+            "preferred_va": "0x421214",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x36bf7",
+            "section": "unnamed_0",
+            "rva": "0x375f7",
+            "preferred_va": "0x4375f7",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x444a0",
+            "section": "unnamed_0",
+            "rva": "0x44ea0",
+            "preferred_va": "0x444ea0",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x5c42f",
+            "section": "unnamed_0",
+            "rva": "0x5ce2f",
+            "preferred_va": "0x45ce2f",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x67049",
+            "section": "unnamed_0",
+            "rva": "0x67a49",
+            "preferred_va": "0x467a49",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x88a7c",
+            "section": "unnamed_0",
+            "rva": "0x8947c",
+            "preferred_va": "0x48947c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xae746",
+            "section": "unnamed_0",
+            "rva": "0xaf146",
+            "preferred_va": "0x4af146",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xb4037",
+            "section": "unnamed_0",
+            "rva": "0xb4a37",
+            "preferred_va": "0x4b4a37",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xcc51e",
+            "section": "unnamed_0",
+            "rva": "0xccf1e",
+            "preferred_va": "0x4ccf1e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xd202b",
+            "section": "unnamed_0",
+            "rva": "0xd2a2b",
+            "preferred_va": "0x4d2a2b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0xd48c4",
+            "section": "unnamed_0",
+            "rva": "0xd52c4",
+            "preferred_va": "0x4d52c4",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x120296",
+            "section": "unnamed_0",
+            "rva": "0x120c96",
+            "preferred_va": "0x520c96",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x128c3b",
+            "section": "unnamed_0",
+            "rva": "0x12963b",
+            "preferred_va": "0x52963b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x130958",
+            "section": "unnamed_1",
+            "rva": "0x338758",
+            "preferred_va": "0x738758",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x134678",
+            "section": "unnamed_1",
+            "rva": "0x33c478",
+            "preferred_va": "0x73c478",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x13aaf5",
+            "section": "unnamed_1",
+            "rva": "0x3428f5",
+            "preferred_va": "0x7428f5",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x13aeeb",
+            "section": "unnamed_1",
+            "rva": "0x342ceb",
+            "preferred_va": "0x742ceb",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x1610b6",
+            "section": ".vm_sec",
+            "rva": "0x4086b6",
+            "preferred_va": "0x8086b6",
+            "section_executable_flag": false
+          },
+          {
+            "file_offset": "0x17904e",
+            "section": ".boot",
+            "rva": "0x8d2a4e",
+            "preferred_va": "0xcd2a4e",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1ac205",
+            "section": ".boot",
+            "rva": "0x905c05",
+            "preferred_va": "0xd05c05",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1bee98",
+            "section": ".boot",
+            "rva": "0x918898",
+            "preferred_va": "0xd18898",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x1f3e6c",
+            "section": ".boot",
+            "rva": "0x94d86c",
+            "preferred_va": "0xd4d86c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x226d78",
+            "section": ".boot",
+            "rva": "0x980778",
+            "preferred_va": "0xd80778",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x24115d",
+            "section": ".boot",
+            "rva": "0x99ab5d",
+            "preferred_va": "0xd9ab5d",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x24596c",
+            "section": ".boot",
+            "rva": "0x99f36c",
+            "preferred_va": "0xd9f36c",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x25d287",
+            "section": ".boot",
+            "rva": "0x9b6c87",
+            "preferred_va": "0xdb6c87",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x26d103",
+            "section": ".boot",
+            "rva": "0x9c6b03",
+            "preferred_va": "0xdc6b03",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2b4656",
+            "section": ".boot",
+            "rva": "0xa0e056",
+            "preferred_va": "0xe0e056",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2bd252",
+            "section": ".boot",
+            "rva": "0xa16c52",
+            "preferred_va": "0xe16c52",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2c2106",
+            "section": ".boot",
+            "rva": "0xa1bb06",
+            "preferred_va": "0xe1bb06",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x2e2fd1",
+            "section": ".boot",
+            "rva": "0xa3c9d1",
+            "preferred_va": "0xe3c9d1",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x30ac2b",
+            "section": ".boot",
+            "rva": "0xa6462b",
+            "preferred_va": "0xe6462b",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x31168f",
+            "section": ".boot",
+            "rva": "0xa6b08f",
+            "preferred_va": "0xe6b08f",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x34adec",
+            "section": ".boot",
+            "rva": "0xaa47ec",
+            "preferred_va": "0xea47ec",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x360fcf",
+            "section": ".boot",
+            "rva": "0xaba9cf",
+            "preferred_va": "0xeba9cf",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3c0edf",
+            "section": ".boot",
+            "rva": "0xb1a8df",
+            "preferred_va": "0xf1a8df",
+            "section_executable_flag": true
+          },
+          {
+            "file_offset": "0x3d7510",
+            "section": ".boot",
+            "rva": "0xb30f10",
+            "preferred_va": "0xf30f10",
+            "section_executable_flag": true
+          }
+        ]
+      }
+    },
+    "visible_winsock_iat_references": {
+      "iat_slot_address_literals": [],
+      "x86_indirect_call_iat": [],
+      "x86_indirect_jump_iat": []
+    },
+    "overlay_layout": {
+      "raw_sections_end": "0x403200",
+      "certificate_file_offset": "0x403200",
+      "certificate_size": 10496,
+      "bytes_between_sections_and_certificate": 0,
+      "bytes_after_certificate": 0
+    }
+  },
+  "protector_stage": {
+    "algorithm": "Original bounded translation of the loader bitstream/back-reference decompressor, structurally aPLib-like",
+    "source_code": "rf-protocol-lab/inspect_client_stage1.py",
+    "verified_by": "Two independent offline transcriptions agree on every block boundary and total SHA256; packaged inspector pins each block hash as well.",
+    "block_count": 8,
+    "block_output_bytes": 614400,
+    "total_output_bytes": 4915200,
+    "output_sha256": "674441d3542447def6b1f79a5344882b22b1d1d34f56d8608f0dd042e13e9cd5",
+    "source_start": "0x16f807",
+    "source_stop": "0x402f8d",
+    "source_limit": "0x403200",
+    "map_start": "0x819000",
+    "map_stop": "0xcc9000",
+    "next_entry": "0xa0d005",
+    "identifiers": [
+      {
+        "identifier": "WinLicenseVersion",
+        "offset": "0x1d5048",
+        "preferred_va": "0x9ee048"
+      },
+      {
+        "identifier": "WinLicenseInstance",
+        "offset": "0x1d7854",
+        "preferred_va": "0x9f0854"
+      },
+      {
+        "identifier": "WinLicense",
+        "offset": "0x1df929",
+        "preferred_va": "0x9f8929"
+      },
+      {
+        "identifier": "WinLicenseDriverVersion",
+        "offset": "0x1dfaf8",
+        "preferred_va": "0x9f8af8"
+      },
+      {
+        "identifier": "WinLicense",
+        "offset": "0x1e154d",
+        "preferred_va": "0x9fa54d"
+      },
+      {
+        "identifier": "WinLicense",
+        "offset": "0x1e20b5",
+        "preferred_va": "0x9fb0b5"
+      }
+    ],
+    "payload_handling": "Derived bytes remain temporary analysis only. Reusable inspector emits metadata by default."
+  },
+  "first_stage_scan": {
+    "positive_patterns": [
+      {
+        "term": "WinLicense",
+        "encoding": "ascii",
+        "count": 6,
+        "offsets": [
+          "0x1d5048",
+          "0x1d7854",
+          "0x1df929",
+          "0x1dfaf8",
+          "0x1e154d",
+          "0x1e20b5"
+        ],
+        "preferred_va": [
+          "0x9ee048",
+          "0x9f0854",
+          "0x9f8929",
+          "0x9f8af8",
+          "0x9fa54d",
+          "0x9fb0b5"
+        ]
+      },
+      {
+        "pattern": "ip_network",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "ip_reversed",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "port7000_u32_little",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "sockaddr7000_little",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "port7000_u32_big",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "sockaddr7000_big",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "port3416_u32_little",
+        "count": 6,
+        "offsets": [
+          "0x2f4b36",
+          "0x3343dd",
+          "0x35138d",
+          "0x382639",
+          "0x38e059",
+          "0x39aca1"
+        ],
+        "preferred_va": [
+          "0xb0db36",
+          "0xb4d3dd",
+          "0xb6a38d",
+          "0xb9b639",
+          "0xba7059",
+          "0xbb3ca1"
+        ]
+      },
+      {
+        "pattern": "sockaddr3416_little",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "port3416_u32_big",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      },
+      {
+        "pattern": "sockaddr3416_big",
+        "count": 0,
+        "offsets": [],
+        "preferred_va": []
+      }
+    ],
+    "absent_ascii_and_utf16_terms": [
+      "5.188.32.117",
+      "7000",
+      "3416",
+      "Nimonix",
+      "GameGuard",
+      "nProtect",
+      "INCA",
+      "Themida",
+      "Oreans",
+      "rumfus.ini",
+      "RumbleFighter",
+      "RumbleLauncher",
+      "connect",
+      "WSAConnect",
+      "getaddrinfo",
+      "gethostbyname",
+      "inet_addr",
+      "inet_pton",
+      "htons",
+      "socket",
+      "WS2_32",
+      "GetProcAddress",
+      "LoadLibrary",
+      "VirtualProtect",
+      "VirtualAlloc",
+      ".ini",
+      ".cfg",
+      "config",
+      "DIRECT",
+      "Author:KimDongJin"
+    ],
+    "interpretation": "No observed endpoint bytes or associated socket-address structure found. Six isolated 3416 little-endian 32-bit patterns are unclassified data, not identified port constants or call references."
+  },
+  "entry_followup": {
+    "observed_path": [
+      "0xa0d005",
+      "0x9eda8d",
+      "0xa0d00b",
+      "0x9edaf5",
+      "0xa0d017",
+      "0x9edc1e",
+      "0xa0d036",
+      "0xa0d000",
+      "0xa0dc94",
+      "0x9b20aa"
+    ],
+    "observed_behavior": "Initial stubs recover protector and image bases. Subsequent bounded reduction identified 32 context slots and a 498-entry normalized dispatch table, followed by four stateful bytecode transitions.",
+    "result": "No second isolated, bounded byte transform was established by this review.",
+    "inference_limit": "A custom bytecode-interpreter path is now established by the startup-map checkpoint. A next whole-image decoder, API resolver, endpoint selector, or unavoidable runtime dependency is not established.",
+    "new_evidence": "schemas/stage2-startup-map.json"
+  },
+  "conclusions": [
+    "The first compressed protector layer is reproducibly decoded and independently verified.",
+    "The decoded region is protector material, not a reconstructed runnable game or a recovered endpoint selector.",
+    "Static absence in these inspected representations does not show that an address cannot be generated, decrypted, resolved from a hostname, or supplied at runtime.",
+    "No supported command-line endpoint override has been established; none is assumed necessary for future local routing."
+  ],
+  "next_analysis_boundary": "Reached handler 0x98d3b4 with bytecode at 0xa0d10a; continue mixed-width state-dependent operand analysis without assuming fixed records or a whole-image decompressor."
+}

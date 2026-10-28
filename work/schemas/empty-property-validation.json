@@ -1,0 +1,198 @@
+{
+  "schema": "rf.empty-property-validation.v1",
+  "scope": "Structural metadata and invented test vectors only. No captured property bodies, owner IDs, item records or tails were decrypted or copied. This does not establish that an empty local profile can reach a playable lobby.",
+  "evidence": {
+    "original_codec": "rf-protocol-lab/character_wire.py::parse_property_request,empty_property_response",
+    "prior_reference_analysis": "analysis/character-inventory-layout.json",
+    "client_header_metadata": "analysis/capture/client_to_server-legacy_rc4_abcde-framing.json",
+    "server_header_metadata": "analysis/capture/server_to_client-legacy_rc4_abcde-framing.json",
+    "reference_commit": "c56f4dccdad72f2d4337ffe6fe650d8c436114d0",
+    "reference_urls": [
+      "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/Network/Packets/GetProperty.cs",
+      "https://github.com/Primitheus/Gemnet/blob/c56f4dccdad72f2d4337ffe6fe650d8c436114d0/Gemnet/PacketProcessors/General.cs"
+    ],
+    "current_local_primary_status": "The detailed owner/count findings come from prior character-inventory-layout.json and the existing original codec. GetProperty.cs and General.cs were not present locally. Root reports fresh pinned-source retrieval was blocked and search returned no relevant source; no fresh original GetProperty.cs or General.cs reinspection is claimed."
+  },
+  "structure": {
+    "request": {
+      "type": 48,
+      "action": 132,
+      "total_bytes": 17,
+      "body_bytes": 11,
+      "owner_body_offset": 0,
+      "owner_width": 4,
+      "owner_encoding": "LE32",
+      "required_synthetic_owner": 1,
+      "opaque_tail_body_offset": 4,
+      "opaque_tail_bytes": 7,
+      "tail_policy": "Accept any seven bytes without interpreting, logging or persisting them. Three observed exchanges do not establish categories, filtering or pagination."
+    },
+    "response": {
+      "type": 48,
+      "action": 133,
+      "total_bytes": 3928,
+      "body_bytes": 3922,
+      "synthetic_body": "All zero: empty item count and zeroed fixed-capacity body.",
+      "prior_count_layout_inference": "LE16 count followed by80 records of49 bytes; reference count write overlaps the first record. All-zero body remains zero-count under either16-bit or32-bit interpretation.",
+      "populated_item_serializer_added": false
+    },
+    "capture_sequence": [
+      {
+        "direction": "client",
+        "type": 48,
+        "action": 132,
+        "total_bytes": 17,
+        "stream_offset": 264
+      },
+      {
+        "direction": "client",
+        "type": 48,
+        "action": 132,
+        "total_bytes": 17,
+        "stream_offset": 281
+      },
+      {
+        "direction": "client",
+        "type": 48,
+        "action": 132,
+        "total_bytes": 17,
+        "stream_offset": 298
+      },
+      {
+        "direction": "server",
+        "type": 48,
+        "action": 133,
+        "total_bytes": 3928,
+        "stream_offset": 980
+      },
+      {
+        "direction": "server",
+        "type": 48,
+        "action": 133,
+        "total_bytes": 3928,
+        "stream_offset": 4908
+      },
+      {
+        "direction": "server",
+        "type": 48,
+        "action": 133,
+        "total_bytes": 3928,
+        "stream_offset": 8836
+      }
+    ],
+    "next_unsupported_request": {
+      "type": 48,
+      "action": 146,
+      "total_bytes": 6,
+      "client_stream_offset": 315,
+      "reply_observed_total_bytes": 3507
+    },
+    "following_request": {
+      "type": 48,
+      "action": 144,
+      "total_bytes": 6,
+      "client_stream_offset": 321
+    }
+  },
+  "bounded_behavior": {
+    "requires_local_cash_reply_written": true,
+    "maximum_property_bodies_received": 3,
+    "maximum_property_replies": 3,
+    "owner_match_required": true,
+    "report_owner_values": false,
+    "report_tail_bytes": false,
+    "header_limit": 12,
+    "fourth_property_request": "Stop after header without reading its body.",
+    "unexpected_length": "Stop after header without reading body.",
+    "owner_mismatch": "Count the complete body, record only mismatch outcome, clear body and stop without response.",
+    "frame_deadline": "One first-byte timestamp covers both header and11-byte body; do not reset it between them.",
+    "cipher": "Advance incoming stream through each header and body exactly once, independent from continuous outgoing state.",
+    "result_fields": {
+      "PropertyRequestCount": "Number of complete accepted-shape property bodies received, including a complete owner-mismatch body.",
+      "PropertyOwnerMatchCount": "Number of received bodies whose owner equals local synthetic ID1.",
+      "PropertyReplyCount": "Number of complete response writes.",
+      "PropertyReplyBytes": "Sum of completed property response bytes."
+    }
+  },
+  "bounds": {
+    "maximum_input_bytes": 222,
+    "input_formula": "version26 + login91 +12 headers*6 +3 property bodies*11",
+    "maximum_output_bytes": 12294,
+    "output_formula": "versionack6 + login326 + GG68 + status8 + cash18 +3 propertyreplies*3928 +6 clocks*14",
+    "normal_input_bytes": 204,
+    "normal_output_bytes": 12238,
+    "normal_postlogin_header_count": 9,
+    "normal_postlogin_read_bytes": 87,
+    "normal_property_body_bytes": 33,
+    "normal_property_reply_bytes": 11784
+  },
+  "synthetic_vectors": {
+    "empty_reply_header_hex": "00300f588500",
+    "empty_reply_sha256": "d3bef5606f949b3e8fe004554f242e85b80685f137d49f96bc2b1d273aed24e0",
+    "property_tail_hex": [
+      "00000000000000",
+      "00010203040506",
+      "ffffffffffffff"
+    ],
+    "property_frame_sha256": [
+      "28128f34e333799a0ee691bdf3e759d2ac5f250855abbce39ddfe4abeeeac886",
+      "e73ccb3e322e7a8380658c5195d5d13bb2ff04bf28cd79d64ebce4c592739ec1",
+      "7eca1f1ca8562c250503d870b3d87d409f5c53217df79d61dd9ccd173c307164"
+    ],
+    "outgoing_definition": "Existing fixed454-byte bootstrap from bootstrap-status-cash-validation.json, followed by three identical empty3928-byte replies; the GG68 fixture uses invented blob0..59.",
+    "outgoing_total_bytes": 12238,
+    "outgoing_plaintext_sha256": "abdd9bb9488515928ce3cf9cd441d4ed555b839d8978f322c07e07b93207fad3",
+    "outgoing_ciphertext_sha256": "081e0c598a88b8cba121a0cecf7914d38f0fd91e0f5701588e248db8948f79b2",
+    "outgoing_empty_reply_offsets": [
+      454,
+      4382,
+      8310
+    ],
+    "outgoing_individual_encrypted_reply_sha256": [
+      "e0d88209c850533e4d137c3786fd68a52f2cbf573ed6b5491acfc15faf373eef",
+      "7b2d0905434d27071fb8c93ab728448051fe8e68d8fac725a71b10c4136eafe2",
+      "d1cb74c8fdfc9b19d8b998826dfc11042b53f5afef037293cf0e63482e95a749"
+    ],
+    "incoming_definition": "Version26 zero body + dummy login91 + clock6 + GG6 + status6 + cash6 + clock6 + three17-byte property frames with owner1 and tails listed above + unsupported0x30/0x92 header6.",
+    "incoming_total_bytes": 204,
+    "incoming_plaintext_sha256": "fdcb21e19ce672079b730c7c7ffa8631586fd7e10e34b89cec4b92812cdf51b8",
+    "incoming_ciphertext_sha256": "dcb0a18670e4384527858a32263f407b3c1eae046fc48847b5364e53239dae83",
+    "incoming_property_header_offsets": [
+      147,
+      164,
+      181
+    ],
+    "incoming_final_header_offset": 198,
+    "incoming_final_header_plaintext_hex": "003000069200",
+    "incoming_final_header_ciphertext_hex": "c796bb18d711",
+    "fragmented_header_body_cipher_roundtrip_passed": true,
+    "arbitrary_synthetic_tail_parse_checks_passed": true
+  },
+  "runtime_validation": {
+    "python_reference_vectors_executed": true,
+    "csharp_compile_or_execution_here": false,
+    "v1_7_real_client_run_completed": false
+  },
+  "csharp_static_review": {
+    "source_path": "rf-protocol-lab/RFHandshakeProbe.cs",
+    "source_sha256": "96f6dd96b07bbea9cbbbbff7db6bb0b794ab24b98d7f59af3bcc7319b1b49208",
+    "scope": [
+      "Exact17-byte property shape and prior GG/status/cash requirements",
+      "Maximum12 post-login headers and3 complete property bodies",
+      "One first-byte timestamp shared by header/body reads",
+      "Incoming cipher advances once for11-byte body; owner comparison uses onlyLE32 ID1",
+      "Opaque tails are ignored and request/reply arrays clear in finally",
+      "Fourth property and unknown headers stop before body reads",
+      "Request, match, reply and aggregate-byte counters reflect their separate completed stages",
+      "Independent synthetic golden literals and fragmented2+4 header/1+3+7 body decoder tests match",
+      "EOF classification now uses frame-relative offset, including preceding6-byte header for body reads"
+    ],
+    "concrete_defects_found": [],
+    "embedded_golden_literals_match": true,
+    "compiler_or_windows_execution_performed_here": false,
+    "maximum_input_bytes": 222,
+    "maximum_output_bytes": 12294,
+    "normal_input_bytes": 204,
+    "normal_output_bytes": 12238
+  }
+}

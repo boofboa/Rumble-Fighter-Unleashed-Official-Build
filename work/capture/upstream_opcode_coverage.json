@@ -1,0 +1,323 @@
+{
+  "upstream_commit": "c56f4dccdad72f2d4337ffe6fe650d8c436114d0",
+  "caveat": "Opcode names and dispatch presence do not prove handler or full-client compatibility. No payload data included.",
+  "client_opcodes": [
+    {
+      "type": "0x0010",
+      "action": "0x0090",
+      "frame_count": 2,
+      "reference_enum": "ActionLogin",
+      "reference_names": [
+        "VERSION_CHECK"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0010",
+      "action": "0x0084",
+      "frame_count": 2,
+      "reference_enum": "ActionLogin",
+      "reference_names": [
+        "CRED_CHECK"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0010",
+      "action": "0x0092",
+      "frame_count": 3,
+      "reference_enum": "ActionLogin",
+      "reference_names": [
+        "SERVER_TIME"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0048",
+      "action": "0x0080",
+      "frame_count": 1,
+      "reference_enum": "ActionGG",
+      "reference_names": [
+        "GAMEGUARD_START"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0010",
+      "action": "0x00d0",
+      "frame_count": 1,
+      "reference_enum": "ActionLogin",
+      "reference_names": [
+        "CASH_UNKNOWN"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0031",
+      "action": "0x0088",
+      "frame_count": 1,
+      "reference_enum": "ActionInventory",
+      "reference_names": [
+        "CASH"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x0084",
+      "frame_count": 3,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "GET_PROPERTY"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x0092",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "GIFT_FROM"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x0090",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "GIFT_TO"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0010",
+      "action": "0x00a8",
+      "frame_count": 1,
+      "reference_enum": "ActionLogin",
+      "reference_names": [
+        "BUDDY_LIST"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0033",
+      "action": "0x0084",
+      "frame_count": 1,
+      "reference_enum": "ActionGuild",
+      "reference_names": [
+        "GET_GUILD_MEMBER"
+      ],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0033",
+      "action": "0x008a",
+      "frame_count": 1,
+      "reference_enum": "ActionGuild",
+      "reference_names": [
+        "GET_GUILD_GREETINGS"
+      ],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0033",
+      "action": "0x0090",
+      "frame_count": 1,
+      "reference_enum": "ActionGuild",
+      "reference_names": [
+        "GET_GUILD_RANK"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0033",
+      "action": "0x008e",
+      "frame_count": 1,
+      "reference_enum": "ActionGuild",
+      "reference_names": [
+        "GET_GUILD_RANK_LIST"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x0086",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "UNKNOWN_1"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0040",
+      "action": "0x00a0",
+      "frame_count": 1,
+      "reference_enum": "ActionQuery",
+      "reference_names": [
+        "EQUIPPED_AVATAR"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x0088",
+      "frame_count": 10,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "AVATAR_LIST"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00a0",
+      "frame_count": 3,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "GET_GRADE",
+        "JOIN_ROOM_BS"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00b4",
+      "frame_count": 5,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "UNKNOWN_2"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0048",
+      "action": "0x0042",
+      "frame_count": 1,
+      "reference_enum": "ActionGG",
+      "reference_names": [],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00b2",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "UNKNOWN_3"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00be",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "STONE_CHECK"
+      ],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0031",
+      "action": "0x00c8",
+      "frame_count": 1,
+      "reference_enum": "ActionInventory",
+      "reference_names": [],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00ba",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "UNKNOWN_4"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00bc",
+      "frame_count": 2,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "TO_INFO"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x00cc",
+      "frame_count": 5,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "QUESTS"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0031",
+      "action": "0x008e",
+      "frame_count": 1,
+      "reference_enum": "ActionInventory",
+      "reference_names": [
+        "UNKNOWN_W"
+      ],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0031",
+      "action": "0x008a",
+      "frame_count": 2,
+      "reference_enum": "ActionInventory",
+      "reference_names": [
+        "ADD_ITEM"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0030",
+      "action": "0x008e",
+      "frame_count": 1,
+      "reference_enum": "ActionGeneral",
+      "reference_names": [
+        "START_USE_ITEM"
+      ],
+      "dispatch_case_exists": false
+    },
+    {
+      "type": "0x0010",
+      "action": "0x00b6",
+      "frame_count": 1,
+      "reference_enum": "ActionLogin",
+      "reference_names": [
+        "TO_LOBBY"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0040",
+      "action": "0x0084",
+      "frame_count": 14,
+      "reference_enum": "ActionQuery",
+      "reference_names": [
+        "GET_ROOM"
+      ],
+      "dispatch_case_exists": true
+    },
+    {
+      "type": "0x0040",
+      "action": "0x0080",
+      "frame_count": 1,
+      "reference_enum": "ActionQuery",
+      "reference_names": [
+        "JOIN_ROOM"
+      ],
+      "dispatch_case_exists": true
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "scope": "Static disassembly and source constants only. No supplied executable execution, patch, live service call, raw user command line, or user argument values.",
+  "image": {
+    "filename": "RumbleLauncher.exe",
+    "image_base": "0x00400000",
+    "sha256": "21dd6e1efb35d140876db353cbf57130f215e7173b80bb6df7d0f29c66e1b77b",
+    "architecture": "PE32 x86"
+  },
+  "diagnostic_metadata": {
+    "source_sha256": "d255d84ece15294e8d50ecc8529ef5bced2891dd4116534329923663cc64d569",
+    "same_launcher_and_client_hashes": true,
+    "observed_allowlisted_option_names": [
+      "direct"
+    ],
+    "missing_adjacent_ini_files": [
+      "RumbleLauncher.ini",
+      "WISEUPDATE.INI",
+      "GrLauncher.ini"
+    ],
+    "current_rumfus_bytes": 1203,
+    "current_rumfus_sha256": "51f408116cdf2f4fe8d5e03e9bc3fa5bfcc18baef90ff0217a5678fa94e5ab48"
+  },
+  "conclusions": [
+    {
+      "finding": "The normal no-argument launcher path constructs /DIRECT: followed by an author literal and updater NUM marker, not a host/port read.",
+      "confidence": "high"
+    },
+    {
+      "finding": "The launcher-generated suffix source is [TEMP] NUM in a downloaded temporary temp.ini. The already-retrieved public copy contains V0935.",
+      "confidence": "high"
+    },
+    {
+      "finding": "At launcher level this is an update/launch marker. Its precise meaning and validation inside the protected game client remain unproved. Calling it an offline switch or endpoint override is not supported.",
+      "confidence": "high_for_provenance_not_client_semantics"
+    },
+    {
+      "finding": "RumbleLauncher.ini [GENERAL] LAUNCHPARAM is an optional raw pass-through inserted into the game command line. It provides no evidenced server-option grammar; accepted game-side argument names are still unknown.",
+      "confidence": "high"
+    },
+    {
+      "finding": "A nonempty incoming launcher command-line tail is forwarded after the generated author/NUM marker; the launcher does not automatically add /DIRECT: in that branch.",
+      "confidence": "high"
+    },
+    {
+      "finding": "No host/IP/port selection occurs in the examined normal launch argument construction. Arbitrary pass-through capacity does not establish that the client interprets an endpoint.",
+      "confidence": "high_bounded_to_examined_flow"
+    }
+  ],
+  "symbolic_grammar": {
+    "warning": "Description of observed code structure, not an instruction to launch, modify configuration, or bypass checks.",
+    "launcher_tail": "WinMain third argument (lpCmdLine), excluding the launcher executable name.",
+    "ini_tail": "GetPrivateProfileStringA(GENERAL, LAUNCHPARAM, empty_default, launcher-directory/RumbleLauncher.ini)",
+    "update_marker": "Author:KimDongJin: + GetPrivateProfileStringA(TEMP, NUM, empty_default, launcher-directory/__TEMP__/temp.ini)",
+    "generated_tail_if_launcher_tail_empty": "/DIRECT: + update_marker",
+    "generated_tail_if_launcher_tail_nonempty": "update_marker + single space + launcher_tail",
+    "game_commandline_format": "quoted(game_executable_path) + single space + ini_tail + single space + generated_tail",
+    "process_api": "CreateProcessA with null lpApplicationName, constructed lpCommandLine, and launcher directory as lpCurrentDirectory."
+  },
+  "evidence": [
+    {
+      "va": "0x00433a3a",
+      "rva": "0x00033a3a",
+      "meaning": "CRT startup calls WinMain-style function at 0x40f9b0 with parsed command-line tail from the _acmdln source.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f9db",
+      "rva": "0x0000f9db",
+      "meaning": "WinMain-style function loads its third argument [ebp+0x10] and passes it to launch routine 0x40f4d0.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f4fd",
+      "rva": "0x0000f4fd",
+      "meaning": "Launch routine retains its incoming argument pointer in esi.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f507",
+      "rva": "0x0000f507",
+      "meaning": "Calls 0x4284c0, which obtains launcher module directory using GetModuleFileNameA and last backslash.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f553",
+      "rva": "0x0000f553",
+      "meaning": "Constructs path to RumbleLauncher.ini beside launcher.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f563",
+      "rva": "0x0000f563",
+      "meaning": "Passes LAUNCHPARAM, GENERAL, assembled INI path and empty default to helper 0x426740.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0042685d",
+      "rva": "0x0002685d",
+      "meaning": "Helper calls imported GetPrivateProfileStringA through IAT VA 0x43811c.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0041c887",
+      "rva": "0x0001c887",
+      "meaning": "Update dialog obtains its stored install/launcher directory through accessor 0x419290 (object+0xc8), then appends __TEMP__ and a backslash; stores result at object+0xe0.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0041be1c",
+      "rva": "0x0001be1c",
+      "meaning": "Assigns embedded RedFox CDN temp.ini URL to update-dialog field object+0xec.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419941",
+      "rva": "0x00019941",
+      "meaning": "Temporary download path is object+0xe0 plus basename(object+0xec), producing __TEMP__/temp.ini for this flow.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x004199ca",
+      "rva": "0x000199ca",
+      "meaning": "Passes temp.ini URL and local temporary path to download helper 0x431720. This helper was not executed during analysis.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419a32",
+      "rva": "0x00019a32",
+      "meaning": "Reconstructs the same temporary path for INI reading.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419abe",
+      "rva": "0x00019abe",
+      "meaning": "Reads key NUM from section TEMP through helper 0x426740 with empty default.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419adc",
+      "rva": "0x00019adc",
+      "meaning": "Pushes literal Author:KimDongJin: and concatenates it with the retrieved NUM value using 0x411d50.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419aef",
+      "rva": "0x00019aef",
+      "meaning": "Stores concatenation in update-dialog field object+0xf0.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419b0d",
+      "rva": "0x00019b0d",
+      "meaning": "Checks whether NUM was empty; failure branch returns false.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00419b78",
+      "rva": "0x00019b78",
+      "meaning": "Success path calls DeleteFileA on the temporary metadata path. Explains why temp.ini may not persist after ordinary startup.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00401e80",
+      "rva": "0x00001e80",
+      "meaning": "Accessor returns a copy of update-dialog field object+0xf0.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f6b8",
+      "rva": "0x0000f6b8",
+      "meaning": "Calls 0x410250 on incoming launcher-tail CString. That helper returns true exactly when string length is zero.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x00410250",
+      "rva": "0x00010250",
+      "meaning": "String helper compares stored length to zero and returns sete result; confirms branch direction.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f6bf",
+      "rva": "0x0000f6bf",
+      "meaning": "Branches to 0x40f704 when incoming launcher-tail is nonempty.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f6c1",
+      "rva": "0x0000f6c1",
+      "meaning": "Empty-tail branch appends literal /DIRECT: then retrieved object+0xf0 marker.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f704",
+      "rva": "0x0000f704",
+      "meaning": "Nonempty-tail branch appends marker, literal space, and unchanged incoming tail.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f7c5",
+      "rva": "0x0000f7c5",
+      "meaning": "Uses format string quoted-%s, space-%s, space-%s. Argument stack identifies executable path, optional INI tail, then generated tail.",
+      "confidence": "high"
+    },
+    {
+      "va": "0x0040f82d",
+      "rva": "0x0000f82d",
+      "meaning": "Calls CreateProcessA through IAT VA 0x4381bc; no process was actually started in this analysis.",
+      "confidence": "high"
+    }
+  ],
+  "verified_binary_constants": [
+    {
+      "va": "0x43976c",
+      "rva": "0x3976c",
+      "file_offset": "0x38b6c",
+      "value": "/DIRECT:"
+    },
+    {
+      "va": "0x439d4c",
+      "rva": "0x39d4c",
+      "file_offset": "0x3914c",
+      "value": "Author:KimDongJin:"
+    },
+    {
+      "va": "0x439d60",
+      "rva": "0x39d60",
+      "file_offset": "0x39160",
+      "value": "TEMP"
+    },
+    {
+      "va": "0x439d68",
+      "rva": "0x39d68",
+      "file_offset": "0x39168",
+      "value": "NUM"
+    },
+    {
+      "va": "0x439758",
+      "rva": "0x39758",
+      "file_offset": "0x38b58",
+      "value": "\"%s\" %s %s"
+    },
+    {
+      "va": "0x439778",
+      "rva": "0x39778",
+      "file_offset": "0x38b78",
+      "value": "GENERAL"
+    },
+    {
+      "va": "0x439780",
+      "rva": "0x39780",
+      "file_offset": "0x38b80",
+      "value": "LAUNCHPARAM"
+    },
+    {
+      "va": "0x43978c",
+      "rva": "0x3978c",
+      "file_offset": "0x38b8c",
+      "value": "RumbleLauncher.ini"
+    },
+    {
+      "va": "0x4397a0",
+      "rva": "0x397a0",
+      "file_offset": "0x38ba0",
+      "value": "RumbleFighter.exe"
+    },
+    {
+      "va": "0x439f24",
+      "rva": "0x39f24",
+      "file_offset": "0x39324",
+      "value": "__TEMP__"
+    },
+    {
+      "va": "0x439ebc",
+      "rva": "0x39ebc",
+      "file_offset": "0x392bc",
+      "value": "http://rumble-fighter.cdn.playredfox.net/cdn/update/temp.ini"
+    }
+  ],
+  "public_marker_evidence": {
+    "source": "http://rumble-fighter.cdn.playredfox.net/cdn/update/temp.ini",
+    "local_copy_sha256": "6e73c2281f0ef3364593f8756ac6ba5c3fefcbab032309654109b6678d61a81c",
+    "section": "TEMP",
+    "key": "NUM",
+    "value": "V0935",
+    "note": "Previously fetched public update metadata; not a user token and not independently established as a network protocol version."
+  },
+  "next_meaningful_target": "Inspect client-side command-line consumption and network initialization or the current binary config format. The launcher DIRECT path is now sufficiently traced and is not an evidenced endpoint mechanism. Do not ask for another generic hash/port diagnostic or raw user command line to resolve this question.",
+  "limits": [
+    "No game-client parser was deprotected, executed or modified.",
+    "No claim that unknown endpoint flags are supported.",
+    "No suggestion to alter marker, author literal, patch metadata, security checks or GameGuard.",
+    "The exact generated command line for the user was not collected; only static symbolic grammar and public constants are recorded."
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "schema": "rf.lobby-bootstrap-synthetic-validation.v1",
+  "privacy": "Frames are constructed from invented local IDs/profile/GG bytes, public catalog IDs and END1000, plus explicitly observed nonidentifying unknown-word scalar candidates85593/85582/85582. No original capture body, private instance/avatar/query key, credential, name or token is copied. The guild query key0x12345678 is invented.",
+  "fixture": {
+    "property_count": 3,
+    "property_record_stride": 49,
+    "instance_ids": [
+      1,
+      2,
+      3
+    ],
+    "catalog_ids": [
+      1000175,
+      2040034,
+      5135224
+    ],
+    "unknown_candidate_words": [
+      85593,
+      85582,
+      85582
+    ],
+    "end_candidate": 1000,
+    "unknown_regions": "zero",
+    "property_repeated_reply_behavior": "Same3records on each of at most3requests; no inferred pagination/tail semantics.",
+    "guild_query_key_hex": "12345678",
+    "guild_key_wire_hex": "78563412",
+    "avatar_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "equipped_avatar": 1,
+    "equipment_job_instance": 1,
+    "equipment_exoa_instance": 2,
+    "equipment_tail_zero_bytes": 180,
+    "clock_filetime": 134365572000000000,
+    "base_definition": "Same fixed454-byte outgoing/147-byte incoming startup fixture as earlier validations, synthetic GGblob0..59 and tokenABCDEFGHIJKLMNOPQRSTUVWXYZ1234.",
+    "unknown_candidate_words_provenance": "Observed structural scalar values from the user-supplied capture, reported in analysis/item-catalog-findings.json. Meaning unknown; not public-source defaults and not established flags."
+  },
+  "response_vectors": {
+    "starter_property": {
+      "total_bytes": 3928,
+      "header_hex": "00300f588500",
+      "plaintext_sha256": "2a36b032f6e0338f040a2afec34f8793c66caff260bbd2965a305d03a0e975e4"
+    },
+    "buddy": {
+      "total_bytes": 3008,
+      "header_hex": "00100bc0a900",
+      "plaintext_sha256": "b02f4eaf0f8914047215665ce8cc73dbf630cdab6a5438e4123a9989dac378da"
+    },
+    "guild_member": {
+      "total_bytes": 580,
+      "header_hex": "003302448500",
+      "plaintext_sha256": "78272fae7fe24ce4d5f23fe83f74a517679b5253f9b6d226da74532323fb6cd1"
+    },
+    "guild_greeting": {
+      "total_bytes": 139,
+      "header_hex": "0033008b8b00",
+      "plaintext_sha256": "be3af80dfd1188d144b3d676655d4dbf3a2f7356a3f87835ddd238fa622aaaf8"
+    },
+    "guild_rank": {
+      "total_bytes": 18,
+      "header_hex": "003300129100",
+      "plaintext_sha256": "8e6770e5fcbe4929adef9b2e4824c20a6cc1e782926a74b847974b6e43b63035"
+    },
+    "guild_rank_list": {
+      "total_bytes": 880,
+      "header_hex": "003303708f00",
+      "plaintext_sha256": "b712d721e693cadb5a65ef463b1c975a61dae50951a3f80e197c405bb7edcdfb"
+    },
+    "avatar_enumeration": {
+      "total_bytes": 87,
+      "header_hex": "003000578700",
+      "plaintext_sha256": "23329926b82d6259589aa70b1a208b4f6b3d866cf31fcf48556b76052f7f8b8c"
+    },
+    "equipped_avatar": {
+      "total_bytes": 10,
+      "header_hex": "0040000aa100",
+      "plaintext_sha256": "647b0a2edd34f783e4433a115923b829023af32c5c11fc7177c7e296b028826b"
+    },
+    "avatar_equipment": {
+      "total_bytes": 366,
+      "header_hex": "0030016e8900",
+      "plaintext_sha256": "0ae3e8a9b1b366093db904c2a6fd4dd11c65ac511136f31e89741a5b98fca80d"
+    }
+  },
+  "paths": [
+    {
+      "property_reply_count": 1,
+      "incoming_total_bytes": 352,
+      "incoming_plaintext_sha256": "85bcaeeb7e0b2b1eee130915d1e348dffef7bef1b8fd05fecfcad6baf026e38c",
+      "incoming_ciphertext_sha256": "6fd5f2b9b90437c873e0b45105504209643ade1d455e84f48099ce848ce3ff1e",
+      "incoming_followup_offsets": {
+        "buddy": 176,
+        "guild_member": 186,
+        "guild_greeting": 200,
+        "guild_rank": 210,
+        "guild_rank_list": 220,
+        "avatar_enumeration": 230,
+        "equipped_avatar": 240,
+        "avatar_equipment_1": 246,
+        "avatar_equipment_2": 256,
+        "avatar_equipment_3": 266,
+        "avatar_equipment_4": 276,
+        "avatar_equipment_5": 286,
+        "avatar_equipment_6": 296,
+        "avatar_equipment_7": 306,
+        "avatar_equipment_8": 316,
+        "avatar_equipment_9": 326,
+        "avatar_equipment_10": 336,
+        "unsupported_grade_header": 346
+      },
+      "outgoing_total_bytes": 19778,
+      "outgoing_plaintext_sha256": "614c7f91e9d5b629b8044234fcbc390199ff07d8bbd0e4b44296068853979bad",
+      "outgoing_ciphertext_sha256": "d3bfff76c904c846a8f20b6609043d148474a1f046f9e17d100a7d76f1860aaf",
+      "outgoing_followup_offsets": {
+        "buddy": 11396,
+        "guild_member": 14404,
+        "guild_greeting": 14984,
+        "guild_rank": 15123,
+        "guild_rank_list": 15141,
+        "avatar_enumeration": 16021,
+        "equipped_avatar": 16108,
+        "avatar_equipment_1": 16118,
+        "avatar_equipment_2": 16484,
+        "avatar_equipment_3": 16850,
+        "avatar_equipment_4": 17216,
+        "avatar_equipment_5": 17582,
+        "avatar_equipment_6": 17948,
+        "avatar_equipment_7": 18314,
+        "avatar_equipment_8": 18680,
+        "avatar_equipment_9": 19046,
+        "avatar_equipment_10": 19412
+      },
+      "fragmented_continuous_decode_passed": true,
+      "outgoing_per_response_ciphertext_sha256": {
+        "buddy": "dd6d8b6d9ab3bb6e98abbd58d2a220df5090dae710dc6b49a55c11684d6a05bc",
+        "guild_member": "0efd5b6358a068ac198e48a4d0129a6ed9dd34c842388d66dde39e9a587dc4a9",
+        "guild_greeting": "56e5804011c960b42f309cc61218fa680e45ed792cefc367b92058a5cb615a0b",
+        "guild_rank": "ad343576b83b121952a6562c284197f72702878442f9e8f338d056d56f9ac5f8",
+        "guild_rank_list": "c5cf3c0d3dd4a20e13c4301d5b0e7177f72da826f65e7925fac462de6adf4cf1",
+        "avatar_enumeration": "fef4028d0da5af3258ff2cf4313d979aa77d6fe86a5f4776b7e54a27c219985e",
+        "equipped_avatar": "9d0e20654e60dd845685c4985e9f302e71275095a7a7c7b1214c2c431288a4ee",
+        "avatar_equipment_1": "54351c33f1989a48c61fb2f70142f3057eaf7088ce8c7ff0c4894525554be3df",
+        "avatar_equipment_2": "0e531fdff5a559e34d091d989dc231c508c149664deb23352771dfaa720dc535",
+        "avatar_equipment_3": "5cb2889d3ac12561fad623003d446bd7ef6c84193155eeaee741d8884110a318",
+        "avatar_equipment_4": "c23c5103cd52604dbec731592bd91da186577e48a57a8f5b836a9af699c94267",
+        "avatar_equipment_5": "c4af426791e973acbc4e61f173a1b5c0295a0de87ed4a87f373d7d9514a41b98",
+        "avatar_equipment_6": "00a4935000ff9f843d378a41b14cd24285badd4412bf6953f303747704d1e4d2",
+        "avatar_equipment_7": "3d6b986fc2ab9deb4798eeed2da456289d806d4498b910466367b147a1eac74e",
+        "avatar_equipment_8": "3df4d684ecc134e60663d9d767a01d35805841be525808b07256f6bbaf363c31",
+        "avatar_equipment_9": "9c58d6eeebda30151c8bfdd0465906418367ddc2604f6683f55bcac6f4776dc0",
+        "avatar_equipment_10": "0ef4e6d6b6842ef49ede4a5e74a7295153540a1c32b5b6f9b7f54eb768634c8e"
+      }
+    },
+    {
+      "property_reply_count": 3,
+      "incoming_total_bytes": 386,
+      "incoming_plaintext_sha256": "961e013d3a2c6f0a9396ce9e22338cb2de1f42a0c4ac9d388d448f7e04b6c62b",
+      "incoming_ciphertext_sha256": "76a831e85f09157d59f2b946d036fb11982fad283c7434433f3bef1f044246b3",
+      "incoming_followup_offsets": {
+        "buddy": 210,
+        "guild_member": 220,
+        "guild_greeting": 234,
+        "guild_rank": 244,
+        "guild_rank_list": 254,
+        "avatar_enumeration": 264,
+        "equipped_avatar": 274,
+        "avatar_equipment_1": 280,
+        "avatar_equipment_2": 290,
+        "avatar_equipment_3": 300,
+        "avatar_equipment_4": 310,
+        "avatar_equipment_5": 320,
+        "avatar_equipment_6": 330,
+        "avatar_equipment_7": 340,
+        "avatar_equipment_8": 350,
+        "avatar_equipment_9": 360,
+        "avatar_equipment_10": 370,
+        "unsupported_grade_header": 380
+      },
+      "outgoing_total_bytes": 27634,
+      "outgoing_plaintext_sha256": "52ad50545dd69f6134dc091ded89d6c3c7921e7f3710fdd05f2dcffe300e93a0",
+      "outgoing_ciphertext_sha256": "880857a9b9209a7104c4b61ff00b332ebc9fd3aa671881d8f1d805e2cb6584de",
+      "outgoing_followup_offsets": {
+        "buddy": 19252,
+        "guild_member": 22260,
+        "guild_greeting": 22840,
+        "guild_rank": 22979,
+        "guild_rank_list": 22997,
+        "avatar_enumeration": 23877,
+        "equipped_avatar": 23964,
+        "avatar_equipment_1": 23974,
+        "avatar_equipment_2": 24340,
+        "avatar_equipment_3": 24706,
+        "avatar_equipment_4": 25072,
+        "avatar_equipment_5": 25438,
+        "avatar_equipment_6": 25804,
+        "avatar_equipment_7": 26170,
+        "avatar_equipment_8": 26536,
+        "avatar_equipment_9": 26902,
+        "avatar_equipment_10": 27268
+      },
+      "fragmented_continuous_decode_passed": true,
+      "outgoing_per_response_ciphertext_sha256": {
+        "buddy": "3b9c7e68c2fd1fa55d06f095d53affe8e7621dd3e8b379981167723dd9e0b514",
+        "guild_member": "c15c3bba413e78495d75455bbe8468b4e34c9e7afe9a185a419c4dd890ef1d2b",
+        "guild_greeting": "f4511030f94fd4fb3af3d1318157590d0f63330586e35b94b64943e739af14bc",
+        "guild_rank": "194680a96f4b6abf6fe9aa783dbc4bc4503c687399f7eb146895926fe2640816",
+        "guild_rank_list": "573cd226f2c5825434d98d05551761a6f808f29166f8612ff359885d72c9992e",
+        "avatar_enumeration": "5cc9085bb8e19085bfe37b044a02bb36024f371672e97d27544c86c5056693d6",
+        "equipped_avatar": "92659f00ad8e9b159e9fea54b5cdbcb46ec668a358dd36bb5a949c867c20843c",
+        "avatar_equipment_1": "9a347cc1b6357abecbd79662822729159177cc8bc21b12ba3852f3de5faa7062",
+        "avatar_equipment_2": "b2e98db5681cf303aa9f46451c6fcf0a7416026f9e6c98b3c91b369967cedc16",
+        "avatar_equipment_3": "4a36ade5bbf995675b8a5947c2004ec5b5e9bceaab61bd423dfe459a50138125",
+        "avatar_equipment_4": "65f3fbbc34b75f2fd1c1f4c151521fa2ae85c10b37c2c061fe3fd84f52739145",
+        "avatar_equipment_5": "c3ab3afcbdd67442650700a1bbddec294c3882d2ef8346f8cb405af1473feac8",
+        "avatar_equipment_6": "cab1c5820787572c9c9103ad7ca049075b93b9d5ae6e6ffb388edca3feba445c",
+        "avatar_equipment_7": "8650733f6372c7c8b637eb3cc9779c11d94cfc8bcafdd37bf8a09350c1a6b901",
+        "avatar_equipment_8": "1904a8d5ba4fc6c7d7c37ad1ca9fe8ab37e4e32c694088fce00b3e93e85955f6",
+        "avatar_equipment_9": "b20585f8b0ebe9ead86f3a997da25b0dc91bf52830cd1f26b29c9bf12304c553",
+        "avatar_equipment_10": "6947ab390cd12f9ef477da4b874c3c3a5dbcc896e3885bc167ff92db0c7b47e7"
+      }
+    }
+  ],
+  "bound_check": {
+    "header_cap": 36,
+    "max_input_bytes": 434,
+    "max_output_bytes": 27760,
+    "max_input_configuration": [
+      3,
+      5,
+      2,
+      10,
+      11
+    ],
+    "max_output_configuration": [
+      3,
+      5,
+      2,
+      10,
+      11
+    ],
+    "configuration_fields": [
+      "property_replies",
+      "social_prefix_steps",
+      "avatar_steps",
+      "equipment_replies",
+      "clock_replies"
+    ],
+    "maximum_input_formula": "117+36*6+3*11+buddy4+guild20+avatarowner4+equipment40",
+    "maximum_output_formula": "332+68+8+18+3*3928+2*3507+3008+1617+87+10+10*366+11*14"
+  },
+  "validation": {
+    "python_reference_executed": true,
+    "fragmented_cipher_continuity": true,
+    "csharp_compilation_here": false,
+    "current_client_candidate_acceptance": false,
+    "v1_9_implementation_completed": false,
+    "csharp_static_review_completed": false
+  },
+  "delivery_status": {
+    "artifact_kind": "Read-only analysis and proposed fixture specification",
+    "active_v1_9_implementation": "blocked_by_automatic_approval_review; not completed or delivered",
+    "automatic_review_reason_reported_by_parent": "Possible cybersecurity risk from the active emulation changes.",
+    "further_active_code_work": "Stopped; no equivalent retry or C# review performed by this analyst.",
+    "last_delivered_active_version": "1.8",
+    "v1_9_csharp_review_completed": false,
+    "v1_9_compilation_or_runtime_validation": false,
+    "scope_limit": "These findings and synthetic vectors are not an executable build, a validated protocol implementation, or evidence of lobby/gameplay acceptance."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schema": "rf-eighth-windows-run-v1",
+  "source_file": "rf-local-handshake-20261016-125113-c8ea345e.json",
+  "source_sha256": "49e27f4587e6041ecf4896e805e5ef98a762bf714641708d87979c65090e8f8b",
+  "reported_result": {
+    "schema": "rf-local-handshake-v1",
+    "script_version": "1.7",
+    "test_id": "c8ea345e1a5340a6adc63bb4476cb30f",
+    "mode": "local_empty_property_inventory",
+    "started_utc": "2026-10-16T12:51:13.0665491Z",
+    "status": "cleanup_pending",
+    "error_code": null,
+    "error_detail": null,
+    "checks": {
+      "probe_selftest": true,
+      "journal_create_replace_readback": true,
+      "capture_fixture_verified": true,
+      "unique_software_loopback": true,
+      "existing_configuration_clear": true,
+      "temporary_address_verified": true,
+      "persistent_address_absent": true,
+      "temporary_address_and_route_verified": true,
+      "ownership_journal_updated": true,
+      "probe_ready": true
+    },
+    "observed_address": {
+      "count": 1,
+      "samples": [
+        {
+          "state": "Preferred",
+          "prefix_length": 32,
+          "interface_matches_expected": true,
+          "skip_as_source": true,
+          "skip_as_source_present": true
+        }
+      ]
+    },
+    "game_peer_correlated": true,
+    "correlated_process_name": "rumblefighter",
+    "client_build_verified": true,
+    "client_build_check": "verified",
+    "probe": {
+      "status": "local_property_postlogin_observed",
+      "request_type": 16,
+      "request_action": 144,
+      "request_bytes": 26,
+      "header_parsed": true,
+      "peer_authorized": true,
+      "accepted_after_start_ms": 40178,
+      "first_byte_after_accept_ms": 20138,
+      "reply_bytes": 6,
+      "reply_written": true,
+      "synthetic_socket_check": true,
+      "error_code": "",
+      "socket_error_code": 0,
+      "login_request_type": 16,
+      "login_request_action": 132,
+      "login_request_bytes": 91,
+      "login_header_parsed": true,
+      "login_frame_received": true,
+      "login_reply_bytes": 326,
+      "login_reply_written": true,
+      "local_fixture_matched": true,
+      "login_reply_kind": "synthetic_success",
+      "post_login_request_bytes": 53,
+      "post_login_headers": [
+        {
+          "type": 16,
+          "action": 146,
+          "total_bytes": 6
+        },
+        {
+          "type": 72,
+          "action": 128,
+          "total_bytes": 6
+        },
+        {
+          "type": 16,
+          "action": 208,
+          "total_bytes": 6
+        },
+        {
+          "type": 49,
+          "action": 136,
+          "total_bytes": 6
+        },
+        {
+          "type": 16,
+          "action": 146,
+          "total_bytes": 6
+        },
+        {
+          "type": 48,
+          "action": 132,
+          "total_bytes": 17
+        },
+        {
+          "type": 48,
+          "action": 146,
+          "total_bytes": 6
+        }
+      ],
+      "clock_reply_count": 2,
+      "post_login_reply_bytes": 4050,
+      "post_login_stop_reason": "unsupported_header",
+      "capture_fixture_loaded": true,
+      "gameguard_replay_written": true,
+      "gameguard_replay_bytes": 68,
+      "startup_ack_written": true,
+      "startup_ack_bytes": 8,
+      "local_cash_reply_written": true,
+      "local_cash_reply_bytes": 18,
+      "property_request_count": 1,
+      "property_owner_match_count": 1,
+      "property_reply_count": 1,
+      "property_reply_bytes": 3928
+    },
+    "cleanup": {
+      "status": "pending_game_still_running",
+      "error_code": null,
+      "address_absent": null,
+      "route_absent": null,
+      "journal_removed": false,
+      "listener_stopped": true
+    },
+    "limits": [
+      "The temporary address makes this one destination IP local for all ports and protocols; only TCP 7000 is serviced.",
+      "Only the fixed invented local credentials can receive an experimental local profile. One initialization frame from the hash-verified user capture may then be replayed locally; this is not fresh GameGuard authentication.",
+      "At most 222 client bytes are read: version26, login91, twelve six-byte post-login headers and up to three eleven-byte property bodies. Unsupported bodies are not read.",
+      "Login and supported property bodies are decrypted only in bounded memory and then cleared. The property owner must match local account1; seven tail bytes remain uninterpreted. Credentials, packet bodies, GUIDs and tokens are never logged or saved.",
+      "At most 12294 server bytes are written: a bounded profile/clock exchange with one captured initializer, one startup acknowledgement, one zero-balance reply and up to three 3928-byte empty property replies. Unsupported headers end observation before their bodies.",
+      "The opaque initialization blob may contain old session binding. It is extracted only in memory, never saved or included in reports. Other GameGuard destinations are not isolated by the one-IP route.",
+      "ReplyWritten means the local probe handed a response to its socket; it does not prove application-level acceptance.",
+      "Closing or killing this window abruptly may leave the volatile address until CleanupLocalHandshake.cmd or a reboot."
+    ],
+    "finished_utc": "2026-10-16T12:53:35.7933776Z"
+  },
+  "screenshot_evidence": {
+    "source_file": "image(20261016-125353).png",
+    "source_sha256": "454837032ecadccec2c6f75b88a1e2ef9c029a187909387918929f7d88e08733",
+    "visible_window_title": "ServerErr",
+    "visible_error_ascii_fragments": [
+      "FUNC_Q_GET_GIFT_FROM",
+      "NULL"
+    ],
+    "intervening_text": "Garbled characters, not interpreted.",
+    "visible_context": "Black Rumble Fighter window with the received-gift error dialog.",
+    "screenshot_not_redistributed": true
+  },
+  "established": [
+    "Version1.7 passed compilation, self-tests, capture/peer/build checks and local routing.",
+    "One complete17-byte property request was received and its local owner1 matched; one3928-byte synthetic empty response was written.",
+    "The client next sent received-gift request30/92/total6, matching the next stage in the original capture after its inventory exchange.",
+    "The current client requested inventory only once, compared with three requests in the original session. Tail/category/pagination semantics remain unproven.",
+    "Version1.7 deliberately stopped without answering the gift request. Screenshot shows FUNC_Q_GET_GIFT_FROM ... NULL.",
+    "The listener stopped; cleanup remained pending with game/launcher still running, so address/route removal and journal deletion were not verified."
+  ],
+  "actual_wire_counts": {
+    "client_bytes_read": 170,
+    "server_bytes_written": 4382,
+    "property_bodies_read": 1,
+    "property_replies_written": 1,
+    "gift_replies_written": 0
+  },
+  "interpretation": "The client progressed from an owner-checked empty inventory reply to the received-gifts stage. This supports compatibility for this bounded empty response under the test conditions, not complete inventory semantics or usable character state.",
+  "cleanup_required": "Close game and launcher, then run CleanupLocalHandshake.cmd as administrator from the SAME v1.7 folder. Wait for Cleanup verified. If the programs remain, end only those programs in Task Manager; reboot clears the volatile test address if necessary.",
+  "not_established": [
+    "A verified empty gift-list encoding or populated gift records.",
+    "Complete inventory/profile semantics or usable character/lobby/gameplay.",
+    "Fresh or ongoing GameGuard authentication.",
+    "Cleanup completion for this run."
+  ],
+  "next_checkpoint": {
+    "version": "1.8",
+    "purpose": "Send one experimental zero-filled3507-byte received-gift response, then one same-sized sent-gift response if requested in order; stop at the next unsupported header.",
+    "candidate_semantics_unverified": true,
+    "expected_next_header": "Buddy request10/A8/total10; only its header will be read.",
+    "requires_new_windows_run": true
+  }
+}

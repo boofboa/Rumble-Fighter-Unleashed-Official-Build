@@ -1,0 +1,116 @@
+{
+  "scope": "Offline decompression only; no Windows code execution, imports, fixups or system calls.",
+  "source_sha256": "94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59",
+  "algorithm": "Bitstream/back-reference decoder structurally consistent with aPLib; translated from this loader, not copied from a library.",
+  "compressed_block_count": 8,
+  "compressed_start_file_offset": "0x16f807",
+  "compressed_stop_file_offset": "0x402f8d",
+  "permitted_source_stop_file_offset": "0x403200",
+  "unconsumed_boot_tail_bytes": 627,
+  "decoded_size_bytes": 4915200,
+  "decoded_sha256": "674441d3542447def6b1f79a5344882b22b1d1d34f56d8608f0dd042e13e9cd5",
+  "independent_block_and_total_checks_passed": true,
+  "mapped_preferred_va_start": "0x819000",
+  "mapped_preferred_va_stop": "0xcc9000",
+  "reserved_virtual_size": 4915200,
+  "next_entry_offset": "0x1f4005",
+  "next_entry_preferred_va": "0xa0d005",
+  "next_entry_within_decoded_range": true,
+  "iterations": 18574051,
+  "iteration_cap": 64000000,
+  "cross_block_copy_count": 0,
+  "operation_counts": {
+    "new_long_distance": 466545,
+    "literal": 1108793,
+    "single_copy": 84395,
+    "zero_literal": 10932,
+    "repeat_distance": 53072,
+    "short_distance": 62792,
+    "block_terminator": 8
+  },
+  "blocks": [
+    {
+      "source_file_start": "0x16f807",
+      "source_file_stop": "0x1be1dd",
+      "compressed_bytes": 322006,
+      "output_offset_start": "0x0",
+      "output_offset_stop": "0x96000",
+      "output_bytes": 614400,
+      "operations": 2445894,
+      "output_sha256": "4525efe493c671e4e094ac537bb732028e67c074925b50d5f4f1086cc5f9120d"
+    },
+    {
+      "source_file_start": "0x1be1dd",
+      "source_file_stop": "0x20b331",
+      "compressed_bytes": 315732,
+      "output_offset_start": "0x96000",
+      "output_offset_stop": "0x12c000",
+      "output_bytes": 614400,
+      "operations": 2468547,
+      "output_sha256": "4a37aa713bf10ba225638ea6500c45967d8e4e35e646c74b670d02cd3d867d46"
+    },
+    {
+      "source_file_start": "0x20b331",
+      "source_file_stop": "0x2466c7",
+      "compressed_bytes": 242582,
+      "output_offset_start": "0x12c000",
+      "output_offset_stop": "0x1c2000",
+      "output_bytes": 614400,
+      "operations": 1918746,
+      "output_sha256": "31bacd7a052e047d053b087a69f156054c239e6a88cf6246103267602bc68bbc"
+    },
+    {
+      "source_file_start": "0x2466c7",
+      "source_file_stop": "0x2a17a1",
+      "compressed_bytes": 372954,
+      "output_offset_start": "0x1c2000",
+      "output_offset_stop": "0x258000",
+      "output_bytes": 614400,
+      "operations": 2308036,
+      "output_sha256": "734734c0b4bdf905c04cc31484b54a23acacd28dbc755bcc2411ca0e722402b2"
+    },
+    {
+      "source_file_start": "0x2a17a1",
+      "source_file_stop": "0x2f6174",
+      "compressed_bytes": 346579,
+      "output_offset_start": "0x258000",
+      "output_offset_stop": "0x2ee000",
+      "output_bytes": 614400,
+      "operations": 2362403,
+      "output_sha256": "779edfc7796b282fbfa9040d88f937e29afb54e63a30ead8cc25ebc3d999b56f"
+    },
+    {
+      "source_file_start": "0x2f6174",
+      "source_file_stop": "0x3488f3",
+      "compressed_bytes": 337791,
+      "output_offset_start": "0x2ee000",
+      "output_offset_stop": "0x384000",
+      "output_bytes": 614400,
+      "operations": 2317126,
+      "output_sha256": "e38b4d03b2705e0c38a5df4e61aca3f37cf5de03db55ad5734854c326cfe33b4"
+    },
+    {
+      "source_file_start": "0x3488f3",
+      "source_file_stop": "0x398177",
+      "compressed_bytes": 325764,
+      "output_offset_start": "0x384000",
+      "output_offset_stop": "0x41a000",
+      "output_bytes": 614400,
+      "operations": 2302235,
+      "output_sha256": "142de0baae667bfe8bae68eca40754d0b03af6f16d74de74a92b71a81dc89a1e"
+    },
+    {
+      "source_file_start": "0x398177",
+      "source_file_stop": "0x402f8d",
+      "compressed_bytes": 437782,
+      "output_offset_start": "0x41a000",
+      "output_offset_stop": "0x4b0000",
+      "output_bytes": 614400,
+      "operations": 2451064,
+      "output_sha256": "f4fc51b81f4bbed1ef415e5b87feb5f1aa8bac0ecf16e4f63a816258d3fad294"
+    }
+  ],
+  "handling": "Derived bytes are temporary analysis only and must not be packaged or redistributed.",
+  "limitation": "First-stage protector reconstruction is not the original application image or proof of endpoint setup.",
+  "derived_bytes_written": false
+}

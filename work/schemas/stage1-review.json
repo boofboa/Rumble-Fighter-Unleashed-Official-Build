@@ -1,0 +1,152 @@
+{
+  "source_sha256": "94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59",
+  "method": "Independent Python transcription of statically disassembled aPLib-style loader; no original x86 or imported functions executed; decompressed bytes retained only in process memory for hashes.",
+  "destination_va": "0x819000",
+  "destination_capacity_bytes": 4915200,
+  "output_bytes": 4915200,
+  "output_sha256": "674441d3542447def6b1f79a5344882b22b1d1d34f56d8608f0dd042e13e9cd5",
+  "source_end": "0x402f8d",
+  "source_boot_raw_end": "0x403200",
+  "source_remaining_boot_bytes": 627,
+  "next_jump_va": "0xa0d005",
+  "next_jump_within_written_output": true,
+  "blocks": [
+    {
+      "index": 0,
+      "source_start": "0x16f807",
+      "source_end": "0x1be1dd",
+      "compressed_bytes": 322006,
+      "output_offset": "0x0",
+      "output_bytes": 614400,
+      "output_sha256": "4525efe493c671e4e094ac537bb732028e67c074925b50d5f4f1086cc5f9120d",
+      "unused_tag_bits": 1
+    },
+    {
+      "index": 1,
+      "source_start": "0x1be1dd",
+      "source_end": "0x20b331",
+      "compressed_bytes": 315732,
+      "output_offset": "0x96000",
+      "output_bytes": 614400,
+      "output_sha256": "4a37aa713bf10ba225638ea6500c45967d8e4e35e646c74b670d02cd3d867d46",
+      "unused_tag_bits": 7
+    },
+    {
+      "index": 2,
+      "source_start": "0x20b331",
+      "source_end": "0x2466c7",
+      "compressed_bytes": 242582,
+      "output_offset": "0x12c000",
+      "output_bytes": 614400,
+      "output_sha256": "31bacd7a052e047d053b087a69f156054c239e6a88cf6246103267602bc68bbc",
+      "unused_tag_bits": 7
+    },
+    {
+      "index": 3,
+      "source_start": "0x2466c7",
+      "source_end": "0x2a17a1",
+      "compressed_bytes": 372954,
+      "output_offset": "0x1c2000",
+      "output_bytes": 614400,
+      "output_sha256": "734734c0b4bdf905c04cc31484b54a23acacd28dbc755bcc2411ca0e722402b2",
+      "unused_tag_bits": 6
+    },
+    {
+      "index": 4,
+      "source_start": "0x2a17a1",
+      "source_end": "0x2f6174",
+      "compressed_bytes": 346579,
+      "output_offset": "0x258000",
+      "output_bytes": 614400,
+      "output_sha256": "779edfc7796b282fbfa9040d88f937e29afb54e63a30ead8cc25ebc3d999b56f",
+      "unused_tag_bits": 2
+    },
+    {
+      "index": 5,
+      "source_start": "0x2f6174",
+      "source_end": "0x3488f3",
+      "compressed_bytes": 337791,
+      "output_offset": "0x2ee000",
+      "output_bytes": 614400,
+      "output_sha256": "e38b4d03b2705e0c38a5df4e61aca3f37cf5de03db55ad5734854c326cfe33b4",
+      "unused_tag_bits": 0
+    },
+    {
+      "index": 6,
+      "source_start": "0x3488f3",
+      "source_end": "0x398177",
+      "compressed_bytes": 325764,
+      "output_offset": "0x384000",
+      "output_bytes": 614400,
+      "output_sha256": "142de0baae667bfe8bae68eca40754d0b03af6f16d74de74a92b71a81dc89a1e",
+      "unused_tag_bits": 7
+    },
+    {
+      "index": 7,
+      "source_start": "0x398177",
+      "source_end": "0x402f8d",
+      "compressed_bytes": 437782,
+      "output_offset": "0x41a000",
+      "output_bytes": 614400,
+      "output_sha256": "f4fc51b81f4bbed1ef415e5b87feb5f1aa8bac0ecf16e4f63a816258d3fad294",
+      "unused_tag_bits": 2
+    }
+  ],
+  "decoded_token_counts": {
+    "literal": 1108801,
+    "short_match": 62792,
+    "long_match": 466545,
+    "repeat_match": 53072,
+    "tiny_copy": 84395,
+    "zero_literal": 10932
+  },
+  "limitations": [
+    "This is the first protector-stage destination, not a reconstructed runnable game executable.",
+    "Successful bounded decompression does not prove endpoint selection was decoded.",
+    "No Windows PE, decrypted game logic, import call, anti-cheat callback or networking code was executed."
+  ],
+  "implementation_review": {
+    "path": "analysis/client/decode_first_stage.py",
+    "result": "No defect identified in the bounded decoder implementation.",
+    "checks": [
+      "MSB-first bit tags and per-block reset match DL sentinel behavior.",
+      "Gamma branches and literal/short/long/repeated/tiny reference state transitions match the disassembly.",
+      "Distance length adjustments match thresholds 0x7f, 0x500 and 0x7d00.",
+      "Previous distance and output history persist across block boundaries; overlapping copies advance byte by byte.",
+      "Source reads are bounded to the .boot raw section, destination to .winlice virtual capacity; backward references and 32-bit arithmetic are validated.",
+      "Every loop has input, arithmetic or operation bounds; an overall 64,000,000-operation budget also applies.",
+      "The decoder pins the source build SHA256 and writes derived bytes only under temporary analysis."
+    ]
+  },
+  "independent_implementation_comparison": {
+    "metadata_path": "analysis/client/first-stage-decompression.json",
+    "sha256_matches": true,
+    "size_matches": true,
+    "source_stop_matches": true,
+    "block_boundaries_match": true,
+    "block_count_matches": true
+  },
+  "bounded_next_entry_static_review": {
+    "entry_va": "0xa0d005",
+    "base_setup": "Two call/jump/pop sequences compute protector base 0x819000 in EBP and preferred image base 0x400000 in EAX.",
+    "followed_direct_control_flow": [
+      "0xa0d005",
+      "0x9eda8d",
+      "0xa0d00b",
+      "0x9edaf5",
+      "0xa0d017",
+      "0x9edc1e",
+      "0xa0d036",
+      "0xa0d000",
+      "0xa0dc94",
+      "0x9b20aa"
+    ],
+    "conclusion": "The followed path transitions into densely obfuscated stack/register setup and control-flow trampolines. No additional isolated pure byte-transform routine was established in this bounded review.",
+    "limitations": [
+      "The helper region intermixes jump stubs and data; linear decoding between known control-flow targets is not reliable.",
+      "Adjacent indirect-call wrappers were observed but not established as part of the followed entry path.",
+      "This limited view does not prove that further offline analysis is impossible or that a particular VM/runtime/API is required.",
+      "No original x86 was executed."
+    ]
+  }
+}

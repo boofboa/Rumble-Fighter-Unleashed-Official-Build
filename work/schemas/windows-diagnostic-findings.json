@@ -1,0 +1,41 @@
+{
+  "report_collected_utc": "2026-10-16T03:40:33.1470039Z",
+  "client_matches_analyzed_bytes": true,
+  "launcher_matches_analyzed_bytes": true,
+  "powershell_version": "5.1.26100.9711",
+  "diagnostic_status": "completed on user Windows PC after explicit output path supplied",
+  "known_plaintext_launcher_configs_present": {
+    "RumbleLauncher.ini": false,
+    "WISEUPDATE.INI": false,
+    "GrLauncher.ini": false
+  },
+  "running_client_options": [
+    [
+      "direct"
+    ]
+  ],
+  "established_remote_ports": [
+    3416,
+    7000
+  ],
+  "adjacent_runtime_dlls_present": {
+    "d3dx9_42.dll": true,
+    "audiere.dll": true,
+    "MSVCR100.dll": true
+  },
+  "binary_config": {
+    "filename": "rumfus.ini",
+    "earlier_size": 1217,
+    "earlier_sha256": "2daef705b079d1f6bfa868107af2a79a1794ae09f24c473ff99083f57c5d39ae",
+    "current_reported_size": 1203,
+    "current_reported_sha256": "51f408116cdf2f4fe8d5e03e9bc3fa5bfcc18baef90ff0217a5678fa94e5ab48",
+    "current_bytes_received": false,
+    "interpretation": "File changed; neither a cause nor endpoint meaning is established by size/hash alone."
+  },
+  "remaining_questions": [
+    "No supported client endpoint override established",
+    "Current-client session/GameGuard exchange unresolved",
+    "Local playable character/lobby/training flow unvalidated"
+  ],
+  "contains_raw_user_values": false
+}

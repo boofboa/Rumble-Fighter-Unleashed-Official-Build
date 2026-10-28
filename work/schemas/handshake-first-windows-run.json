@@ -1,0 +1,62 @@
+{
+  "source_file": "rf-local-handshake-20261016-045020-5d7a569e.json",
+  "source_sha256": "b2a01611347a09ac12c04cb0f095c8a3afa16d7889f35b675ff27f941d0c67fd",
+  "reported_result": {
+    "schema": "rf-local-handshake-v1",
+    "test_id": "5d7a569e2084402e9f78a713d6a83fcf",
+    "mode": "version_handshake",
+    "started_utc": "2026-10-16T04:50:20.9677650Z",
+    "status": "stopped_before_completion",
+    "error_code": "temporary_address_verification_failed",
+    "checks": {
+      "probe_selftest": true,
+      "unique_software_loopback": true,
+      "existing_configuration_clear": true
+    },
+    "game_peer_correlated": false,
+    "correlated_process_name": null,
+    "client_build_verified": false,
+    "client_build_check": "not_observed",
+    "probe": null,
+    "cleanup": {
+      "status": "verified_removed",
+      "error_code": null,
+      "address_absent": true,
+      "route_absent": true,
+      "journal_removed": true,
+      "listener_stopped": false
+    },
+    "limits": [
+      "The temporary address makes this one destination IP local for all ports and protocols; only TCP 7000 is serviced.",
+      "No login, account, GameGuard, other-service or gameplay compatibility is tested.",
+      "ReplyWritten means the local probe handed the acknowledgement to its socket; it does not prove application-level acceptance.",
+      "Closing or killing this window abruptly may leave the volatile address until CleanupLocalHandshake.cmd or a reboot."
+    ],
+    "finished_utc": "2026-10-16T04:50:24.7579040Z"
+  },
+  "confirmed": [
+    "C# compiled and built-in crypto/protocol self-tests passed on Windows.",
+    "Existing software loopback discovery and pre-existing conflict checks passed.",
+    "The local listener was never started; no game connection was observed.",
+    "Cleanup verified the temporary address and route absent, and removed the ownership journal."
+  ],
+  "cause_not_proven": "The original stage label covered several address queries, route checks and a later state-file replacement. It did not identify which operation raised the exception.",
+  "candidate_script_defect": "File.Replace backup-path argument used PowerShell $null at a .NET string parameter. Revised script uses NullString.Value to pass a true .NET null.",
+  "changes": [
+    "Use explicit NullString.Value for atomic file replacement.",
+    "Exercise create/replace/readback before any network mutation.",
+    "Distinguish address, route, persistent-store-query and journal-update failure stages.",
+    "Retain bounded fixed-destination address facts plus exception class/numeric code only."
+  ],
+  "unchanged_guards": [
+    "Unique software loopback and disabled DHCP.",
+    "Exact VIP /32, SkipAsSource, Preferred state, ActiveStore only and matching local route.",
+    "No physical-adapter, firewall, DNS, driver or game-file changes.",
+    "Close-game-before-cleanup, exact owned-address cleanup and recovery journal."
+  ],
+  "references": [
+    "https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.language.nullstring",
+    "https://learn.microsoft.com/en-us/dotnet/api/system.io.file.replace?view=netframework-4.8.1"
+  ],
+  "revised_script_windows_run": "not yet performed"
+}

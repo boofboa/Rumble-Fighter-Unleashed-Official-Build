@@ -1,0 +1,253 @@
+{
+  "schema": "rf.bootstrap-status-cash-validation.v1",
+  "scope": "Independent structural evidence and original synthetic vectors for the next bounded local-client test. Only the eight-byte fixed status response was selectively decrypted for comparison with public source. No captured account IDs, balances, login/session fields or GameGuard blob bytes are reproduced.",
+  "evidence": {
+    "reference_commit": "c56f4dccdad72f2d4337ffe6fe650d8c436114d0",
+    "reference_status_method": "analysis/reference-source/upstream-c56f4dc/Gemnet/PacketProcessors/Login.cs::CashUnknown",
+    "reference_dispatch": "analysis/reference-source/upstream-c56f4dc/Gemnet/Network/PacketProcessor.cs::ProcessLoginPacket",
+    "reference_name": "analysis/reference-source/upstream-c56f4dc/Gemnet/Packets.cs::ActionLogin.CASH_UNKNOWN",
+    "cash_serializer": "rf-protocol-lab/character_wire.py::cash_response",
+    "cash_prior_layout": "analysis/character-inventory-layout.json",
+    "client_header_metadata": "analysis/capture/client_to_server-legacy_rc4_abcde-framing.json",
+    "server_header_metadata": "analysis/capture/server_to_client-legacy_rc4_abcde-framing.json",
+    "chronology": "analysis/capture/flow-01/chronology.json"
+  },
+  "status_reply": {
+    "request_type": 16,
+    "request_action": 208,
+    "request_total_bytes": 6,
+    "response_type": 16,
+    "response_action": 209,
+    "response_total_bytes": 8,
+    "body_bytes": 2,
+    "body_layout": "Little-endian uint16 constant1 from public source, not an account balance.",
+    "meaning": "Unresolved; reference calls it CASH_UNKNOWN. Do not label this as a verified money amount or generic authentication success.",
+    "capture_selected_server_offset": 940,
+    "capture_selected_bytes": 8,
+    "capture_matches_public_fixed_response": true,
+    "other_capture_bodies_decrypted": false
+  },
+  "cash_reply": {
+    "request_type": 49,
+    "request_action": 136,
+    "request_total_bytes": 6,
+    "response_type": 49,
+    "response_action": 137,
+    "response_total_bytes": 18,
+    "body_bytes": 12,
+    "fields": [
+      {
+        "name": "local_account_id",
+        "body_offset": 0,
+        "encoding": "LE32",
+        "synthetic_value": 1
+      },
+      {
+        "name": "local_cash",
+        "body_offset": 4,
+        "encoding": "LE32",
+        "synthetic_value": 0
+      },
+      {
+        "name": "local_medals",
+        "body_offset": 8,
+        "encoding": "LE32",
+        "synthetic_value": 0
+      }
+    ],
+    "field_meanings_source": "Existing original serializer and reference-derived schema; only response length checked against original capture. No captured values inspected.",
+    "real_client_acceptance_with_synthetic_values_verified": false
+  },
+  "original_nearby_header_metadata": [
+    {
+      "direction": "client_to_server",
+      "offset": 240,
+      "type": "0x0048",
+      "action": "0x0080",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "client_to_server",
+      "offset": 246,
+      "type": "0x0010",
+      "action": "0x00d0",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "client_to_server",
+      "offset": 252,
+      "type": "0x0031",
+      "action": "0x0088",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "client_to_server",
+      "offset": 258,
+      "type": "0x0010",
+      "action": "0x0092",
+      "total_bytes": 6,
+      "body_bytes": 0,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "client_to_server",
+      "offset": 264,
+      "type": "0x0030",
+      "action": "0x0084",
+      "total_bytes": 17,
+      "body_bytes": 11,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "server_to_client",
+      "offset": 872,
+      "type": "0x0048",
+      "action": "0x0081",
+      "total_bytes": 68,
+      "body_bytes": 62,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "server_to_client",
+      "offset": 940,
+      "type": "0x0010",
+      "action": "0x00d1",
+      "total_bytes": 8,
+      "body_bytes": 2,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "server_to_client",
+      "offset": 948,
+      "type": "0x0031",
+      "action": "0x0089",
+      "total_bytes": 18,
+      "body_bytes": 12,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "server_to_client",
+      "offset": 966,
+      "type": "0x0010",
+      "action": "0x0093",
+      "total_bytes": 14,
+      "body_bytes": 8,
+      "type_known_to_reference": true
+    },
+    {
+      "direction": "server_to_client",
+      "offset": 980,
+      "type": "0x0030",
+      "action": "0x0085",
+      "total_bytes": 3928,
+      "body_bytes": 3922,
+      "type_known_to_reference": true
+    }
+  ],
+  "synthetic_vectors": {
+    "status_plaintext_hex": "00100008d1000100",
+    "status_sha256": "9d8f1ec8473e906e3afee634e0a8d1738d5b70040dfbc93de2cd6954cbe78c7b",
+    "cash_plaintext_hex": "003100128900010000000000000000000000",
+    "cash_sha256": "de7f4259af2973a3ef3c9ed8eb907f3971157ae57556fa2be16255d757db3d7d",
+    "base_definition": "Versionack6 + fixed AsterLocal login326 from login-success-vectors.json + fixed clock14 + invented GG68 with blob0..59",
+    "base_bytes": 414,
+    "base_ciphertext_sha256": "10f064f3833e33e5a49572b399f9645f301a474ff42e6933893dd4e7c9cd06d0",
+    "status_added_total_bytes": 422,
+    "status_added_ciphertext_sha256": "da9bd0d70964c33d9d6ab55c93f45dc0d31d63b46c867254c9c88f280b013f07",
+    "status_and_cash_total_bytes": 440,
+    "status_and_cash_plaintext_sha256": "21b1a1a6a6cdba66e7db2a63dc974ecbebf266b9dfa3d267040277167fa0fd9a",
+    "status_and_cash_ciphertext_sha256": "2c9e5734bab8f43dc06ed13993f27a7edbd1e8f853e6f208ff723e8d7a901ead",
+    "full_definition": "Base414 + status8 + cash18 + another identical fixed clock14",
+    "full_total_bytes": 454,
+    "full_plaintext_sha256": "65f8642dc0a89de8d618988e304ac5a15b0e65e667dc555cf96156e8b5647d9c",
+    "full_ciphertext_sha256": "8bbd1b68b04f40467577b803841d7aaf3aa8c206807d69661cd38df2f54c2953",
+    "status_at_offset414_ciphertext_hex": "e6c7333f1e13bcf9",
+    "cash_at_offset422_ciphertext_hex": "3498ae51a9be12388bee2290d12b9a283cdb",
+    "clock_at_offset440_ciphertext_hex": "1a6740b687ab057ff721a036b716",
+    "incoming_definition": "Version26 zero body + dummy login91 + clock6 + GGinit6 + statusquery6 + cashquery6 + clock6 + property header6 declaring total17. Property body intentionally absent.",
+    "incoming_bytes": 153,
+    "incoming_plaintext_sha256": "fa37b2e577a9ffb35a216714069a8b6366f898c0af01e0594a5a0243251ec5d4",
+    "incoming_ciphertext_sha256": "a64106af8fc7cd9397389640175097cc8b261c67684068b8531b99462da88cb5",
+    "incoming_postlogin_headers": [
+      {
+        "offset": 117,
+        "plaintext_hex": "001000069200",
+        "ciphertext_hex": "48d5553a13ea"
+      },
+      {
+        "offset": 123,
+        "plaintext_hex": "004800068000",
+        "ciphertext_hex": "d3c61f3ea743"
+      },
+      {
+        "offset": 129,
+        "plaintext_hex": "00100006d000",
+        "ciphertext_hex": "067e9df47f5a"
+      },
+      {
+        "offset": 135,
+        "plaintext_hex": "003100068800",
+        "ciphertext_hex": "c6f0bf6a8942"
+      },
+      {
+        "offset": 141,
+        "plaintext_hex": "001000069200",
+        "ciphertext_hex": "3a5fa7553577"
+      },
+      {
+        "offset": 147,
+        "plaintext_hex": "003000118400",
+        "ciphertext_hex": "c93f8b99b331"
+      }
+    ],
+    "continuous_fragmented_encryption_matches_whole_stream": true
+  },
+  "bounded_next_step": {
+    "status_reply_limit": 1,
+    "cash_reply_limit": 1,
+    "status_requires_captured_init_replay_written": true,
+    "cash_requires_status_reply_written": true,
+    "postlogin_header_limit": 8,
+    "unsupported_request_behavior": "Record header only and close without reading its body. Expected next unsupported header is property0x30/0x84 total17.",
+    "clock_behavior": "Retain bounded existing clock replies, including after cash.",
+    "captured_account_or_balance_replay": false,
+    "claims_excluded": [
+      "Fresh GameGuard challenge generation",
+      "Completed GameGuard authentication",
+      "Playable lobby or character creation",
+      "Offline isolation"
+    ]
+  },
+  "runtime_validation": {
+    "python_reference_vectors_executed": true,
+    "csharp_compile_or_execution_here": false,
+    "v1_6_real_client_run_completed": false
+  },
+  "csharp_static_review": {
+    "source_path": "rf-protocol-lab/RFHandshakeProbe.cs",
+    "source_sha256": "c2be889742558ce1891535f8627aeffa0b2a5b92856e4a2d6ebfff7831f0c019",
+    "scope": [
+      "Startup/status8 and cash18 serializers match independently executed Python vectors",
+      "GG replay before status, status before cash, single use of each reply",
+      "Clocks allowed throughout bounded eight-header sequence",
+      "First unsupported, malformed, duplicate or out-of-order request stops before body read",
+      "New result fields copied to snapshot and byte counters incremented once after successful write",
+      "Continuous stream vectors and incoming sequence tests match independent golden values",
+      "All eight state-flag combinations and malformed lengths covered by embedded self-tests"
+    ],
+    "concrete_defects_found": [],
+    "embedded_golden_literals_match": true,
+    "csharp_compilation_or_windows_execution_here": false,
+    "max_client_bytes": 165,
+    "max_success_branch_server_bytes": 498,
+    "max_rejection_branch_server_bytes": 526,
+    "normal_sequence_client_bytes": 153,
+    "normal_sequence_server_bytes": 454
+  }
+}

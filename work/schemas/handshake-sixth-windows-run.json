@@ -1,0 +1,133 @@
+{
+  "schema": "rf-sixth-windows-run-v1",
+  "source_file": "rf-local-handshake-20261016-054008-0b9a15f4.json",
+  "source_sha256": "d38f465221b2e2cd2a539d2407956e2cc6e4f2163b15d8dc4d5085c92a611be7",
+  "reported_result": {
+    "schema": "rf-local-handshake-v1",
+    "script_version": "1.5",
+    "test_id": "0b9a15f4464e4453ad64dbe6ffdd34a0",
+    "mode": "captured_gameguard_initialization_compatibility",
+    "started_utc": "2026-10-16T05:40:08.0612836Z",
+    "status": "cleanup_pending",
+    "error_code": null,
+    "error_detail": null,
+    "checks": {
+      "probe_selftest": true,
+      "journal_create_replace_readback": true,
+      "capture_fixture_verified": true,
+      "unique_software_loopback": true,
+      "existing_configuration_clear": true,
+      "temporary_address_verified": true,
+      "persistent_address_absent": true,
+      "temporary_address_and_route_verified": true,
+      "ownership_journal_updated": true,
+      "probe_ready": true
+    },
+    "observed_address": {
+      "count": 1,
+      "samples": [
+        {
+          "state": "Preferred",
+          "prefix_length": 32,
+          "interface_matches_expected": true,
+          "skip_as_source": true,
+          "skip_as_source_present": true
+        }
+      ]
+    },
+    "game_peer_correlated": true,
+    "correlated_process_name": "rumblefighter",
+    "client_build_verified": true,
+    "client_build_check": "verified",
+    "probe": {
+      "status": "captured_gameguard_replay_next_header_observed",
+      "request_type": 16,
+      "request_action": 144,
+      "request_bytes": 26,
+      "header_parsed": true,
+      "peer_authorized": true,
+      "accepted_after_start_ms": 43671,
+      "first_byte_after_accept_ms": 21162,
+      "reply_bytes": 6,
+      "reply_written": true,
+      "synthetic_socket_check": true,
+      "error_code": "",
+      "socket_error_code": 0,
+      "login_request_type": 16,
+      "login_request_action": 132,
+      "login_request_bytes": 91,
+      "login_header_parsed": true,
+      "login_frame_received": true,
+      "login_reply_bytes": 326,
+      "login_reply_written": true,
+      "local_fixture_matched": true,
+      "login_reply_kind": "synthetic_success",
+      "post_login_request_bytes": 18,
+      "post_login_headers": [
+        {
+          "type": 16,
+          "action": 146,
+          "total_bytes": 6
+        },
+        {
+          "type": 72,
+          "action": 128,
+          "total_bytes": 6
+        },
+        {
+          "type": 16,
+          "action": 208,
+          "total_bytes": 6
+        }
+      ],
+      "clock_reply_count": 1,
+      "post_login_reply_bytes": 82,
+      "post_login_stop_reason": "after_gameguard_replay_header",
+      "capture_fixture_loaded": true,
+      "gameguard_replay_written": true,
+      "gameguard_replay_bytes": 68
+    },
+    "cleanup": {
+      "status": "pending_game_still_running",
+      "error_code": null,
+      "address_absent": null,
+      "route_absent": null,
+      "journal_removed": false,
+      "listener_stopped": true
+    },
+    "limits": [
+      "The temporary address makes this one destination IP local for all ports and protocols; only TCP 7000 is serviced.",
+      "Only the fixed invented local credentials can receive an experimental local profile. One initialization frame from the hash-verified user capture may then be replayed locally; this is not fresh GameGuard authentication.",
+      "At most 165 client bytes are read: version26, login91 and eight six-byte post-login headers. Unknown post-login bodies are not read.",
+      "The login body is decrypted only in memory for the fixed test comparison, then cleared. Credentials, packet bodies, GUIDs and tokens are never logged or saved.",
+      "At most 526 server bytes are written: either rejection, or a bounded profile/clock exchange with one 68-byte captured initialization reply. The next header ends observation.",
+      "The opaque initialization blob may contain old session binding. It is extracted only in memory, never saved or included in reports. Other GameGuard destinations are not isolated by the one-IP route.",
+      "ReplyWritten means the local probe handed a response to its socket; it does not prove application-level acceptance.",
+      "Closing or killing this window abruptly may leave the volatile address until CleanupLocalHandshake.cmd or a reboot."
+    ],
+    "finished_utc": "2026-10-16T05:42:29.9990432Z"
+  },
+  "ui_observation": "No screenshot or new error description accompanied this report. Whether Start Null Error disappeared is unknown.",
+  "established": [
+    "Version1.5 compiled and passed its self-tests, capture verification and local-route preflight on the user Windows machine.",
+    "The exact game build and TCP peer passed verification; invented credentials matched and the326-byte local profile was written.",
+    "One14-byte clock response and one68-byte captured initialization response were written.",
+    "The next client header was type0x0010/action0x00D0/total6, matching the next startup request in the original capture.",
+    "The probe deliberately stopped at that header without replying. The listener stopped.",
+    "Cleanup remained pending because the game or launcher was still running; address/route removal was not verified and the ownership journal was retained."
+  ],
+  "interpretation": "The observed next header shows further startup progress after the captured initializer under these test conditions. It does not establish fresh or ongoing GameGuard authentication, full profile compatibility or gameplay.",
+  "cleanup_required": "Close the game and launcher, then run CleanupLocalHandshake.cmd as administrator from the SAME extracted v1.5 folder. Wait for Cleanup verified. Close both and reboot if recovery cannot complete.",
+  "not_established": [
+    "Whether the prior GameGuard error changed or disappeared.",
+    "Removal of this run temporary address and route.",
+    "A fresh GameGuard initializer or ongoing challenge/answer implementation.",
+    "Usable character, lobby, offline solo or multiplayer gameplay."
+  ],
+  "next_checkpoint": {
+    "version": "1.6",
+    "purpose": "Reply once to the observed startup/status request, then one local cash request with account1 and zero balances; continue known clocks and stop at an unsupported header without its body.",
+    "expected_next_unsupported_header": "0x0030/0x0084/total17 based on original capture; not guaranteed for synthetic profile.",
+    "requires_new_windows_run": true
+  }
+}

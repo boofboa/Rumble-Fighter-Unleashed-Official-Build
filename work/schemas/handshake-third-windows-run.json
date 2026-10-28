@@ -1,0 +1,109 @@
+{
+  "schema": "rf-third-windows-run-v1",
+  "source_file": "rf-local-handshake-20261016-050240-137fb479.json",
+  "source_sha256": "51f1cce00a5cec172420697f73c1e8471f4147f9e4dc2ff3ac4314a2f4d45fff",
+  "reported_result": {
+    "schema": "rf-local-handshake-v1",
+    "script_version": "1.2",
+    "test_id": "137fb47938a44ec494a3d7b28795bc93",
+    "mode": "version_handshake",
+    "started_utc": "2026-10-16T05:02:40.9314621Z",
+    "status": "game_version_request_received_reply_written",
+    "error_code": null,
+    "error_detail": null,
+    "checks": {
+      "probe_selftest": true,
+      "journal_create_replace_readback": true,
+      "unique_software_loopback": true,
+      "existing_configuration_clear": true,
+      "temporary_address_verified": true,
+      "persistent_address_absent": true,
+      "temporary_address_and_route_verified": true,
+      "ownership_journal_updated": true,
+      "probe_ready": true
+    },
+    "observed_address": {
+      "count": 1,
+      "samples": [
+        {
+          "state": "Preferred",
+          "prefix_length": 32,
+          "interface_matches_expected": true,
+          "skip_as_source": true,
+          "skip_as_source_present": true
+        }
+      ]
+    },
+    "game_peer_correlated": true,
+    "correlated_process_name": "rumblefighter",
+    "client_build_verified": true,
+    "client_build_check": "verified",
+    "probe": {
+      "status": "version_request_received_reply_written",
+      "request_type": 16,
+      "request_action": 144,
+      "request_bytes": 26,
+      "header_parsed": true,
+      "peer_authorized": true,
+      "accepted_after_start_ms": 41406,
+      "first_byte_after_accept_ms": 27001,
+      "reply_bytes": 6,
+      "reply_written": true,
+      "synthetic_socket_check": true,
+      "error_code": "",
+      "socket_error_code": 0
+    },
+    "cleanup": {
+      "status": "verified_removed",
+      "error_code": null,
+      "address_absent": true,
+      "route_absent": true,
+      "journal_removed": true,
+      "listener_stopped": true
+    },
+    "limits": [
+      "The temporary address makes this one destination IP local for all ports and protocols; only TCP 7000 is serviced.",
+      "No login, account, GameGuard, other-service or gameplay compatibility is tested.",
+      "ReplyWritten means the local probe handed the acknowledgement to its socket; it does not prove application-level acceptance.",
+      "Closing or killing this window abruptly may leave the volatile address until CleanupLocalHandshake.cmd or a reboot."
+    ],
+    "finished_utc": "2026-10-16T05:04:12.2310336Z"
+  },
+  "established": [
+    "The exact game executable and TCP peer were verified on the local listener.",
+    "The complete 26-byte version request decoded as type 0x0010/action 0x0090.",
+    "The local probe wrote the six-byte version acknowledgement.",
+    "Initial client data arrived 27.001 seconds after accept, exceeding the old five-second wait.",
+    "Listener shutdown and temporary-address/route cleanup were verified."
+  ],
+  "not_established": [
+    "A successful socket write alone does not establish that the client processed the acknowledgement.",
+    "No login frame was read in this version-only test.",
+    "Account authentication, GameGuard/session compatibility and gameplay remain unverified."
+  ],
+  "next_checkpoint": {
+    "version": "1.3",
+    "scope": "One version frame and one login frame, followed by a fixed synthetic local rejection banner.",
+    "max_client_bytes": 117,
+    "max_server_bytes": 526,
+    "login_expected_type": "0x0010",
+    "login_expected_action": "0x0084",
+    "login_expected_total_bytes": 91,
+    "response_type": "0x0210",
+    "response_action": "0x0285",
+    "response_total_bytes": 520,
+    "response_message": "ASTER LOCAL SERVER: login message received. Gameplay is not enabled yet.",
+    "credential_handling": "Read exactly the bounded encrypted 85-byte body after a validated header, do not decode credential fields, do not log or persist it, and clear the temporary array.",
+    "no_authentication": "The fixed response rejects the test; it creates no account and does not emit a success reply."
+  },
+  "reference_evidence": [
+    "Original local Python serialize_failure implementation with tests.",
+    "Previously inspected public LoginFailRes layout and captured failure-frame header/length."
+  ],
+  "golden_synthetic_checks": {
+    "combined_server_cipher_bytes": 526,
+    "combined_server_cipher_sha256": "4f63e44c4093452dbea89605e6eae7ae7ce6556bf35ab23e7620a8a76a0561e1",
+    "continuous_login_header_cipher_hex": "185326e56141"
+  },
+  "revised_version_windows_run_performed": false
+}

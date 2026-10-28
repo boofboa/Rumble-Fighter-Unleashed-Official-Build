@@ -1,0 +1,71 @@
+{
+  "schema": "rf-primary-source-options-v1",
+  "checked_date_utc": "2026-10-16",
+  "conclusion": "No reviewed public project demonstrates offline solo or multiplayer compatibility with supplied RedFox client SHA256 94194afa95d3d2cc81a55438a0f584bfaf039ca85adab5b07966ae3e4d593a59. Public source remains useful protocol evidence, not a validated replacement build.",
+  "sources": [
+    {
+      "project": "Primitheus/Gemnet",
+      "url": "https://github.com/Primitheus/Gemnet",
+      "pushed_at_from_github_api": "2025-11-15T04:23:05Z",
+      "github_license_metadata": null,
+      "status": "README lists training, boss mode, lobby and ProudNet P2P alongside incomplete features. It does not identify a matching client hash or provide compatibility evidence for the supplied current build. Existing pinned source analysis remains applicable."
+    },
+    {
+      "project": "oyenmwen/rumble-fighter-emulator",
+      "url": "https://github.com/oyenmwen/rumble-fighter-emulator",
+      "client_identity_url": "https://github.com/oyenmwen/rumble-fighter-emulator/blob/main/client/README.md",
+      "pushed_at_from_github_api": "2026-08-04T01:17:30Z",
+      "github_license_metadata": null,
+      "target_client": {
+        "label": "v1.1.2",
+        "size_bytes": 3174400,
+        "sha256": "4661caa3cc5fbadd9bc5942be3b70c24c861f59254389d72a3ab2721bc8c9d7a"
+      },
+      "status": "Maintainer reports login/rendering with target-specific client changes. README explicitly lists QUERY/0x36 as blocking; lobby/room/match flow and actual P2P gameplay remain unimplemented. Target differs from supplied 4217600-byte protected RedFox client. Old OGPlanet hostname mappings and byte offsets are not transferable without verification."
+    },
+    {
+      "project": "Primitheus/gemnet-js",
+      "url": "https://github.com/Primitheus/gemnet-js",
+      "pushed_at_from_github_api": "2023-06-27T04:56:30Z",
+      "github_license_metadata": null,
+      "status": "Author labels this a proof of concept, unsupported and being rewritten privately; no matching-build evidence."
+    },
+    {
+      "project": "Primitheus/rumbledecomp",
+      "url": "https://github.com/Primitheus/rumbledecomp",
+      "pushed_at_from_github_api": "2024-07-12T04:38:28Z",
+      "github_license_metadata": null,
+      "status": "Author describes extremely incomplete decompilation: game functions0.6%, launcher4.3%, Home97.4%. Not a replacement client."
+    }
+  ],
+  "license_limit": "GitHub API returned null license metadata for all four RF repositories; no affirmative reuse license was identified in reviewed root files. This is a documentation observation, not a full repository legal audit. No upstream source is included in the user deliverable.",
+  "routing_options": [
+    {
+      "option": "Known hostname mapping",
+      "assessment": "Can affect name resolution only if the exact client uses those names. An observed numeric endpoint alone neither proves DNS nor hardcoding. Old OGPlanet names from the v1.1.2 fork are not evidence for current RedFox."
+    },
+    {
+      "option": "Local-only destination alias in an isolated Windows test environment",
+      "assessment": "Conceptually can make a known destination address local without modifying the client. Requires verified isolated interface/route state, exact destination and port, local listener and rollback. Does not solve launcher, GameGuard, login or P2P compatibility. No such change was made or validated."
+    },
+    {
+      "option": "netsh portproxy",
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-interface",
+      "assessment": "Microsoft documents a listener for incoming TCP connections on a local address, forwarded to another address. It does not by itself intercept outbound connections to a remote IP."
+    },
+    {
+      "option": "Windows address configuration",
+      "url": "https://learn.microsoft.com/en-us/powershell/module/nettcpip/new-netipaddress?view=windowsserver2025-ps",
+      "assessment": "Microsoft documents New-NetIPAddress; adding to a DHCP-enabled interface disables DHCP. A public-destination alias must not be blindly added to the active internet adapter. A dedicated isolated interface would need explicit preparation and verification."
+    },
+    {
+      "option": "WFP or WinDivert redirection",
+      "urls": [
+        "https://learn.microsoft.com/en-us/windows-hardware/drivers/network/using-bind-or-connect-redirection",
+        "https://reqrypt.org/windivert-doc.html"
+      ],
+      "assessment": "Primary documentation supports connection or packet redirection to local services. WinDivert is LGPLv3, uses a driver and has a local-proxy sample; packet layer has no process-ID field. This adds Windows driver/deployment and compatibility work and is not a validated RF solution."
+    }
+  ],
+  "next_engineering_step": "Continue offline first-stage reconstruction already underway to locate endpoint initialization and opaque resource-read routines. This advances evidence without another generic startup capture. Routing is one future testable component, not the whole private-server solution."
+}

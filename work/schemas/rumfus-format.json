@@ -1,0 +1,80 @@
+{
+  "file": "rumfus.ini",
+  "scope": "Read-only offline format classification; no decoded user/account/config values emitted or saved.",
+  "original_metadata": {
+    "size_bytes": 1217,
+    "entropy_bits_per_byte": 7.84,
+    "unique_byte_values": 255
+  },
+  "current_diagnostics_comparison": {
+    "reported_size_bytes": 1203,
+    "content_hash_changed": true,
+    "comparison_limit": "Current file contents were not available to this analysis; a changed size/hash does not identify changed fields or their purpose."
+  },
+  "format_classification": {
+    "category": "unrecognized binary container",
+    "confidence": "high for non-plaintext appearance; specific encoding unknown",
+    "standard_magic_detected": false,
+    "text_BOM_detected": false,
+    "recovered_field_names": [],
+    "possible_interpretations": [
+      "compressed data with an unknown wrapper or codec",
+      "encrypted or obfuscated data",
+      "custom binary serialization with high-entropy sections"
+    ],
+    "interpretation_limit": "Entropy alone cannot distinguish these alternatives."
+  },
+  "structural_observations": {
+    "first_1024_bytes": "high entropy",
+    "last_128_bytes": "lower entropy with sparse repeated zero bytes",
+    "known_length_field_in_first_64_bytes": false,
+    "named_header_or_trailer_fields": [],
+    "confidence": "low; no schema recovered"
+  },
+  "offline_tests": {
+    "standard_decompressors": [
+      "zlib",
+      "gzip",
+      "raw DEFLATE",
+      "bzip2",
+      "LZMA auto/XZ",
+      "LZMA-alone"
+    ],
+    "tested_start_offsets_inclusive": [
+      0,
+      128
+    ],
+    "validated_decompression_found": false,
+    "bounds": "Decoded output limited to 2 MiB; LZMA decoder memory limited to 64 MiB. Validated candidates required EOF, at least 100 output bytes, and at most 32 trailing input bytes.",
+    "known_reference_transport_cipher_reuse": {
+      "tested_offsets": [
+        0,
+        1,
+        4,
+        8,
+        16
+      ],
+      "recognized_plaintext_or_standard_compression_found": false,
+      "confidence": "Only this narrow reuse hypothesis was tested; failure does not identify or exclude other encryption."
+    }
+  },
+  "executable_filename_reference_checks": {
+    "rumblefighter.exe": {
+      "ascii_filename_reference_present": false,
+      "utf16le_filename_reference_present": false
+    },
+    "RumbleLauncher.exe": {
+      "ascii_filename_reference_present": false,
+      "utf16le_filename_reference_present": false
+    }
+  },
+  "role_assessment": {
+    "local_settings": "Plausible from mutability and filename, but unconfirmed. App caches, account state or another container role remain possible.",
+    "server_endpoint_configuration": "No recovered key, field, string reference or validated decoder establishes this role.",
+    "client_reference_limit": "Executable protection limits what absence of a literal filename can tell us."
+  },
+  "next_step_assessment": {
+    "request_current_file_by_itself": "Low value for endpoint investigation; byte comparison without a decoder would not identify server routing.",
+    "conditional_settings_experiment": "Only if classifying this file becomes necessary: compare copies before and after one harmless in-game display or sound setting change. This can test involvement in settings persistence, but does not establish an endpoint field."
+  }
+}
